@@ -12,7 +12,7 @@
 <body>
 <h2>Benvenuto <?php echo $_SESSION['username'] ?></h2><a href="script/logout.php">Logout</a>
 <?php
-include_once 'config/db.php';
+include_once 'config/db.php'; 
 ?>
 <h2>Inserisci utente</h2>
 <div class="utente">
