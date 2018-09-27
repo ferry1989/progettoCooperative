@@ -24,13 +24,18 @@ $(document).ready(function() {
 		};
 		$.ajax({
 			type: "POST",
-			dataType: 'jsonp',
+			dataType: 'json',
 			url: "script/insert_utente.php",
 			async: false,
 			data : JSON.stringify(utente),
-			contentType: "application/json; charset=utf-8",
+			contentType: "application/json",
 			success: function (msg) {
-				alert('utente inserito con successo');                
+				if(msg.error){
+					alert(msg.error);
+				}
+				else{
+					alert(msg.success);
+				}               
 			}
 		});
 	});
@@ -54,7 +59,12 @@ $(document).ready(function() {
 			data : JSON.stringify(regione),
 			contentType: "application/json",
 			success: function (msg) {
-				alert('regione inserita con successo');
+				if(msg.error){
+					alert(msg.error);
+				}
+				else{
+					alert(msg.success);
+				}
 			}
 		});
 	});
@@ -113,4 +123,118 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	$("#insertVolontario").click(function() {
+		var nome = $('.volontario input[name*="nome"]').val();
+		var cognome = $('.volontario input[name*="cognome"]').val();
+		var dataNascita = $('.volontario input[name*="dataNascita"]').val(); //formato yyyymmdd
+		var codFiscale = $('.volontario input[name*="codFiscale"]').val();
+		var ente = $('.volontario select[name*="ente"]').val();
+		var volontario = {
+			"nome": nome,
+			"cognome": cognome,
+			"dataNascita": dataNascita,
+			"codFiscale": codFiscale,
+			"ente": ente
+		};
+		$.ajax({
+			type: "POST",
+			dataType: 'json',
+			url: "script/insert_volontario.php",
+			async: false,
+			data : JSON.stringify(volontario),
+			contentType: "application/json",
+			success: function (msg) {
+				if(msg.error){
+					alert(msg.error);
+				}
+				else{
+					alert(msg.success);
+				}
+			}
+		});
+	});
+	
+	$("#insertProgetto").click(function() {
+		var titolo = $('.progetto input[name*="titolo"]').val();
+		var idRegione = $('.progetto select[name*="regione"]').val();
+		var progetto = {
+			"idRegione": idRegione,
+			"titolo": titolo
+		};
+		$.ajax({
+			type: "POST",
+			dataType: 'json',
+			url: "script/insert_progetto.php",
+			async: false,
+			data : JSON.stringify(progetto),
+			contentType: "application/json",
+			success: function (msg) {
+				if(msg.error){
+					alert(msg.error);
+				}
+				else{
+					alert(msg.success);
+				}
+			}
+		});
+	});
+	
+	$("#insertPresenza").click(function() {
+		var idVolontario = $('.presenza select[name*="volontario"]').val();
+		var idProgetto = $('.presenza select[name*="progetto"]').val();
+		var dataOraInizio = $('.presenza input[name*="dataOraInizio"]').val(); //formato yyyymmddhhmmss (ad es 20180518200000)
+		var dataOraFine = $('.presenza input[name*="dataOraFine"]').val();	//formato yyyymmddhhmmss (ad es 20180518200000)
+		var isApprovata = $('.presenza select[name*="approvata"]').val();
+		var presenza = {
+			"idVolontario": idVolontario,
+			"idProgetto": idProgetto,
+			"dataOraInizio": dataOraInizio,
+			"dataOraFine": dataOraFine,
+			"isApprovata": isApprovata
+		};
+		$.ajax({
+			type: "POST",
+			dataType: 'json',
+			url: "script/insert_presenza.php",
+			async: false,
+			data : JSON.stringify(presenza),
+			contentType: "application/json",
+			success: function (msg) {
+				if(msg.error){
+					alert(msg.error);
+				}
+				else{
+					alert(msg.success);
+				}
+			}
+		});
+	});
+	
+	$("#insertRegioneProgetto").click(function() {
+		var idProgetto = $('.regioneprogetto select[name*="progetto"]').val();
+		var idRegione = $('.regioneprogetto select[name*="regione"]').val();
+		var regioneprogetto = {
+			"idProgetto": idProgetto,
+			"idRegione": idRegione
+		};
+		$.ajax({
+			type: "POST",
+			dataType: 'json',
+			url: "script/insert_regioneprogetto.php",
+			async: false,
+			data : JSON.stringify(regioneprogetto),
+			contentType: "application/json",
+			success: function (msg) {
+				if(msg.error){
+					alert(msg.error);
+				}
+				else{
+					alert(msg.success);
+				}
+			}
+		});
+	});
+	
+	
 });

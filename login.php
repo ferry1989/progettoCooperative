@@ -5,7 +5,7 @@
 	<input type='text' name='username'/>
 	<label for='password' >Password:</label>
 	<input type='password' name='password' id='password'/>
-	<input type='submit' name='Submit' value='Submit' /> 
+	<input type='submit' name='Submit' value='Submit' />
 </form>
 </body>
-</html> 
+</html>
