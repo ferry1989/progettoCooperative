@@ -284,6 +284,45 @@ include_once 'config/db.php';
 		
 	</table>
 </div>
+
+<h2>Collega volontario a progetto</h2>
+<div class="volontarioprogetto">
+	<table>
+		<tr>
+			<td>Volontario</td>
+			<td>Progetto</td>
+		</tr>
+		<tr>
+			<td>
+				<select name="volontario">
+					<?php
+						$getRegioni = "SELECT * FROM volontario";
+						$result = mysqli_query($con,$getRegioni);
+						while ($row = $result->fetch_assoc()) {
+							echo '<option value="'.$row['id_volontario'].'">'.$row['codFiscale'].'</option>"';
+						}
+					?>
+				</select>
+			</td>
+			<td>
+				<select name="progetto">
+					<?php
+						$getProgetti = "SELECT * FROM progetto";
+						$result = mysqli_query($con,$getProgetti);
+						while ($row = $result->fetch_assoc()) {
+							echo '<option value="'.$row['id_progetto'].'">'.$row['titolo'].'</option>"';
+						}
+					?>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button id="insertVolontarioProgetto">inserisci</button></td>
+		</tr>
+		
+	</table>
+</div>
 </body>
 </html>
 <?php

@@ -202,6 +202,21 @@ include_once 'config/db.php';
 		</tr>
 	</table>
 </div><br>
+
+<h2>Seleziona volontario progetto</h2>
+<div class="volontarioprogetto">
+	<table>
+		<tr>
+			<td>id volontario</td>
+			<td>id progetto</td>
+		</tr>
+		<tr>
+			<td><input name='id_volontario' /></td>
+			<td><input name='id_progetto' /></td>
+			<td><button id="selectVolontariProgetti">cerca</button>
+		</tr>
+	</table>
+</div><br>
 </body>
 </html>
 <?php

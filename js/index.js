@@ -236,5 +236,30 @@ $(document).ready(function() {
 		});
 	});
 	
+	$("#insertVolontarioProgetto").click(function() {
+		var idProgetto = $('.volontarioprogetto select[name*="progetto"]').val();
+		var idVolontario = $('.volontarioprogetto select[name*="volontario"]').val();
+		var regioneprogetto = {
+			"idProgetto": idProgetto,
+			"idVolontario": idVolontario
+		};
+		$.ajax({
+			type: "POST",
+			dataType: 'json',
+			url: "script/insert_volontarioprogetto.php",
+			async: false,
+			data : JSON.stringify(regioneprogetto),
+			contentType: "application/json",
+			success: function (msg) {
+				if(msg.error){
+					alert(msg.error);
+				}
+				else{
+					alert(msg.success);
+				}
+			}
+		});
+	});
+	
 	
 });

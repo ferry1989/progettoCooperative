@@ -182,6 +182,31 @@ $(document).ready(function() {
 		});
 	});
 	
+		$("#selectVolontariProgetti").click(function() {
+		var id_volontario = $('.volontarioprogetto input[name*="id_volontario"]').val();
+		var id_progetto = $('.volontarioprogetto input[name*="id_progetto"]').val();
+		var filtri = {
+			"id_volontario": id_volontario,
+			"id_progetto": id_progetto
+		};
+		$.ajax({
+			type: "POST",
+			dataType: 'json',
+			url: "script/seleziona_volontari_progetti.php",
+			async: false,
+			data : JSON.stringify(filtri),
+			contentType: "application/json",
+			success: function (msg) {
+				if(msg.error){
+					alert(msg.error);
+				}
+				else{
+					console.log(msg);
+				}               
+			}
+		});
+	});
+	
 	$("#selectSedi").click(function() {
 		var id_sede = $('.sede input[name*="id_sede"]').val();
 		var id_ente = $('.sede input[name*="id_ente"]').val();
