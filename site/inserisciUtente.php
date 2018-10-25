@@ -52,41 +52,40 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Pannello di controllo per l' utente REGIONE</h2>
+					<h2 class="page-header text-primary">Inserisci Utente</h2>
 				</div>
 			</div>
 
-			<div class="row">
-					 
-				<div class="col-lg-4">
-				  <form class="form-inline">
-				  <h3>Ricerca Ente</h3>
-				  <div class="form-group mx-sm-3 mb-2">
-				  <label for="inputPassword2" class="sr-only">Ente...</label>
-				  <input type="text" class="form-control" id="inputPassword2" placeholder="Ente">
+			<div class="row">	
+				<div class="utente">
+				  <div class="form-group">
+					<label for="exampleFormControlInput1">Username</label>
+					<input type="text" class="form-control" name="user" placeholder="Username">
 				  </div>
-				  <button type="submit" class="btn btn-primary mb-1">Cerca</button></form>
-				</div>
+				  
+				  <div class="form-group">
+					<label for="exampleFormControlInput2">Password</label>
+					<input type="text" class="form-control" name="password" type="password" placeholder="Password">
+				  </div>
+				  
+				  <div class="form-group">
+					<label for="exampleFormControlSelect3">Regione</label>
+					<select class="form-control" name="regione">
+						<option value="-1">-</option>
+					</select>
+				  </div>
+				  
+				  <div class="form-group">
+					<label for="exampleFormControlSelect3">Ente</label>
+					<select class="form-control" name="ente">
+						<option value="-1">-</option>
+					</select>
+				  </div>
+				  
+				  <button type="submit" class="btn btn-info" id="inserisci_utente" >SALVA</button>
 
-				 <div class="col-lg-4">
-				  <form class="form-inline">
-				  <h3>Ricerca Progetto</h3>
-				  <div class="form-group mx-sm-3 mb-2">
-				  <label for="inputPassword2" class="sr-only">Progetto...</label>
-				  <input type="text" class="form-control" id="inputPassword2" placeholder="Progetto">
-				  </div>
-				  <button type="submit" class="btn btn-primary mb-1">Cerca</button></form>
-				</div>
-
-				 <div class="col-lg-4">
-				  <form class="form-inline">
-				  <h3>Ricerca Volontario</h3>
-				  <div class="form-group mx-sm-3 mb-2">
-				  <label for="inputPassword2" class="sr-only">Volontario...</label>
-				  <input type="text" class="form-control" id="inputPassword2" placeholder="Volontario">
-				  </div>
-				  <button type="submit" class="btn btn-primary mb-1">Cerca</button></form>
-				</div>
+				</div>	  
+  
 				
 			</div>
 		</div>
@@ -104,11 +103,11 @@
 
     <!-- Morris Charts JavaScript -->
     <script src="vendor/raphael/raphael.min.js"></script>
-    <script src="vendor/morrisjs/morris.min.js"></script>
-    <script src="data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
+	
+	<script type="text/javascript" src="js/inserisciUtente.js"></script>
 
 </body>
 
