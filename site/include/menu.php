@@ -33,7 +33,6 @@
                 <div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
 				<?php
-					session_start();
 					if($_SESSION['isAdmin'] == 1 || $_SESSION['id_regione'] > 0){
 				?>
 					<!-- Sezione di menu dedicata alla regione e all'admin -->
