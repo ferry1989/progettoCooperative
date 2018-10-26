@@ -52,77 +52,64 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Inserisci Ente</h2>
+					<h2 class="page-header text-primary">Inserisci Progetto</h2>
 				</div>
 			</div>
 
 			<div class="row">	
-				<div class="ente">
+				<div class="progetto">
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Denominazione</label>
-						<input type="text" class="form-control" name="nomeEnte">
+						<label for="exampleFormControlSelect3">Ente</label>
+						<select class="form-control" name="ente">
+							<option value="-1">-</option>
+						</select>
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Telefono</label>
-					<input type="text" class="form-control" name="telefono">
+					<label for="exampleFormControlInput1">Titolo</label>
+					<input type="text" class="form-control" name="titolo">
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Regione</label>
-						<select class="form-control" name="regione">
+						<label for="exampleFormControlSelect3">Anno Bando</label>
+						<select class="form-control" name="annobando">
 							<option value="-1">-</option>
 						</select>
 					</div>
 					
 					<div class="form-group">
-					<label for="exampleFormControlSelect3">Utente</label>
-					<select class="form-control" name="utente">
+					<label for="exampleFormControlSelect3">Settore Prevalente Campi</label>
+					<select class="form-control" name="settprev">
 						<option value="-1">-</option>
 					</select>
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Codice Fiscale</label>
-						<input type="text" class="form-control" name="codfis">
+					<label for="exampleFormControlInput1">Altro Settore</label>
+						<input type="text" class="form-control" name="altrosett">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Tipo</label>
-						<input type="text" class="form-control" name="tipo">
+						<label for="exampleFormControlSelect3">Sedi di attuazione</label>
+						<select class="form-control" name="sede">
+							<option value="-1">-</option>
+						</select>
 					</div>
 
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Rappresentante Legale</label>
-						<input type="text" class="form-control" name="rapplegale">
-					</div>
+					<button type="submit" class="btn btn-info" id="inserisci_ente" >SALVA E CONFERMA</button>
 
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Cod</label>
-						<input type="text" class="form-control" name="cod">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Sito Web</label>
-						<input type="text" class="form-control" name="web">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Email</label>
-						<input type="text" class="form-control" name="email" type="email">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">PEC</label>
-						<input type="text" class="form-control" name="pec">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Fax</label>
-						<input type="text" class="form-control" name="fax">
-					</div>
-					
+					<!-- questo bottone deve rendere tutti i form disabled in modo da non permettere la modifica  -->
 					<button type="submit" class="btn btn-info" id="inserisci_ente" >SALVA</button>
+					<button class="btn btn-info" id="inserisci_ente" >CHIUDI</button>
+
+					<!-- questo bottone deve rendere tutti i form enabled in modo da permettere la modifica  -->
+					<button class="btn btn-info hidden" id="inserisci_ente" >MODIFICA</button>
+
+					<!-- questo bottone deve pulire tutti i campi -->
+					<button class="btn btn-info hidden" id="inserisci_ente" >ELIMINA</button>
+
+					<!-- questo bottone reindirizza alla creazione del nuovo progetto  -->
+					<button class="btn btn-info hidden" id="inserisci_ente" >CREA NUOVO PROGETTO</button>
 				</div>
 			</div>
 		</div>
@@ -144,7 +131,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 	
-	<script type="text/javascript" src="js/inserisciEnte.js"></script>
+	<script type="text/javascript" src="js/inserisciProgetto.js"></script>
 
 </body>
 

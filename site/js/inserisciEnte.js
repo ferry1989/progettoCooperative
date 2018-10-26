@@ -91,12 +91,13 @@ $(document).ready(function() {
 		var pec = $('.ente').find('input[name*="pec"]').val();
 
 		var filtri = {
+			'type': 'project',
 			"denominazione": denominazione,
 			"codFisc": codFisc,
 			"email": email,
 			"pec": pec
 		};
-		
+
 		$.ajax({
 			type: "POST",
 			dataType: 'json',

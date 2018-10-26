@@ -1,12 +1,14 @@
 $(document).ready(function() {
 	$(window).on('load', function(){
-		var filtri = [];
+
+		var filtriRegioni = [];
+		
 		$.ajax({
 			type: "POST",
 			dataType: 'json',
 			url: "../script/seleziona_regioni.php",
 			async: false,
-			data : JSON.stringify(filtri),
+			data : JSON.stringify(filtriRegioni),
 			contentType: "application/json",
 			success: function (regioni) {
 				for (i in regioni){
@@ -15,12 +17,16 @@ $(document).ready(function() {
 			}
 		});
 		
+		var filtriEnti = {
+			'type': 'user'
+		}
+
 		$.ajax({
 			type: "POST",
 			dataType: 'json',
 			url: "../script/seleziona_enti.php",
 			async: false,
-			data : JSON.stringify(filtri),
+			data : JSON.stringify(filtriEnti),
 			contentType: "application/json",
 			success: function (enti) {
 				for (i in enti){

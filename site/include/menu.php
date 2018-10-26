@@ -49,7 +49,7 @@
                             <a href="ricercaEnte.php"><i class="fa fa-user fa-fw"></i>Ricerca Ente</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Inserisci Progetto</i></a>
+                            <a href="inserisciProgetto.php"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Inserisci Progetto</i></a>
                         </li>
 						<li>
                             <a href="indexrcercaprogetto.php"><i class="fa fa-th-list fa-fw"></i>Ricerca Progetto</a>
