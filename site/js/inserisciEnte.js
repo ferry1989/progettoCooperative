@@ -89,13 +89,13 @@ $(document).ready(function() {
 		var codFisc = $('.ente').find('input[name*="codFisc"]').val();
 		var email = $('.ente').find('input[name*="email"]').val();
 		var pec = $('.ente').find('input[name*="pec"]').val();
+
 		var filtri = {
 			"denominazione": denominazione,
 			"codFisc": codFisc,
 			"email": email,
 			"pec": pec
 		};
-		var _enti;
 		
 		$.ajax({
 			type: "POST",
@@ -105,6 +105,7 @@ $(document).ready(function() {
 			data : JSON.stringify(filtri),
 			contentType: "application/json",
 			success: function (enti) {
+				console.log("ciao");
 				if(enti.error){
 					alert(enti.error);
 				}
