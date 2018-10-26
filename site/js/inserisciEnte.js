@@ -105,7 +105,6 @@ $(document).ready(function() {
 			data : JSON.stringify(filtri),
 			contentType: "application/json",
 			success: function (enti) {
-				console.log("ciao");
 				if(enti.error){
 					alert(enti.error);
 				}
@@ -140,7 +139,7 @@ $(document).ready(function() {
 						$('#enti_ricercati').append($row);
 						
 					}
-				}               
+				}
 			}
 		});
 	});
