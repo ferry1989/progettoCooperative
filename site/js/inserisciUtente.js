@@ -36,8 +36,8 @@ $(document).ready(function() {
 		var password = $('.utente').find('input[name*="password"]').val();
 		var id_regione = $('.utente').find('select[name*="regione"]').val();
 		var id_ente = $('.utente').find('select[name*="ente"]').val();
-		
 		var password = $('.utente input[name*="password"]').val();
+		
 		var utente = {
 			"user": user,
 			"password":password,
