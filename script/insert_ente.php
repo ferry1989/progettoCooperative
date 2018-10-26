@@ -26,7 +26,7 @@
 			$result = mysqli_query($con,$verificaEnte);
 
 			if ($result->num_rows > 0) {
-				$msg = array("error"=>"Ente già esistente!");
+				$msg = array("error"=>"Ente già esistente!".$verificaEnte);
 				echo json_encode($msg);
 				mysqli_close($con);
 				return;

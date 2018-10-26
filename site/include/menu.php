@@ -46,7 +46,7 @@
                             <a href="inserisciEnte.php"><i class="fa fa-user fa-fw"></i><span data-toggle="modal" data-target="#inserisciente">Inserisci Ente</span></a>
                         </li>
 						<li>
-                            <a href="indexrcercaente.php"><i class="fa fa-user fa-fw"></i>Ricerca Ente</a>
+                            <a href="ricercaEnte.php"><i class="fa fa-user fa-fw"></i>Ricerca Ente</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Inserisci Progetto</i></a>

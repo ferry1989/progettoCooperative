@@ -6,32 +6,30 @@
 		$foo = file_get_contents("php://input");
 
 		$filtri = json_decode($foo, true);
-		$id_ente = mysqli_real_escape_string($con, $filtri['id_ente']);
-		$telefono = trim(mysqli_real_escape_string($con, $filtri['telefono']));
-		$nomeEnte = mysqli_real_escape_string($con, $filtri['nomeEnte']);
+		$denominazione = mysqli_real_escape_string($con, $filtri['denominazione']);
+		$codFisc = trim(mysqli_real_escape_string($con, $filtri['codFisc']));
+		$email = mysqli_real_escape_string($con, $filtri['email']);
 		$id_regione = mysqli_real_escape_string($con, $filtri['id_regione']);
 		$id_utente = mysqli_real_escape_string($con, $filtri['id_utente']);
 
 		$selezionaEnti = "SELECT * FROM ente WHERE 1=1 ";
-		if($id_ente != null && $id_ente != ""){
-			$selezionaEnti .= "and id_ente='$id_ente'";
+		
+		if($denominazione != null && $denominazione != ""){
+			$selezionaEnti .= "and trim(nomeEnte) LIKE '%$denominazione%'";
 		}
-		if($telefono != null && $telefono != ""){
-			$selezionaEnti .= "and trim(telefono) LIKE '%$telefono%'";
+		if($codFisc != null && $codFisc != ""){
+			$selezionaEnti .= "and trim(codfis) LIKE '%$codFisc%'";
 		}
-		if($nomeEnte != null && $nomeEnte != ""){
-			$selezionaEnti .= "and trim(nomeEnte) LIKE '%$nomeEnte%'";
+		if($email != null && $email != ""){
+			$selezionaEnti .= "and trim(email) LIKE '%$email%'";
 		}
-		if($id_regione != null && $id_regione != ""){
-			$selezionaEnti .= "and id_regione='$id_regione'";
-		}
-		if($id_utente != null && $id_utente != ""){
-			$selezionaEnti .= "and id_utente='$id_utente'";
+		if($pec != null && $pec != ""){
+			$selezionaEnti .= "and trim(pec) LIKE '%$pec%'";
 		}
 		$result = mysqli_query($con,$selezionaEnti);
 		$msg = array();
 		while($row = $result->fetch_assoc()) {
-			$addEnte = array("id_ente"=>$row["id_ente"], "telefono"=>$row["telefono"], "nomeEnte"=>$row["nomeEnte"], "id_regione"=>$row["id_regione"], "id_utente"=>$row["id_utente"]);
+			$addEnte = array("id_ente"=>$row["id_ente"], "telefono"=>$row["telefono"], "nomeEnte"=>$row["nomeEnte"], "id_regione"=>$row["id_regione"], "id_utente"=>$row["id_utente"], "codfis"=>$row["codfis"], "tipo"=>$row["tipo"], "rapplegale"=>$row["rapplegale"], "cod"=>$row["cod"], "web"=>$row["web"], "email"=>$row["email"], "pec"=>$row["pec"], "fax"=>$row["fax"]);
 			array_push($msg, $addEnte);
 		}
 		
