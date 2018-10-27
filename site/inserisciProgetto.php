@@ -60,7 +60,7 @@
 				<div class="progetto">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Ente</label>
-						<select class="form-control" name="ente">
+						<select class="form-control filled" value="" name="ente">
 							<option value="-1">-</option>
 						</select>
 					</div>
@@ -96,20 +96,20 @@
 						</select>
 					</div>
 
-					<button type="submit" class="btn btn-info" id="inserisci_ente" >SALVA E CONFERMA</button>
+					<button type="submit" class="btn btn-info" id="insert_progetto" >SALVA E CONFERMA</button>
 
 					<!-- questo bottone deve rendere tutti i form disabled in modo da non permettere la modifica  -->
-					<button type="submit" class="btn btn-info" id="inserisci_ente" >SALVA</button>
-					<button class="btn btn-info" id="inserisci_ente" >CHIUDI</button>
+					<button type="submit" class="btn btn-info" >SALVA</button>
+					<button class="btn btn-info" >CHIUDI</button>
 
 					<!-- questo bottone deve rendere tutti i form enabled in modo da permettere la modifica  -->
-					<button class="btn btn-info hidden" id="inserisci_ente" >MODIFICA</button>
+					<button class="btn btn-info hidden" >MODIFICA</button>
 
 					<!-- questo bottone deve pulire tutti i campi -->
-					<button class="btn btn-info hidden" id="inserisci_ente" >ELIMINA</button>
+					<button class="btn btn-info hidden" >ELIMINA</button>
 
 					<!-- questo bottone reindirizza alla creazione del nuovo progetto  -->
-					<button class="btn btn-info hidden" id="inserisci_ente" >CREA NUOVO PROGETTO</button>
+					<button class="btn btn-info hidden" >CREA NUOVO PROGETTO</button>
 				</div>
 			</div>
 		</div>
@@ -131,7 +131,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 	
-	<script type="text/javascript" src="js/inserisciProgetto.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 
 </body>
 

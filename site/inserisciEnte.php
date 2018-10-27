@@ -122,7 +122,7 @@
 						<input type="text" class="form-control" name="fax">
 					</div>
 					
-					<button type="submit" class="btn btn-info" id="inserisci_ente" >SALVA</button>
+					<button type="submit" class="btn btn-info" id="insert_ente" >SALVA</button>
 				</div>
 			</div>
 		</div>
@@ -144,7 +144,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 	
-	<script type="text/javascript" src="js/inserisciEnte.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 
 </body>
 

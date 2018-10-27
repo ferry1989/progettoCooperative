@@ -58,35 +58,32 @@
 
 			<div class="row">	
 				<div class="utente">
-				  <div class="form-group">
-					<label for="exampleFormControlInput1">Username</label>
-					<input type="text" class="form-control" name="user" placeholder="Username">
-				  </div>
-				  
-				  <div class="form-group">
-					<label for="exampleFormControlInput2">Password</label>
-					<input type="text" class="form-control" name="password" type="password" placeholder="Password">
-				  </div>
-				  
-				  <div class="form-group">
-					<label for="exampleFormControlSelect3">Regione</label>
-					<select class="form-control" name="regione">
-						<option value="-1">-</option>
-					</select>
-				  </div>
-				  
-				  <div class="form-group">
-					<label for="exampleFormControlSelect3">Ente</label>
-					<select class="form-control" name="ente">
-						<option value="-1">-</option>
-					</select>
-				  </div>
-				  
-				  <button type="submit" class="btn btn-info" id="inserisci_utente" >SALVA</button>
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Username</label>
+						<input type="text" class="form-control" name="user" placeholder="Username">
+					</div>
 
+					<div class="form-group">
+						<label for="exampleFormControlInput2">Password</label>
+						<input type="text" class="form-control" name="password" type="password" placeholder="Password">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlSelect3">Regione</label>
+						<select class="form-control" name="regione">
+							<option value="-1">-</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlSelect3">Ente</label>
+						<select class="form-control" name="ente">
+							<option value="-1">-</option>
+						</select>
+					</div>
+				  
+					<button type="submit" class="btn btn-info" id="insert_utente" >SALVA</button>
 				</div>	  
-  
-				
 			</div>
 		</div>
 	</div>
@@ -107,7 +104,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 	
-	<script type="text/javascript" src="js/inserisciUtente.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 
 </body>
 
