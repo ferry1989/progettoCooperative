@@ -58,6 +58,7 @@
 
 			<div class="row">	
 				<div class="progetto">
+					<input type="hidden" class="type" value="project">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Ente</label>
 						<select class="form-control" id="seleziona_enti" name="ente">

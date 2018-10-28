@@ -58,6 +58,7 @@
 
 			<div class="row">	
 				<div class="utente">
+					<input type="hidden" class="type" value="user">
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Username</label>
 						<input type="text" class="form-control" name="user" placeholder="Username">
