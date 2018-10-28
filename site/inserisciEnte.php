@@ -59,7 +59,7 @@
 			<div class="row">	
 				<div class="ente">
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Denominazione</label>
+						<label for="exampleFormControlInput1">Ente</label>
 						<input type="text" class="form-control" name="nomeEnte">
 					</div>
 
@@ -70,14 +70,14 @@
 					
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Regione</label>
-						<select class="form-control" name="regione">
+						<select class="form-control" id="seleziona_regioni" name="regione">
 							<option value="-1">-</option>
 						</select>
 					</div>
 					
 					<div class="form-group">
 					<label for="exampleFormControlSelect3">Utente</label>
-					<select class="form-control" name="utente">
+					<select class="form-control" id="seleziona_utenti" name="utente">
 						<option value="-1">-</option>
 					</select>
 					</div>

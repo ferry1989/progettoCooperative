@@ -70,14 +70,14 @@
 
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Regione</label>
-						<select class="form-control" name="regione">
+						<select class="form-control" id="seleziona_regioni" name="regione">
 							<option value="-1">-</option>
 						</select>
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Ente</label>
-						<select class="form-control" name="ente">
+						<label for="exampleFormControlSelect4">Ente</label>
+						<select class="form-control" id="seleziona_enti" name="ente">
 							<option value="-1">-</option>
 						</select>
 					</div>

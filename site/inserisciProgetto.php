@@ -60,7 +60,7 @@
 				<div class="progetto">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Ente</label>
-						<select class="form-control filled" value="" name="ente">
+						<select class="form-control" id="seleziona_enti" name="ente">
 							<option value="-1">-</option>
 						</select>
 					</div>
