@@ -58,7 +58,7 @@
 
 			<div class="row">	
 				<div class="progetto">
-					<input type="hidden" class="type" value="project">
+					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Ente</label>
 						<select class="form-control" id="seleziona_enti" name="ente">
@@ -98,19 +98,6 @@
 					</div>
 
 					<button type="submit" class="btn btn-info" id="insert_progetto" >SALVA E CONFERMA</button>
-
-					<!-- questo bottone deve rendere tutti i form disabled in modo da non permettere la modifica  -->
-					<button type="submit" class="btn btn-info" >SALVA</button>
-					<button class="btn btn-info" >CHIUDI</button>
-
-					<!-- questo bottone deve rendere tutti i form enabled in modo da permettere la modifica  -->
-					<button class="btn btn-info hidden" >MODIFICA</button>
-
-					<!-- questo bottone deve pulire tutti i campi -->
-					<button class="btn btn-info hidden" >ELIMINA</button>
-
-					<!-- questo bottone reindirizza alla creazione del nuovo progetto  -->
-					<button class="btn btn-info hidden" >CREA NUOVO PROGETTO</button>
 				</div>
 			</div>
 		</div>
