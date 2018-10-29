@@ -4,7 +4,7 @@ var generalInsert = function(msg) {
     msg.error ? alert(msg.error) : alert(msg.success);
 }
 
- var selectForm = function(msg) {
+var selectForm = function(msg) {
     if(msg.error) {
         alert(msg.error)
     }else{
@@ -79,7 +79,7 @@ function buttonClick() {
         json[form.name] = form.value;
 
     if( id.indexOf('seleziona') > -1 )
-        success= null;
+        success= selectForm;
 
     callAjax(json,url,success);
 }
