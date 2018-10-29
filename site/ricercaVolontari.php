@@ -65,11 +65,11 @@
 						<input type="hidden" class="type" value="search">
 						<table>
 							<tr>
-								<td><input class="form-control" placeholder="Denominazione" name='denominazione' /></td>
-								<td><input class="form-control" placeholder="Codice Fiscale" name='codFisc' /></td>
-								<td><input class="form-control" placeholder="Email" name='email' /></td>
-								<td><input class="form-control" placeholder="Pec" name='pec' /></td>
-								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_enti">Cerca</button></td>
+								<td><input class="form-control" placeholder="Nome" name='nomevolontario' /></td>
+								<td><input class="form-control" placeholder="Cognome" name='cognomevolontario' /></td>
+								<td><input class="form-control" placeholder="stato" name='statovolontario' /></td>
+								<td><input class="form-control" placeholder="progetto" name='progettovolontario' /></td>
+								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_volontari">Cerca</button></td>
 							</tr>
 						</table>
 					</div>
@@ -78,18 +78,18 @@
 				
 			</div>
 			
-			<table id="enti_ricercati">
+			<table id="ricercati">
 				<thead>
-					<th>Telefono</th>
-					<th>Denominazione</th>
+					<th>Nome</th>
+					<th>Cognome</th>
 					<th>Codice Fiscale</th>
-					<th>Tipo</th>
-					<th>Rappresentante Legale</th>
-					<th>Cod</th>
-					<th>Web</th>
-					<th>Email</th>
-					<th>Pec</th>
-					<th>Fax</th>
+					<th>Sesso</th>
+					<th>Nazionalita</th>
+					<th>Titolo Studio</th>
+					<th>Nome OLP</th>
+					<th>Cognome OLP</th>
+					<th>COD IBAN</th>
+				
 					<th>Modifica</th>
 					<th>Elimina</th>
 				</thead>

@@ -59,17 +59,17 @@
 			<div class="row">
 					 
 				<div class="col-lg-4">
-				  <h3>Ricerca Ente</h3>
+				  <h3>Ricerca Progetto</h3>
 				  <div class="form-group mx-sm-3 mb-2">
 					<div class="ente">
 						<input type="hidden" class="type" value="search">
 						<table>
 							<tr>
-								<td><input class="form-control" placeholder="Denominazione" name='denominazione' /></td>
-								<td><input class="form-control" placeholder="Codice Fiscale" name='codFisc' /></td>
-								<td><input class="form-control" placeholder="Email" name='email' /></td>
-								<td><input class="form-control" placeholder="Pec" name='pec' /></td>
-								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_enti">Cerca</button></td>
+								<td><input class="form-control" placeholder="Denominazione" name='denominazioneprogetto' /></td>
+								<td><input class="form-control" placeholder="ente titolare" name='entetitolare' /></td>
+								<td><input class="form-control" placeholder="settore intervento" name='settoreintervento' /></td>
+								
+								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_progetti">Cerca</button></td>
 							</tr>
 						</table>
 					</div>
@@ -80,16 +80,12 @@
 			
 			<table id="enti_ricercati">
 				<thead>
-					<th>Telefono</th>
-					<th>Denominazione</th>
-					<th>Codice Fiscale</th>
-					<th>Tipo</th>
-					<th>Rappresentante Legale</th>
-					<th>Cod</th>
-					<th>Web</th>
-					<th>Email</th>
-					<th>Pec</th>
-					<th>Fax</th>
+					<th>Progetto</th> <!-- vengono fuori i progetti creati ed assegnati ad un ente xy (esempio napolicalcio) -->
+					<th>Ente Titolare</th> <!-- che sarebbe l' ente al quale qui va un acosa tipo < ? php echo row['ente?'] ? > e stratio assegnato un progetrti -->  
+					<th>Anno Bando</th> 
+					<th>Ente Titolare</th>   
+					<th>Sede Attuazione</th>   
+					
 					<th>Modifica</th>
 					<th>Elimina</th>
 				</thead>

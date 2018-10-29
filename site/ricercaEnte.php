@@ -78,7 +78,7 @@
 				
 			</div>
 			
-			<table id="enti_ricercati">
+			<table id="ricercati">
 				<thead>
 					<th>Telefono</th>
 					<th>Denominazione</th>
