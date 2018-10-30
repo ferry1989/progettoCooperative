@@ -11,8 +11,6 @@
 			$ente = json_decode($foo, true);
 			$nomeEnte = trim(mysqli_real_escape_string($con, $ente['nomeEnte']));
 			$telefono = mysqli_real_escape_string($con, $ente['telefono']);
-			$id_regione = mysqli_real_escape_string($con, $ente['id_regione']);
-			$id_utente = mysqli_real_escape_string($con, $ente['id_utente']);
 			$codfis = mysqli_real_escape_string($con, $ente['codfis']);
 			$tipo = mysqli_real_escape_string($con, $ente['tipo']);
 			$rapplegale = mysqli_real_escape_string($con, $ente['rapplegale']);
@@ -32,7 +30,7 @@
 				return;
 			}
 			
-			$insertente = "INSERT INTO ente (nomeEnte, telefono, id_regione, id_utente, codfis, tipo, rapplegale, cod, web, email, pec, fax)  VALUES ('$nomeEnte', '$telefono', '$id_regione', '$id_utente', '$codfis', '$tipo', '$rapplegale', '$cod', '$web', '$email', '$pec', '$fax')";
+			$insertente = "INSERT INTO ente (nomeEnte, telefono, codfis, tipo, rapplegale, cod, web, email, pec, fax)  VALUES ('$nomeEnte', '$telefono', '$codfis', '$tipo', '$rapplegale', '$cod', '$web', '$email', '$pec', '$fax')";
 
 			if (!mysqli_query($con,$insertente)) {
 				$msg = array("error"=>mysqli_error($con));

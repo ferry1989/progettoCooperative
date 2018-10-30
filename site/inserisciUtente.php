@@ -70,16 +70,11 @@
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Regione</label>
-						<select class="form-control" id="seleziona_regioni" name="regione">
+						<label for="exampleFormControlSelect3">Admin</label>
+						<select class="form-control" name="admin">
 							<option value="-1">-</option>
-						</select>
-					</div>
-
-					<div class="form-group">
-						<label for="exampleFormControlSelect4">Ente</label>
-						<select class="form-control" id="seleziona_enti" name="ente">
-							<option value="-1">-</option>
+							<option value="0">NO</option>
+							<option value="1">SI</option>
 						</select>
 					</div>
 				  

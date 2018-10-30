@@ -9,7 +9,8 @@
 			$foo = file_get_contents("php://input");
 
 			$progetto = json_decode($foo, true);
-			$idRegione = trim(mysqli_real_escape_string($con, $progetto['idRegione']));
+			$idEnte = trim(mysqli_real_escape_string($con, $progetto['id_ente']));
+			$idRegione = trim(mysqli_real_escape_string($con, $progetto['id_regione']));
 			$titolo = mysqli_real_escape_string($con, $progetto['titolo']);
 			
 			$verificaRegione = "SELECT id_regione FROM regione where id_regione='$idRegione'";

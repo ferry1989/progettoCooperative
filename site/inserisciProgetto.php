@@ -61,7 +61,7 @@
 					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Ente</label>
-						<select class="form-control" id="seleziona_enti" name="ente">
+						<select class="form-control" id="seleziona_enti" name="id_ente">
 							<option value="-1">-</option>
 						</select>
 					</div>
@@ -73,15 +73,18 @@
 					
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Anno Bando</label>
-						<select class="form-control" name="annobando">
-							<option value="-1">-</option>
-						</select>
+						<input type="text" class="form-control" name="annobando">
 					</div>
 					
 					<div class="form-group">
 					<label for="exampleFormControlSelect3">Settore Prevalente Campi</label>
 					<select class="form-control" name="settprev">
-						<option value="-1">-</option>
+						<option></option>
+						<option>Assistenza e servizio sociale</option>
+						<option>Valorizzazione del patrimonio storico, artistico e ambientale</option>
+						<option>Promozione ed organizzazione di attività educative e culturali</option>
+						<option>Promozione ed organizzazione di attività dell’economia solidale</option>
+						<option>Promozione ed organizzazione di attività di protezione civile</option>
 					</select>
 					</div>
 
@@ -91,8 +94,8 @@
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Sedi di attuazione</label>
-						<select class="form-control" name="sede">
+						<label for="exampleFormControlSelect3">Sede di attuazione</label>
+						<select class="form-control" id="seleziona_sedi" name="id_sede">
 							<option value="-1">-</option>
 						</select>
 					</div>

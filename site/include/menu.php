@@ -33,7 +33,7 @@
                 <div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
 				<?php
-					if($_SESSION['isAdmin'] == 1 || $_SESSION['id_regione'] > 0){
+					if($_SESSION['isAdmin'] == 1){
 				?>
 					<!-- Sezione di menu dedicata alla regione e all'admin -->
                         <li>
@@ -52,7 +52,6 @@
                             <a href="inserisciProgetto.php"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Inserisci Progetto</i></a>
                         </li>
 					<?php	}
-							if($_SESSION['isAdmin'] == 1 || $_SESSION['id_ente'] > 0){
 					?>
 						<!-- Sezione di menu dedicata all'ente e all'admin -->
                         <li>
@@ -64,7 +63,6 @@
                         <li>
                             <a href="ricercaVolontari.php"><i class="fa fa-user fa-fw"></i>Gestione Volontari</a>
                         </li>
-					<?php } ?>
                     </ul>
                 </div>
             </div>

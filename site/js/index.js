@@ -4,38 +4,22 @@ var generalInsert = function(msg) {
     msg.error ? alert(msg.error) : alert(msg.success);
 }
 
-var selectForm = function(msg) {
-    if(msg.error) {
-        alert(msg.error)
+var selectForm = function(rows) {
+    if(rows.error) {
+        alert(rows.error)
     }else{
-        for (i in enti){
-//             $row = $('<tr/>').attr('id',enti[i].id_ente);
-//             $tel = $('<td/>').append($('<input/>').val(enti[i].telefono));
-//             $nomeEnte = $('<td/>').append($('<input/>').val(enti[i].nomeEnte));
-//             $codfis = $('<td/>').append($('<input/>').val(enti[i].codfis));
-//             $tipo = $('<td/>').append($('<input/>').val(enti[i].tipo));
-//             $rapplegale = $('<td/>').append($('<input/>').val(enti[i].rapplegale));
-//             $cod = $('<td/>').append($('<input/>').val(enti[i].cod));
-//             $web = $('<td/>').append($('<input/>').val(enti[i].web));
-//             $email = $('<td/>').append($('<input/>').val(enti[i].email));
-//             $pec = $('<td/>').append($('<input/>').val(enti[i].pec));
-//             $fax = $('<td/>').append($('<input/>').val(enti[i].fax));
-//             $modifica = $('<td/>').append($('<button>modifica</button>'));
-//             $elimina = $('<td/>').append($('<button>elimina</button>').attr('class','elimina'));
-    
-//             $row.append($tel);
-//             $row.append($nomeEnte);
-//             $row.append($codfis);
-//             $row.append($tipo);
-//             $row.append($rapplegale);
-//             $row.append($cod);
-//             $row.append($web);
-//             $row.append($email);
-//             $row.append($pec);
-//             $row.append($fax);
-//             $row.append($modifica);
-//             $row.append($elimina);
-//             $('#enti_ricercati').append($row);
+        for (row of rows){
+            var form = rows[0]['fillForm'];
+
+            $row = $('<tr/>').attr('class',form);
+
+            for(prop in row){
+                $row.append( $('<td/>').append($('<input/>').val(row[prop])) );
+            }
+            $row.append( $('<td/>').append($('<button>modifica</button>')) );
+            $row.append( $('<td/>').append($('<button>elimina</button>').attr('class','elimina')) );
+
+            $('#ricercati').append($row);
         }
     }
 }
