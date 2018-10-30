@@ -52,7 +52,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Inserisci Volontario</h2>
+					<h2 class="page-header text-primary">Inserisci Presenza</h2>
 				</div>
 			</div>
 
@@ -61,7 +61,7 @@
 					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Progetto</label>
-						<select class="form-control" id="seleziona_progetti" name="id_progetto">
+						<select class="form-control" id="seleziona_progetti" name="id_progetti">
 							<option value="-1">-</option>
 						</select>
 					</div>

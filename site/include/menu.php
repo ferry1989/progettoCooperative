@@ -60,6 +60,12 @@
                         <li>
                             <a href="inserisciVolontari.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Iserisci Volontari</span></a>
                         </li>
+						<li>
+                            <a href="inserisciPresenze.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Inserisci Presenze</span></a>
+                        </li>
+						<li>
+                            <a href="esportaPresenze.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Esporta Presenze</span></a>
+                        </li>
                         <li>
                             <a href="ricercaVolontari.php"><i class="fa fa-user fa-fw"></i>Gestione Volontari</a>
                         </li>

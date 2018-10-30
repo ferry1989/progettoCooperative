@@ -8,9 +8,9 @@ var selectForm = function(rows) {
     if(rows.error) {
         alert(rows.error)
     }else{
+		var i = 0;
         for (row of rows){
             var form = rows[0]['fillForm'];
-
             $row = $('<tr/>').attr('class',form);
 
             for(prop in row){
@@ -18,8 +18,10 @@ var selectForm = function(rows) {
             }
             $row.append( $('<td/>').append($('<button>modifica</button>')) );
             $row.append( $('<td/>').append($('<button>elimina</button>').attr('class','elimina')) );
-
-            $('#ricercati').append($row);
+			if(i>0){
+				$('#ricercati').append($row);
+			}
+			i++;
         }
     }
 }
@@ -27,8 +29,13 @@ var selectForm = function(rows) {
 //DA AGGIUSTARE ASSOLUTAMENTE
 var fillForm = function (rows) {
     var form = rows[0]['fillForm'];
+	var i=0;
     for (row of rows) {
-        $('select[name*='+form+']').append('<option value=' + row[form] + '>' + row[form] +'</option>');
+		console.log(row);
+		if(i>0){
+			$('select[name*='+form+']').append('<option value=' + row[form] + '>' + row[form] +'</option>');
+		}
+		i++;
     }
 }
 //-------------------------------------------------------------------------
