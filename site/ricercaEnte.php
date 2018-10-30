@@ -62,13 +62,14 @@
 				  <h3>Ricerca Ente</h3>
 				  <div class="form-group mx-sm-3 mb-2">
 					<div class="ente">
+						<input type="hidden" class="type" value="search">
 						<table>
 							<tr>
 								<td><input class="form-control" placeholder="Denominazione" name='denominazione' /></td>
 								<td><input class="form-control" placeholder="Codice Fiscale" name='codFisc' /></td>
 								<td><input class="form-control" placeholder="Email" name='email' /></td>
 								<td><input class="form-control" placeholder="Pec" name='pec' /></td>
-								<td><button type="submit" class="btn btn-primary mb-1" id="ricerca_ente">Cerca</button></td>
+								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_enti">Cerca</button></td>
 							</tr>
 						</table>
 					</div>
@@ -77,7 +78,7 @@
 				
 			</div>
 			
-			<table id="enti_ricercati">
+			<table id="ricercati">
 				<thead>
 					<th>Telefono</th>
 					<th>Denominazione</th>
@@ -111,7 +112,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
-	<script type="text/javascript" src="js/inserisciEnte.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/jquery.dynatable.js"></script>
 	
 

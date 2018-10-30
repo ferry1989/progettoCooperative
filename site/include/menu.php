@@ -33,7 +33,7 @@
                 <div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
 				<?php
-					if($_SESSION['isAdmin'] == 1 || $_SESSION['id_regione'] > 0){
+					if($_SESSION['isAdmin'] == 1){
 				?>
 					<!-- Sezione di menu dedicata alla regione e all'admin -->
                         <li>
@@ -49,29 +49,20 @@
                             <a href="ricercaEnte.php"><i class="fa fa-user fa-fw"></i>Ricerca Ente</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Inserisci Progetto</i></a>
-                        </li>
-						<li>
-                            <a href="indexrcercaprogetto.php"><i class="fa fa-th-list fa-fw"></i>Ricerca Progetto</a>
-                        </li>
-                        
-                        <li>
-                            <a href="indexrcercavolontario.php"><i class="fa fa-user fa-fw"></i>Gestione Volontari</a>
+                            <a href="inserisciProgetto.php"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Inserisci Progetto</i></a>
                         </li>
 					<?php	}
-							if($_SESSION['isAdmin'] == 1 || $_SESSION['id_ente'] > 0){
 					?>
 						<!-- Sezione di menu dedicata all'ente e all'admin -->
-						<li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i><span data-toggle="modal" data-target="#enteconsultaprogetto">Progetti</span></a>
+                        <li>
+                            <a href="ricercaProgetto.php"><i class="fa fa-th-list fa-fw"></i>Ricerca Progetto</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Iserisci Candidati</span></a>
+                            <a href="inserisciVolontari.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Iserisci Volontari</span></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i>Gestione volontari in Servizio</a>
+                            <a href="ricercaVolontari.php"><i class="fa fa-user fa-fw"></i>Gestione Volontari</a>
                         </li>
-					<?php } ?>
                     </ul>
                 </div>
             </div>

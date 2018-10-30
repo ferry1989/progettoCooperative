@@ -52,35 +52,47 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Inserisci Utente</h2>
+					<h2 class="page-header text-primary">Pannello di controllo per l' utente REGIONE</h2>
 				</div>
 			</div>
 
-			<div class="row">	
-				<div class="utente">
-					<input type="hidden" class="type" value="insert">
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Username</label>
-						<input type="text" class="form-control" name="user" placeholder="Username">
+			<div class="row">
+					 
+				<div class="col-lg-4">
+				  <h3>Ricerca Progetto</h3>
+				  <div class="form-group mx-sm-3 mb-2">
+					<div class="ente">
+						<input type="hidden" class="type" value="search">
+						<table>
+							<tr>
+								<td><input class="form-control" placeholder="Denominazione" name='denominazioneprogetto' /></td>
+								<td><input class="form-control" placeholder="ente titolare" name='entetitolare' /></td>
+								<td><input class="form-control" placeholder="settore intervento" name='settoreintervento' /></td>
+								
+								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_progetti">Cerca</button></td>
+							</tr>
+						</table>
 					</div>
-
-					<div class="form-group">
-						<label for="exampleFormControlInput2">Password</label>
-						<input type="text" class="form-control" name="password" type="password" placeholder="Password">
-					</div>
-
-					<div class="form-group">
-						<label for="exampleFormControlSelect3">Admin</label>
-						<select class="form-control" name="admin">
-							<option value="-1">-</option>
-							<option value="0">NO</option>
-							<option value="1">SI</option>
-						</select>
-					</div>
-				  
-					<button type="submit" class="btn btn-info" id="insert_utente" >SALVA E CONFERMA</button>
-				</div>	  
+				  </div>
+				</div>
+				
 			</div>
+			
+			<table id="enti_ricercati">
+				<thead>
+					<th>Progetto</th> <!-- vengono fuori i progetti creati ed assegnati ad un ente xy (esempio napolicalcio) -->
+					<th>Ente Titolare</th> <!-- che sarebbe l' ente al quale qui va un acosa tipo < ? php echo row['ente?'] ? > e stratio assegnato un progetrti -->  
+					<th>Anno Bando</th> 
+					<th>Ente Titolare</th>   
+					<th>Sede Attuazione</th>   
+					
+					<th>Modifica</th>
+					<th>Elimina</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+
 		</div>
 	</div>
 
@@ -94,13 +106,11 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="vendor/raphael/raphael.min.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
-	
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/jquery.dynatable.js"></script>
+	
 
 </body>
 

@@ -58,72 +58,58 @@
 
 			<div class="row">	
 				<div class="ente">
-				<div class="form-group">
-					<label for="exampleFormControlInput1">Denominazione</label>
-					<input type="text" class="form-control" name="nomeEnte">
-				</div>
+					<input type="hidden" class="type" value="insert">
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Ente</label>
+						<input type="text" class="form-control" name="nomeEnte">
+					</div>
 
-				<div class="form-group">
-				<label for="exampleFormControlInput1">Telefono</label>
-				<input type="text" class="form-control" name="telefono">
-				</div>
-				
-				<div class="form-group">
-					<label for="exampleFormControlSelect3">Regione</label>
-					<select class="form-control" name="regione">
-						<option value="-1">-</option>
-					</select>
-				</div>
-				
-				<div class="form-group">
-				<label for="exampleFormControlSelect3">Utente</label>
-				<select class="form-control" name="utente">
-					<option value="-1">-</option>
-				</select>
-				</div>
+					<div class="form-group">
+					<label for="exampleFormControlInput1">Telefono</label>
+					<input type="text" class="form-control" name="telefono">
+					</div>
 
-				<div class="form-group">
-				<label for="exampleFormControlInput1">Codice Fiscale</label>
-					<input type="text" class="form-control" name="codfis">
-				</div>
+					<div class="form-group">
+					<label for="exampleFormControlInput1">Codice Fiscale</label>
+						<input type="text" class="form-control" name="codfis">
+					</div>
 
-				<div class="form-group">
-				<label for="exampleFormControlInput1">Tipo</label>
-					<input type="text" class="form-control" name="tipo">
-				</div>
+					<div class="form-group">
+					<label for="exampleFormControlInput1">Tipo</label>
+						<input type="text" class="form-control" name="tipo">
+					</div>
 
-				<div class="form-group">
-				<label for="exampleFormControlInput1">Rappresentante Legale</label>
-					<input type="text" class="form-control" name="rapplegale">
-				</div>
+					<div class="form-group">
+					<label for="exampleFormControlInput1">Rappresentante Legale</label>
+						<input type="text" class="form-control" name="rapplegale">
+					</div>
 
-				<div class="form-group">
-				<label for="exampleFormControlInput1">Cod</label>
-					<input type="text" class="form-control" name="cod">
-				</div>
+					<div class="form-group">
+					<label for="exampleFormControlInput1">Cod</label>
+						<input type="text" class="form-control" name="cod">
+					</div>
 
-				<div class="form-group">
-				<label for="exampleFormControlInput1">Sito Web</label>
-					<input type="text" class="form-control" name="web">
-				</div>
+					<div class="form-group">
+					<label for="exampleFormControlInput1">Sito Web</label>
+						<input type="text" class="form-control" name="web">
+					</div>
 
-				<div class="form-group">
-				<label for="exampleFormControlInput1">Email</label>
-					<input type="text" class="form-control" name="email" type="email">
-				</div>
+					<div class="form-group">
+					<label for="exampleFormControlInput1">Email</label>
+						<input type="text" class="form-control" name="email" type="email">
+					</div>
 
-				<div class="form-group">
-				<label for="exampleFormControlInput1">PEC</label>
-					<input type="text" class="form-control" name="pec">
-				</div>
+					<div class="form-group">
+					<label for="exampleFormControlInput1">PEC</label>
+						<input type="text" class="form-control" name="pec">
+					</div>
 
-				<div class="form-group">
-				<label for="exampleFormControlInput1">Fax</label>
-					<input type="text" class="form-control" name="fax">
-				</div>
-				  
-				<button type="submit" class="btn btn-info" id="inserisci_ente" >SALVA</button>
-
+					<div class="form-group">
+					<label for="exampleFormControlInput1">Fax</label>
+						<input type="text" class="form-control" name="fax">
+					</div>
+					
+					<button type="submit" class="btn btn-info" id="insert_ente" >SALVA E CONFERMA</button>
 				</div>
 			</div>
 		</div>
@@ -145,7 +131,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 	
-	<script type="text/javascript" src="js/inserisciEnte.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 
 </body>
 
