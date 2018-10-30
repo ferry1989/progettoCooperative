@@ -49,6 +49,9 @@
                             <a href="ricercaEnte.php"><i class="fa fa-user fa-fw"></i>Ricerca Ente</a>
                         </li>
                         <li>
+                            <a href="inserisciSede.php"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Inserisci Sede</i></a>
+                        </li>
+                        <li>
                             <a href="inserisciProgetto.php"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Inserisci Progetto</i></a>
                         </li>
 					<?php	}
@@ -58,7 +61,7 @@
                             <a href="ricercaProgetto.php"><i class="fa fa-th-list fa-fw"></i>Ricerca Progetto</a>
                         </li>
                         <li>
-                            <a href="inserisciVolontari.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Iserisci Volontari</span></a>
+                            <a href="inserisciVolontari.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Iserisci Volontario</span></a>
                         </li>
 						<li>
                             <a href="inserisciPresenze.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Inserisci Presenze</span></a>

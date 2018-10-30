@@ -112,7 +112,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/libform.js"></script>
 	<script type="text/javascript" src="js/jquery.dynatable.js"></script>
 	
 

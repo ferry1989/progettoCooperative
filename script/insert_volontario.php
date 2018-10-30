@@ -9,35 +9,48 @@
 			$foo = file_get_contents("php://input");
 
 			$volontario = json_decode($foo, true);
-			$idEnte = trim(mysqli_real_escape_string($con, $volontario['ente']));
-			$nome = mysqli_real_escape_string($con, $volontario['nome']);
+			$nome = trim(mysqli_real_escape_string($con, $volontario['nome']));
 			$cognome = mysqli_real_escape_string($con, $volontario['cognome']);
-			$dataNascita = mysqli_real_escape_string($con, $volontario['dataNascita']);
 			$codFiscale = mysqli_real_escape_string($con, $volontario['codFiscale']);
-			
-			$verificaEnte = "SELECT id_ente FROM ente where id_ente='$idEnte'";
-			$result = mysqli_query($con,$verificaEnte);
+			$sesso = mysqli_real_escape_string($con, $volontario['sesso']);
+			$titolodistudio = mysqli_real_escape_string($con, $volontario['titolostudio']);
+			$stato = mysqli_real_escape_string($con, $volontario['stato']);
+			$nomeolp = mysqli_real_escape_string($con, $volontario['nomeolp']);
+			$cognomeolp = mysqli_real_escape_string($con, $volontario['cognomeolp']);
+			$codiceiban = mysqli_real_escape_string($con, $volontario['codiceiban']);
+			$provincianazionenascita = mysqli_real_escape_string($con, $volontario['provincianazionenascita']);
+			$esteronasc = mysqli_real_escape_string($con, $volontario['esteronasc']);
+			$comuneesteronascita = mysqli_real_escape_string($con, $volontario['comuneesteronascita']);
+			$provincianazioneresidenza = mysqli_real_escape_string($con, $volontario['provincianazioneresidenza']);
+			$esterores = mysqli_real_escape_string($con, $volontario['esterores']);
+			$comuneesteroresidenta = mysqli_real_escape_string($con, $volontario['comuneesteroresidenta']);
+			$indirizzoresidenza = mysqli_real_escape_string($con, $volontario['indirizzoresidenza']);
+			$numcivicoresidenza = mysqli_real_escape_string($con, $volontario['numcivicoresidenza']);
+			$capresidenza = mysqli_real_escape_string($con, $volontario['capresidenza']);
+			$provinciadomicilio = mysqli_real_escape_string($con, $volontario['provinciadomicilio']);
+			$comunedomicilio = mysqli_real_escape_string($con, $volontario['comunedomicilio']);
+			$indirizzodomicilio = mysqli_real_escape_string($con, $volontario['indirizzodomicilio']);
+			$id_sedeprogetto = mysqli_real_escape_string($con, $volontario['id_sedeprogetto']);
+			$numcivicodomic = mysqli_real_escape_string($con, $volontario['numcivicodomic']);
+			$capdomic = mysqli_real_escape_string($con, $volontario['capdomic']);
 
-			if ($result->num_rows == 0) {
-				$msg = array("error"=>"Ente non esistente!");
-				echo json_encode($msg);
-				mysqli_close($con);
-				return;
-			}
-			else{
-				$insertvolontario = "INSERT INTO volontario (nome, cognome, dataNascita, codFiscale, id_ente) VALUES ('$nome', '$cognome', '$dataNascita', '$codFiscale', '$idEnte')";
+			$verificaVolontario = "SELECT codFiscale FROM volontario where codFiscale='$codFiscale'";
+			$result = mysqli_query($con,$verificaVolontario);
+
+			if ($result->num_rows > 0) {
+				$msg = array("error"=>"Volontario già creato!");
+			}else{
+				$insertvolontario = "INSERT INTO volontario (nome,cognome,codFiscale,sesso,titolodistudio,stato,nomeolp,cognomeolp,codiceiban,provincianazionenascita,esteronasc,comuneesteronascita,provincianazioneresidenza,esterores,comuneesteroresidenta,indirizzoresidenza,numcivicoresidenza,capresidenza,provinciadomicilio,comunedomicilio,indirizzodomicilio,giornidiservizio,id_sedeprogetto,numcivicodomic,capdomic) VALUES ('$nome','$cognome','$codFiscale','$sesso','$titolodistudio','$stato','$nomeolp','$cognomeolp','$codiceiban','$provincianazionenascita','$esterores','$comuneesteronascita','$provincianazioneresidenza','$esterores','$comuneesteroresidenta','$indirizzoresidenza','$numcivicoresidenza','$capresidenza','$provinciadomicilio','$comunedomicilio','$indirizzodomicilio','0','$id_sedeprogetto','$numcivicodomic','$capdomic')";
 				if (!mysqli_query($con,$insertvolontario)) {
-					$msg = array("error"=>mysqli_error($con));
-				}
-				else{
-					$msg = array("success"=>"volontario creato");
+						$msg = array("error"=>mysqli_error($con));
+					}else{
+						$msg = array("success"=>"Volontario creato");
+					}
 				}
 			}
 			mysqli_close($con);
-		}
-		else{
+		}else{
 			$msg = array("error"=>"Connessione al db non riuscita!");
 		}
 		echo json_encode($msg);
-	}
 ?>

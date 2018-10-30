@@ -10,39 +10,38 @@
 
 			$sede = json_decode($foo, true);
 			$indirizzo = trim(mysqli_real_escape_string($con, $sede['indirizzo']));
-			$ente = mysqli_real_escape_string($con, $sede['ente']);
+			$id_ente = mysqli_real_escape_string($con, $sede['id_ente']);
+			$denominazione = mysqli_real_escape_string($con, $sede['denominazione']);
+			$numvolontari = mysqli_real_escape_string($con, $sede['numvolontari']);
+			$provincia = mysqli_real_escape_string($con, $sede['provincia']);
+			$comune = mysqli_real_escape_string($con, $sede['comune']);
+			$numcivico = mysqli_real_escape_string($con, $sede['numcivico']);
+			$capsede = mysqli_real_escape_string($con, $sede['capsede']);
+			$telefono = mysqli_real_escape_string($con, $sede['telefono']);
+			$fax = mysqli_real_escape_string($con, $sede['fax']);
+			$titologiuridico = mysqli_real_escape_string($con, $sede['titologiuridico']);
+			$sitoweb = mysqli_real_escape_string($con, $sede['sitoweb']);
+			$emailordinaria = mysqli_real_escape_string($con, $sede['emailordinaria']);
 			
-			$verificaEnte = "SELECT id_sede FROM sede where id_ente='$ente' and trim(indirizzo)='$indirizzo'";
-			$result = mysqli_query($con,$verificaEnte);
+			$verificaSede = "SELECT denominazione FROM sede where trim(denominazione)='$denominazione'";
+			$result = mysqli_query($con,$verificaSede);
 
 			if ($result->num_rows > 0) {
 				$msg = array("error"=>"Sede già esistente!");
 				echo json_encode($msg);
 				mysqli_close($con);
 				return;
+			}else{
+				$insertSede = "INSERT INTO sede (indirizzo,id_ente,denominazione,numvolontari,provincia,comune,numcivico,capsede,telefono,fax,titologiuridico,sitoweb,emailordinaria) VALUES ('$indirizzo','$id_ente','$denominazione','$numvolontari','$provincia','$comune','$numcivico','$capsede','$fax','$titologiuridico','$titologiuridico','$sitoweb','$emailordinaria')";
+				if (!mysqli_query($con,$insertSede)) {
+					$msg = array("error"=>mysqli_error($con));
+				}
+				else{
+					$msg = array("success"=>"Sede creata");
+				}
 			}
-			
-			$verificaEnte = "SELECT id_ente FROM ente where id_ente='$ente'";
-			$result = mysqli_query($con,$verificaEnte);
-
-			if ($result->num_rows == 0) {
-				$msg = array("error"=>"Ente non esistente!");
-				echo json_encode($msg);
-				mysqli_close($con);
-				return;
-			}
-			
-			$insertSede = "INSERT INTO sede (indirizzo, id_ente) VALUES ('$indirizzo', '$ente')";
-			if (!mysqli_query($con,$insertSede)) {
-				$msg = array("error"=>mysqli_error($con));
-			}
-			else{
-				$msg = array("success"=>"Sede creata");
-			}
-			
 			mysqli_close($con);
-		}
-		else{
+		}else{
 			$msg = array("error"=>"Connessione al db non riuscita!");
 		}
 		echo json_encode($msg);

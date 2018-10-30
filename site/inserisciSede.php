@@ -60,56 +60,81 @@
 				<div class="ente">
 					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Ente</label>
-						<input type="text" class="form-control" name="nomeEnte">
+						<label for="exampleFormControlSelect3">Ente proprietario</label>
+						<select class="form-control" id="seleziona_enti" name="id_ente">
+							<option value="-1">-</option>
+						</select>
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Telefono</label>
-					<input type="text" class="form-control" name="telefono">
+						<label for="exampleFormControlInput1">Denominazione  Sede</label>
+						<input type="text" class="form-control" name="denominazione">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Codice Fiscale</label>
-						<input type="text" class="form-control" name="codfis">
+						<label for="exampleFormControlInput1">Indirizzo</label>
+						<input type="text" class="form-control" name="indirizzo">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Tipo</label>
-						<input type="text" class="form-control" name="tipo">
+						<label for="exampleFormControlInput1">N. Volontari assegnati</label>
+						<input type="text" class="form-control" name="numvolontari">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Rappresentante Legale</label>
-						<input type="text" class="form-control" name="rapplegale">
+						<label for="exampleFormControlInput1">Provincia</label>
+						<input type="text" class="form-control" name="provincia">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Cod</label>
-						<input type="text" class="form-control" name="cod">
+						<label for="exampleFormControlInput1">Comune</label>
+						<input type="text" class="form-control" name="comune">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Sito Web</label>
-						<input type="text" class="form-control" name="web">
+						<label for="exampleFormControlInput1">N. Civico</label>
+						<input type="text" class="form-control" name="numcivico">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Email</label>
-						<input type="text" class="form-control" name="email" type="email">
+						<label for="exampleFormControlInput1">C.A.P</label>
+						<input type="text" class="form-control" name="capsede">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">PEC</label>
-						<input type="text" class="form-control" name="pec">
+						<label for="exampleFormControlInput1">Telefono</label>
+						<input type="text" class="form-control" name="telefono">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Fax</label>
+						<label for="exampleFormControlSelect3">Titolo giuridico seguenti opzioni</label>
+						<select class="form-control" name="titologiuridico">
+							<option >-</option>
+							<option >Proprietà</option>
+							<option >Locazione</option>
+							<option >Comodato d'uso</option>
+							<option >Atto di affido</option>
+							<option >Contratto di servizio</option>
+							<option >Altro</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Http</label>
+						<input type="text" class="form-control" name="sitoweb">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Fax</label>
 						<input type="text" class="form-control" name="fax">
 					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Email</label>
+						<input type="text" class="form-control" name="emailordinaria" type="email">
+					</div>
 					
-					<button type="submit" class="btn btn-info" id="insert_ente" >SALVA E CONFERMA</button>
+					<button type="submit" class="btn btn-info" id="insert_sede" >SALVA E CONFERMA</button>
 				</div>
 			</div>
 		</div>

@@ -30,12 +30,12 @@ var selectForm = function(rows) {
 var fillForm = function (rows) {
     var form = rows[0]['fillForm'];
     var skip = 0;
-    console.log('ciao')
     for (row of rows) {
-		if(skip == 0){
+		if(skip > 0){
             $('select[name*='+form+']').append('<option value=' + row[form] + '>' + row[form] +'</option>');
+        }else{
             skip++;
-		}
+        }
     }
 }
 //-------------------------------------------------------------------------
@@ -44,6 +44,7 @@ var fillForm = function (rows) {
 function fillSelect (forms) {
     for(var form of forms) {
         let id = form.id;
+        console.log('prova')
 
         if(!!id){
             let type = $('.type').val();
