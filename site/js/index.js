@@ -26,16 +26,16 @@ var selectForm = function(rows) {
     }
 }
 
-//DA AGGIUSTARE ASSOLUTAMENTE
+//success of fillSelect
 var fillForm = function (rows) {
     var form = rows[0]['fillForm'];
-	var i=0;
+    var skip = 0;
+    console.log('ciao')
     for (row of rows) {
-		console.log(row);
-		if(i>0){
-			$('select[name*='+form+']').append('<option value=' + row[form] + '>' + row[form] +'</option>');
+		if(skip == 0){
+            $('select[name*='+form+']').append('<option value=' + row[form] + '>' + row[form] +'</option>');
+            skip++;
 		}
-		i++;
     }
 }
 //-------------------------------------------------------------------------
@@ -77,6 +77,7 @@ function buttonClick() {
 
 //general call ajax
 function callAjax (json,url,success) {
+    console.log('ciao');
     $.ajax({
         type: "POST",
         dataType: 'json',
@@ -86,6 +87,7 @@ function callAjax (json,url,success) {
         contentType: "application/json",
         success: success
     });
+
 }
 
 $(document).ready(function() {
