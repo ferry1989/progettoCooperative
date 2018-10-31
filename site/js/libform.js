@@ -9,22 +9,23 @@ var selectForm = function(rows) {
         alert(rows.error)
     }else{
         $('.results').html('')
-		var skip = 0;
+        var skip = 0;
+        var lines = 0;
+        let file = $('.file').val();
         for (row of rows){
-            var form = rows[0]['fillForm'];
-            $row = $('<tr/>').attr('class',form);
+            $row = $('<tr class=row'+lines+' />')
 
             for(prop in row){
-                $row.append( $('<td/>').append($('<input class="form-control others" name="'+row[prop]+'" value="'+row[prop]+'"/>')));
+                $row.append( $('<td/>').append($('<input class="form-control others row'+lines+'" name="'+prop+'" value="'+row[prop]+'"/>')));
             }
-            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" id="'+'aggiorna_'+'">modifica</button>')));
-            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" id="'+''+'">elimina</button>')));
+            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" name=row'+lines+' id="'+'aggiorna_'+file+'">modifica</button>')));
+            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" name=row'+lines+' id="'+'elimina_'+file+'">elimina</button>')));
 			if(skip>0){
 				$('#ricercati').append($row);
 			}else{
                 skip++;
             }
-
+            lines++;
         }
     }
 }
@@ -71,7 +72,7 @@ function buttonClick() {
     if( ( id.indexOf('insert') > -1 ) || ( id.indexOf('seleziona') > -1 ) ) {
         let type = $('.type').val();
         let forms = $('.form-control');
-        json = {'type':type,'fillForm':'none'};
+        json = {'type':type,'fillForm':'select'};
         for (var form of forms)
             json[form.name] = form.value;
 
@@ -79,15 +80,17 @@ function buttonClick() {
             success= selectForm;
     }else{
         if( id.indexOf('aggiorna') > -1 ) {
-            let forms = $('.results');
-            let forms2 = $('.others');
-            for (var form of forms){
-                json[form.name] = forms2.value;
-            }
+            let row = $(this)[0].name;
+            let forms = $('.'+row);
+            for (var form of forms)
+                json[form.name] = form.value;
         }else{
-            json['']
+            let row = $(this)[0].name;
+            let form = $('.'+row)[1].value;
+            let file = $('.file').val();
+            let id_form = 'id_'+file;
+            json[id_form] = form;
         }
-
     }
 
     callAjax(json,url,success);
