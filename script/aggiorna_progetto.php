@@ -6,10 +6,14 @@
 		$foo = file_get_contents("php://input");
 
 		$progetto = json_decode($foo, true);
-		$idProgetto = mysqli_real_escape_string($con, $progetto['idProgetto']);
-		$titolo = mysqli_real_escape_string($con, $progetto['titolo']);
+		$id_progetto = trim(mysqli_real_escape_string($con, $progetto['id_progetto']));
+		$titolo = trim(mysqli_real_escape_string($con, $progetto['titolo']));
+		$annobando = trim(mysqli_real_escape_string($con, $progetto['annobando']));
+		$settoreprevalente = trim(mysqli_real_escape_string($con, $progetto['settprev']));
+		$altrosettore = trim(mysqli_real_escape_string($con, $progetto['altrosett']));
+		$sedidiattuazione = trim(mysqli_real_escape_string($con, $progetto['id_sede']));
 		
-		$verificaProgetto = "SELECT id_progetto FROM progetto where id_progetto='$idProgetto'";
+		$verificaProgetto = "SELECT id_progetto FROM progetto where id_progetto='$id_progetto'";
 		$result = mysqli_query($con,$verificaProgetto);
 
 		if ($result->num_rows == 0) {
@@ -20,7 +24,7 @@
 		}
 		
 		else{
-			$updatePresenza="update progetto set titolo = '$titolo' where id_progetto = '$idProgetto'";
+			$updatePresenza="update progetto set titolo = '$titolo', annobando = '$annobando', settprev = '$settprev', altrosettore = '$altrosettore', id_sede = '$id_sede' where id_progetto = '$idProgetto'";
 			if (!mysqli_query($con,$updatePresenza)) {
 				$msg = array("error"=>mysqli_error($con));
 			}

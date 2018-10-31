@@ -80,20 +80,21 @@
 			
 			<table id="ricercati">
 				<thead>
-					<th>Telefono</th>
-					<th>Denominazione</th>
-					<th>Codice Fiscale</th>
-					<th>Tipo</th>
-					<th>Rappresentante Legale</th>
-					<th>Cod</th>
-					<th>Web</th>
-					<th>Email</th>
-					<th>Pec</th>
-					<th>Fax</th>
+					<th class="otherstitle" name="telefono">ID</th>
+					<th class="otherstitle" name="telefono">Telefono</th>
+					<th class="otherstitle" name="nomeEnte">Denominazione</th>
+					<th class="otherstitle" name="codfis">Cod. Fiscale</th>
+					<th class="otherstitle" name="tipo">Tipo</th>
+					<th class="otherstitle" name="rapplegale">Rapp. Legale</th>
+					<th class="otherstitle" name="cod">Cod</th>
+					<th class="otherstitle" name="web">Web</th>
+					<th class="otherstitle" name="email">Email</th>
+					<th class="otherstitle" name="pec">Pec</th>
+					<th class="otherstitle" name="fax">Fax</th>
 					<th>Modifica</th>
 					<th>Elimina</th>
 				</thead>
-				<tbody>
+				<tbody class="results">
 				</tbody>
 			</table>
 

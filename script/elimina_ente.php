@@ -6,9 +6,9 @@
 		$foo = file_get_contents("php://input");
 
 		$ente = json_decode($foo, true);
-		$idEnte = mysqli_real_escape_string($con, $ente['idEnte']);
+		$id_ente = mysqli_real_escape_string($con, $ente['id_ente']);
 		
-		$verificaEnte = "SELECT id_ente FROM ente where id_ente='$idEnte'";
+		$verificaEnte = "SELECT id_ente FROM ente where id_ente='$id_ente'";
 		$result = mysqli_query($con,$verificaEnte);
 
 		if ($result->num_rows == 0) {
@@ -19,12 +19,12 @@
 		}
 		
 		else{
-			$deleteEnte ="delete from ente where id_ente = '$idEnte'";
+			$deleteEnte ="delete from ente where id_ente = '$id_ente'";
 			if (!mysqli_query($con,$deleteEnte)) {
 				$msg = array("error"=>mysqli_error($con));
 			}
 			else{
-				$msg = array("success"=>"ente eliminato");
+				$msg = array("success"=>"Ente eliminato");
 			}
 		}
 		mysqli_close($con);
