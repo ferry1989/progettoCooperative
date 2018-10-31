@@ -16,10 +16,10 @@ var selectForm = function(rows) {
             $row = $('<tr class=row'+lines+' />')
 
             for(prop in row){
-                $row.append( $('<td/>').append($('<input class="form-control others" name="'+'qui devo prendere la key del json'+'" value="'+row[prop]+'"/>')));
+                $row.append( $('<td/>').append($('<input class="form-control others row'+lines+'" name="'+prop+'" value="'+row[prop]+'"/>')));
             }
-            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" name=row'+lines+'" id="'+'aggiorna_'+file+'">modifica</button>')));
-            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" name=row'+lines+'" id="'+'elimina_'+file+'">elimina</button>')));
+            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" name=row'+lines+' id="'+'aggiorna_'+file+'">modifica</button>')));
+            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" name=row'+lines+' id="'+'elimina_'+file+'">elimina</button>')));
 			if(skip>0){
 				$('#ricercati').append($row);
 			}else{
@@ -80,15 +80,17 @@ function buttonClick() {
             success= selectForm;
     }else{
         if( id.indexOf('aggiorna') > -1 ) {
-            let row = $(this).name;
-            let forms = $('.others .'+row)
+            let row = $(this)[0].name;
+            let forms = $('.'+row);
             for (var form of forms)
                 json[form.name] = form.value;
         }else{
-            let forms = $('.row0 .others');
-            json['']
+            let row = $(this)[0].name;
+            let form = $('.'+row)[1].value;
+            let file = $('.file').val();
+            let id_form = 'id_'+file;
+            json[id_form] = form;
         }
-
     }
 
     callAjax(json,url,success);
