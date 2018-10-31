@@ -74,6 +74,9 @@ function buttonClick() {
         json = {'type':type,'fillForm':'none'};
         for (var form of forms)
             json[form.name] = form.value;
+
+        if( id.indexOf('seleziona') > -1 )
+            success= selectForm;
     }else{
         if( id.indexOf('aggiorna') > -1 ) {
             let forms = $('.results');
@@ -86,9 +89,6 @@ function buttonClick() {
         }
 
     }
-
-    if( id.indexOf('seleziona') > -1 )
-        success= selectForm;
 
     callAjax(json,url,success);
 }
