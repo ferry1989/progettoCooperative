@@ -65,9 +65,12 @@
 						<input type="hidden" class="type" value="search">
 						<table>
 							<tr>
-								<td><input class="form-control" placeholder="Denominazione" name='denominazioneprogetto' /></td>
-								<td><input class="form-control" placeholder="ente titolare" name='entetitolare' /></td>
-								<td><input class="form-control" placeholder="settore intervento" name='settoreintervento' /></td>
+								<td><input class="form-control" placeholder="Denominazione" name='titolo' /></td>
+								<td><select class="form-control" placeholder="settore intervento" id="seleziona_enti" name='id_ente' >
+										<option value="-1">-</option>
+									</select>
+								</td>
+								<td><input class="form-control" placeholder="settore intervento" name='settoreprevalente' /></td>
 								
 								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_progetti">Cerca</button></td>
 							</tr>
@@ -78,13 +81,13 @@
 				
 			</div>
 			
-			<table id="enti_ricercati">
+			<table id="ricercati">
 				<thead>
-					<th>Progetto</th> <!-- vengono fuori i progetti creati ed assegnati ad un ente xy (esempio napolicalcio) -->
-					<th>Ente Titolare</th> <!-- che sarebbe l' ente al quale qui va un acosa tipo < ? php echo row['ente?'] ? > e stratio assegnato un progetrti -->  
+					<th>Progetto</th>
+					<th>Ente Titolare</th> 
 					<th>Anno Bando</th> 
 					<th>Ente Titolare</th>   
-					<th>Sede Attuazione</th>   
+					<th>Sede Attuazione</th>
 					
 					<th>Modifica</th>
 					<th>Elimina</th>
@@ -108,7 +111,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/libform.js"></script>
 	<script type="text/javascript" src="js/jquery.dynatable.js"></script>
 	
 

@@ -78,7 +78,7 @@
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Codice Fiscale</label>
-						<input type="text" class="form-control" name="codfis">
+						<input type="text" class="form-control" name="codFiscale">
 					</div>
 
 					<div class="form-group">
@@ -91,69 +91,67 @@
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Provincia/Nazione di nascita</label>
-						<input type="text" class="form-control" name="provnasc">
+						<label for="exampleFormControlInput1">Provincia/Nazione di nascita</label>
+						<input type="text" class="form-control" name="provincianazionenascita">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Estero</label>
+						<select class="form-control" name="esteronasc">
+							<option value="-1">-</option>
+							<option value="0">NO</option>
+							<option value="1">SI</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Comune/Paese estero di nascita</label>
+						<input type="text" class="form-control" name="comuneesteronascita">
+					</div>
+
+					<div class="form-group">
+					<label for="exampleFormControlInput1">Provincia/Nazione di residenza</label>
+						<input type="text" class="form-control" name="provincianazioneresidenza">
 					</div>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Estero</label>
-						<select class="form-control" name="isesteronasc">
+						<select class="form-control" name="esterores">
 							<option value="-1">-</option>
 							<option value="0">NO</option>
 							<option value="1">SI</option>
-
 						</select>
 					</div>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Comune/Paese estero di residenza</label>
-						<input type="text" class="form-control" name="paesenasc">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Estero</label>
-						<select class="form-control" name="isesterores">
-							<option value="-1">-</option>
-							<option value="0">NO</option>
-							<option value="1">SI</option>
-						</select>
-						
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Comune/Paese estero di residenza</label>
-						<input type="text" class="form-control" name="comres">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Comune/Paese estero di nascita</label>
-						<input type="text" class="form-control" name="provnasc">
+						<input type="text" class="form-control" name="comuneesteroresidenta">
 					</div>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Indirizzo di residenza</label>
-						<input type="text" class="form-control" name="indres">
+						<input type="text" class="form-control" name="indirizzoresidenza">
 					</div>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">num. Civico</label>
-						<input type="text" class="form-control" name="ncivico">
+						<input type="text" class="form-control" name="numcivicoresidenza">
 					</div>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">CAP</label>
-						<input type="text" class="form-control" name="cap">
+						<input type="text" class="form-control" name="capresidenza">
 					</div>
 
 					<div class="text">
 						<label> ----------------------------------</label><br/>
-						<label>Se Domicilio diverso dalla Residenza</label><br/>
+						<label>N.B. Se Domicilio diverso dalla Residenza</label><br/>
 						<label> ----------------------------------</label>
 					</div>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Provincia di domicilio</label>
-						<select class="form-control" name="provdom">
+						<select class="form-control" name="provinciadomicilio">
 							<option>-</option>
 							<option>Belluno</option>
 							<option>Padova</option>
@@ -167,23 +165,25 @@
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Comune di domicilio</label>
-						<input type="text" class="form-control" name="comdom">
+						<input type="text" class="form-control" name="comunedomicilio">
 					</div>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Indirizzo di domicilio</label>
-						<input type="text" class="form-control" name="inddom">
+						<input type="text" class="form-control" name="indirizzodomicilio">
 					</div>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Num. Civico</label>
-						<input type="text" class="form-control" name="numcivdom">
+						<input type="text" class="form-control" name="numcivicodomic">
 					</div>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">CAP</label>
-						<input type="text" class="form-control" name="capdom">
+						<input type="text" class="form-control" name="capdomic">
 					</div>
+
+					-------------------------------------------------------------
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Titolo di studio</label>
@@ -207,6 +207,32 @@
 							<option>Ritirato</option>
 						</select>
 					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlSelect3">Sede di assegnazione</label>
+						<select class="form-control" id="seleziona_sedi_progetti" name="id_sedeprogetto">
+							<option value="-1">-</option>
+						</select>
+					</div>
+
+					---------------da far scomparire se volontario è diverso da attivo----------------------------
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Nome OLP</label>
+						<input type="text" class="form-control" name="nomeolp">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Cognome OLP</label>
+						<input type="text" class="form-control" name="cognomeolp">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Codice IBAN</label>
+						<input type="text" class="form-control" name="codiceiban">
+					</div>
+
+					--------------------------------------------------------------------------------------------
 					
 					<button type="submit" class="btn btn-info" id="insert_volontario" >SALVA E CONFERMA</button>
 				</div>
@@ -230,7 +256,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 	
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/libform.js"></script>
 
 </body>
 

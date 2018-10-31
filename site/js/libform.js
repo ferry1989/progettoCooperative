@@ -8,34 +8,38 @@ var selectForm = function(rows) {
     if(rows.error) {
         alert(rows.error)
     }else{
-		var i = 0;
+        $('.results').html('')
+		var skip = 0;
         for (row of rows){
             var form = rows[0]['fillForm'];
             $row = $('<tr/>').attr('class',form);
 
             for(prop in row){
-                $row.append( $('<td/>').append($('<input/>').val(row[prop])) );
+                $row.append( $('<td/>').append($('<input class="form-control others" name="'+row[prop]+'" value="'+row[prop]+'"/>')));
             }
-            $row.append( $('<td/>').append($('<button>modifica</button>')) );
-            $row.append( $('<td/>').append($('<button>elimina</button>').attr('class','elimina')) );
-			if(i>0){
+            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" id="'+'aggiorna_'+'">modifica</button>')));
+            $row.append( $('<td/>').append($('<button type="submit" class="btn btn-info" id="'+''+'">elimina</button>')));
+			if(skip>0){
 				$('#ricercati').append($row);
-			}
-			i++;
+			}else{
+                skip++;
+            }
+
         }
     }
 }
 
-//DA AGGIUSTARE ASSOLUTAMENTE
+//success of fillSelect
 var fillForm = function (rows) {
     var form = rows[0]['fillForm'];
-	var i=0;
+    var skip = 0;
+
     for (row of rows) {
-		console.log(row);
-		if(i>0){
-			$('select[name*='+form+']').append('<option value=' + row[form] + '>' + row[form] +'</option>');
-		}
-		i++;
+		if(skip > 0){
+            $('select[name*='+form+']').append('<option value=' + row[form] + '>' + row[form] +'</option>');
+        }else{
+            skip++;
+        }
     }
 }
 //-------------------------------------------------------------------------
@@ -58,19 +62,33 @@ function fillSelect (forms) {
 
 //function used for insert or remove or select rows from db
 function buttonClick() {
-    let type = $('.type').val();
-    let forms = $('.form-control');
     let formClick = $(this)[0];
     let id = formClick.id;
     let url = '../script/' + id + '.php';
-    let json = {'type':type,'fillForm':'none'};
+    let json = {};
     let success = generalInsert;
 
-    for (var form of forms)
-        json[form.name] = form.value;
+    if( ( id.indexOf('insert') > -1 ) || ( id.indexOf('seleziona') > -1 ) ) {
+        let type = $('.type').val();
+        let forms = $('.form-control');
+        json = {'type':type,'fillForm':'none'};
+        for (var form of forms)
+            json[form.name] = form.value;
 
-    if( id.indexOf('seleziona') > -1 )
-        success= selectForm;
+        if( id.indexOf('seleziona') > -1 )
+            success= selectForm;
+    }else{
+        if( id.indexOf('aggiorna') > -1 ) {
+            let forms = $('.results');
+            let forms2 = $('.others');
+            for (var form of forms){
+                json[form.name] = forms2.value;
+            }
+        }else{
+            json['']
+        }
+
+    }
 
     callAjax(json,url,success);
 }
@@ -86,6 +104,7 @@ function callAjax (json,url,success) {
         contentType: "application/json",
         success: success
     });
+
 }
 
 $(document).ready(function() {
@@ -97,6 +116,6 @@ $(document).ready(function() {
         fillSelect(initSelect);
 
     //on click button we do different function
-    $('.btn').on('click',buttonClick);
+    $(document).on('click','.btn',buttonClick);
 
 });

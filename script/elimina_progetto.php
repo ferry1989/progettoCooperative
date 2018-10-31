@@ -6,25 +6,25 @@
 		$foo = file_get_contents("php://input");
 
 		$progetto = json_decode($foo, true);
-		$idProgetto = mysqli_real_escape_string($con, $progetto['idProgetto']);
+		$id_progetto = mysqli_real_escape_string($con, $progetto['id_progetto']);
 		
-		$verificaProgetto = "SELECT id_progetto FROM progetto where id_progetto = '$idProgetto'";
+		$verificaProgetto = "SELECT id_progetto FROM progetto where id_progetto = '$id_progetto'";
 		$result = mysqli_query($con,$verificaProgetto);
 
 		if ($result->num_rows == 0) {
-			$msg = array("error"=>"progetto non trovato!");
+			$msg = array("error"=>"Progetto non trovato!");
 			echo json_encode($msg);
 			mysqli_close($con);
 			return;
 		}
 		
 		else{
-			$deletePresenza ="delete from progetto where id_progetto = '$idProgetto'";
-			if (!mysqli_query($con,$deletePresenza)) {
+			$deleteProgetto ="delete from progetto where id_progetto = '$id_progetto'";
+			if (!mysqli_query($con,$deleteProgetto)) {
 				$msg = array("error"=>mysqli_error($con));
 			}
 			else{
-				$msg = array("success"=>"progetto eliminato");
+				$msg = array("success"=>"Progetto eliminato");
 			}
 		}
 		mysqli_close($con);

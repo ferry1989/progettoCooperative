@@ -10,7 +10,7 @@
 
 			$progetto = json_decode($foo, true);
 			$idEnte = trim(mysqli_real_escape_string($con, $progetto['id_ente']));
-			$idRegione = trim(mysqli_real_escape_string($con, $progetto['id_regione']));
+			$titolo = trim(mysqli_real_escape_string($con, $progetto['titolo']));
 			$annobando = trim(mysqli_real_escape_string($con, $progetto['annobando']));
 			$settoreprevalente = trim(mysqli_real_escape_string($con, $progetto['settprev']));
 			$altrosettore = trim(mysqli_real_escape_string($con, $progetto['altrosett']));
@@ -18,16 +18,15 @@
 			
 			$titolo = mysqli_real_escape_string($con, $progetto['titolo']);
 			
-/* 			$verificaRegione = "SELECT id_regione FROM regione where id_regione='$idRegione'";
-			$result = mysqli_query($con,$verificaRegione);
+ 			$verificaProgetto = "SELECT titolo FROM progetto where titolo='$titolo'";
+			$result = mysqli_query($con,$verificaProgetto);
 
-			if ($result->num_rows == 0) {
-				$msg = array("error"=>"Regione non esistente!");
+			if ($result->num_rows > 0) {
+				$msg = array("error"=>"Progetto già esistente!");
 				echo json_encode($msg);
 				mysqli_close($con);
 				return;
-			}
-			else{ */
+			}else{
 				$insertprogetto = "INSERT INTO progetto (titolo,ente,annobando,settoreprevalente,altrosettore,sedidiattuazione,numerovolontari,numgiornidiservizio,nhorestettiman) VALUES ('$titolo','$idEnte','$annobando','$settoreprevalente','$altrosettore','$sedidiattuazione','0','0','0')";
 				if (!mysqli_query($con,$insertprogetto)) {
 					$msg = array("error"=>mysqli_error($con));
@@ -35,10 +34,9 @@
 				else{
 					$msg = array("success"=>"Progetto inserito con successo!");
 				}
-			//}
+			}
 			mysqli_close($con);
-		}
-		else{
+		}else{
 			$msg = array("error"=>"Connessione al db non riuscita!");
 		}
 		echo json_encode($msg);
