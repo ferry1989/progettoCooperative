@@ -63,6 +63,7 @@
 				  <div class="form-group mx-sm-3 mb-2">
 					<div class="ente">
 						<input type="hidden" class="type" value="search">
+						<input type="hidden" class="file" value="ente">
 						<table>
 							<tr>
 								<td><input class="form-control" placeholder="Denominazione" name='denominazione' /></td>
@@ -91,8 +92,8 @@
 					<th class="otherstitle" name="email">Email</th>
 					<th class="otherstitle" name="pec">Pec</th>
 					<th class="otherstitle" name="fax">Fax</th>
-					<th>Modifica</th>
-					<th>Elimina</th>
+					<th id="aggiorna_ente" >Modifica</th>
+					<th id="elimina_ente" >Elimina</th>
 				</thead>
 				<tbody class="results">
 				</tbody>
