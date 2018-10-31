@@ -61,13 +61,13 @@
                             <a href="ricercaProgetto.php"><i class="fa fa-th-list fa-fw"></i>Ricerca Progetto</a>
                         </li>
                         <li>
-                            <a href="inserisciVolontari.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Iserisci Volontario</span></a>
+                            <a href="inserisciVolontari.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Inserisci Volontario</span></a>
                         </li>
 						<li>
-                            <a href="inserisciPresenze.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Inserisci Presenze</span></a>
+                            <a href="inserisciPresenze.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscipresenza">Inserisci Presenze</span></a>
                         </li>
 						<li>
-                            <a href="esportaPresenze.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#inseriscivolontario">Esporta Presenze</span></a>
+                            <a href="esportaPresenze.php"><i class="fa fa-table fa-fw"></i><span data-toggle="modal" data-target="#esportapresenze">Esporta Presenze</span></a>
                         </li>
                         <li>
                             <a href="ricercaVolontari.php"><i class="fa fa-user fa-fw"></i>Gestione Volontari</a>

@@ -27,7 +27,7 @@
 				mysqli_close($con);
 				return;
 			}else{
-				$insertprogetto = "INSERT INTO progetto (titolo,ente,annobando,settoreprevalente,altrosettore,sedidiattuazione,numerovolontari,numgiornidiservizio,nhorestettiman) VALUES ('$titolo','$idEnte','$annobando','$settoreprevalente','$altrosettore','$sedidiattuazione','0','0','0')";
+				$insertprogetto = "INSERT INTO progetto (titolo,id_ente,annobando,settoreprevalente,altrosettore,sedidiattuazione,numerovolontari,numgiornidiservizio,nhorestettiman) VALUES ('$titolo','$idEnte','$annobando','$settoreprevalente','$altrosettore','$sedidiattuazione','0','0','0')";
 				if (!mysqli_query($con,$insertprogetto)) {
 					$msg = array("error"=>mysqli_error($con));
 				}

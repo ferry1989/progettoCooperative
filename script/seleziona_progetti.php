@@ -32,7 +32,7 @@
 		$msg = array();
 		array_push($msg,array("fillForm"=>$fillForm));
 		while($row = $result->fetch_assoc()) {
-			$addProgetto = array("settoreprevalente"=>$row["settoreprevalente"], "titolo"=>$row["titolo"], "id_ente"=>$row["id_ente"]);
+			$addProgetto = array("id_progetto"=>$row["id_progetto"], "settoreprevalente"=>$row["settoreprevalente"], "titolo"=>$row["titolo"], "id_ente"=>$row["id_ente"]);
 			array_push($msg, $addProgetto);
 		}
 		

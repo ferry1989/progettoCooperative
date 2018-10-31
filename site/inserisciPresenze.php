@@ -32,6 +32,9 @@
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+	
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,154 +64,129 @@
 					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Progetto</label>
-						<select class="form-control" id="seleziona_progetti" name="id_progetti">
+						<select class="form-control" id="seleziona_progetti" name="id_progetto">
 							<option value="-1">-</option>
 						</select>
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Nome</label>
-						<input type="text" class="form-control" name="nome">
+						<label for="exampleFormControlInput1">Data Ora Inizio</label>
+						<div class="input-group date" data-provide="datepicker">
+							<input type="text" class="form-control datepicker" name="dataorainizio">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</div>
+						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Cognome</label>
-						<input type="text" class="form-control" name="cognome">
+						<label for="exampleFormControlInput1">Data Ora Fine</label>
+						<div class="input-group date" data-provide="datepicker">
+							<input type="text" class="form-control datepicker" name="dataorafine">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</div>
+						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Codice Fiscale</label>
-						<input type="text" class="form-control" name="codfis">
-					</div>
-
-					<div class="form-group">
-						<label for="exampleFormControlSelect3">Sesso</label>
-						<select class="form-control" name="sesso">
+						<label for="exampleFormControlSelect3">Volontario</label>
+						<select class="form-control" id="seleziona_volontari" name="id_volontario">
 							<option value="-1">-</option>
-							<option value="M">M</option>
-							<option value="F">F</option>
-						</select>
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Provincia/Nazione di nascita</label>
-						<input type="text" class="form-control" name="provnasc">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Estero</label>
-						<select class="form-control" name="isesteronasc">
-							<option value="-1">-</option>
-							<option value="0">NO</option>
-							<option value="1">SI</option>
-
-						</select>
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Comune/Paese estero di residenza</label>
-						<input type="text" class="form-control" name="paesenasc">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Estero</label>
-						<select class="form-control" name="isesterores">
-							<option value="-1">-</option>
-							<option value="0">NO</option>
-							<option value="1">SI</option>
-						</select>
-						
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Comune/Paese estero di residenza</label>
-						<input type="text" class="form-control" name="comres">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Comune/Paese estero di nascita</label>
-						<input type="text" class="form-control" name="provnasc">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Indirizzo di residenza</label>
-						<input type="text" class="form-control" name="indres">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">num. Civico</label>
-						<input type="text" class="form-control" name="ncivico">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">CAP</label>
-						<input type="text" class="form-control" name="cap">
-					</div>
-
-					<div class="text">
-						<label> ----------------------------------</label><br/>
-						<label>Se Domicilio diverso dalla Residenza</label><br/>
-						<label> ----------------------------------</label>
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Provincia di domicilio</label>
-						<select class="form-control" name="provdom">
-							<option>-</option>
-							<option>Belluno</option>
-							<option>Padova</option>
-							<option>Venezia</option>
-							<option>Verona</option>
-							<option>Vicenza</option>
-							<option>Rovigo</option>
-							<option>Treviso</option>
-						</select>
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Comune di domicilio</label>
-						<input type="text" class="form-control" name="comdom">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Indirizzo di domicilio</label>
-						<input type="text" class="form-control" name="inddom">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Num. Civico</label>
-						<input type="text" class="form-control" name="numcivdom">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">CAP</label>
-						<input type="text" class="form-control" name="capdom">
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Titolo di studio</label>
-						<select class="form-control" name="titolostudio">
-							<option></option>
-							<option>Laurea magistrale</option>
-							<option>Laurea triennale</option>
-							<option>Diploma di maturità</option>
-							<option>Qualifica di istruzione professionale</option>
-							<option>Licenza media</option>
-						</select>
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Stato</label>
-						<select class="form-control" name="stato">
-							<option></option>
-							<option>Attivo</option>
-							<option>Idoneo non selezionato</option>
-							<option>Non idoneo</option>
-							<option>Ritirato</option>
 						</select>
 					</div>
 					
-					<button type="submit" class="btn btn-info" id="insert_volontario" >SALVA E CONFERMA</button>
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Ore Permessi</label>
+						<input type="text" class="form-control" name="numpermessi">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Ore Permessi usu</label>
+						<input type="text" class="form-control" name="numpermessiusu">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Ore Permessi Donazione Sangue</label>
+						<input type="text" class="form-control" name="perdonazsang">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Ore Permessi Donazione Sangue usu</label>
+						<input type="text" class="form-control" name="perdonazsangusu">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Ore Permessi Studio</label>
+						<input type="text" class="form-control" name="perstudio">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Ore Permessi Studio usu</label>
+						<input type="text" class="form-control" name="perstudiousu">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Giorni Malattia</label>
+						<input type="text" class="form-control" name="giornimalatt">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Giorni Malattia usu</label>
+						<input type="text" class="form-control" name="giornimalattusu">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Giorni Malattia non Retribuita</label>
+						<input type="text" class="form-control" name="malattnonretrib">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Giorni Malattia non Retribuita usu</label>
+						<input type="text" class="form-control" name="malattnonretribusu">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Giorni Assenza per Servizio</label>
+						<input type="text" class="form-control" name="assenzaperservizio">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Giorni Assenza per Servizio usu</label>
+						<input type="text" class="form-control" name="assenzaperserviziousu">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Giorni Lutto</label>
+						<input type="text" class="form-control" name="numgiornilutto">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Giorni Lutto usu</label>
+						<input type="text" class="form-control" name="numgiorniluttousu">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Data Materintà</label>
+						<div class="input-group date" data-provide="datepicker">
+							<input type="text" class="form-control datepicker" name="maternita">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Giorni Infortunio</label>
+						<input type="text" class="form-control" name="infortunio">
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Compenso Mensile</label>
+						<input type="text" class="form-control" name="compensomensile">
+					</div>
+					
+					<button type="submit" class="btn btn-info" id="insert_presenza" >SALVA E CONFERMA</button>
 				</div>
 			</div>
 		</div>
@@ -226,6 +204,10 @@
 
     <!-- Morris Charts JavaScript -->
     <script src="vendor/raphael/raphael.min.js"></script>
+	
+	<!-- Boostrap daterimepicker -->
+	<script src="vendor/datepicker/moment.js"></script>
+	<script src="vendor/datepicker/bootstrap-datetimepicker.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
