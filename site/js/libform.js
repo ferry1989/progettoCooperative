@@ -37,7 +37,11 @@ var fillForm = function (rows) {
 
     for (row of rows) {
 		if(skip > 0){
-            $('select[name*='+form+']').append('<option value=' + row[form] + '>' + row[form] +'</option>');
+			let values = '';
+			$.each(row, function(k, v) {
+				values += v+' ';
+			});
+            $('select[name*='+form+']').append('<option value=' + row[form] + '>' + values +'</option>');
         }else{
             skip++;
         }
