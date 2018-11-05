@@ -1,0 +1,11 @@
+
+.containerforms {
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+@media only screen and (min-width: 768px) {
+    .containerforms {
+        padding-left: 270px;
+    }
+}

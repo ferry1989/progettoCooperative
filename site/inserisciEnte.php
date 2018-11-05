@@ -58,7 +58,7 @@
 
 			<div class="row">	
 				<div class="ente">
-					<input type="hidden" class="type" value="insert">
+					<input type="hidden" class="file_primary" value="ente_codfis">
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Ente</label>
 						<input type="text" class="form-control" name="nomeEnte">
@@ -86,7 +86,7 @@
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Cod</label>
-						<input type="text" class="form-control" name="cod">
+						<input type="text" class="form-control" name="cod">	
 					</div>
 
 					<div class="form-group">
@@ -109,7 +109,7 @@
 						<input type="text" class="form-control" name="fax">
 					</div>
 					
-					<button type="submit" class="btn btn-info" id="insert_ente" >SALVA E CONFERMA</button>
+					<button type="submit" class="btn btn-info" id="insert">SALVA E CONFERMA</button>
 				</div>
 			</div>
 		</div>

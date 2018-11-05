@@ -1,0 +1,18 @@
+{
+    "Inserisci Ente": {
+        "nomeEnte": "Ente",
+        "telefono": {
+            "title": "Tipo di Telefono",
+            "option1": "Telefono Casa",
+            "option2": "Telefono Cellulare"
+        },
+        "codfis": "Codice Fiscale",
+        "tipo": "Tipo",
+        "rapplegale": "Rappresentante Legale",
+        "cod": "Cod",
+        "web": "Sito Web",
+        "email": "Email",
+        "pec": "PEC",
+        "fax": "Fax"
+    }
+}
