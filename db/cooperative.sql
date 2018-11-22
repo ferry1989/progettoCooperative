@@ -376,6 +376,13 @@ ALTER TABLE `volontario`
 ALTER TABLE `volontarioprogetto`
   MODIFY `id_volontarioprogetto` int(11) NOT NULL AUTO_INCREMENT;
 
+
+--
+-- AUTO_INCREMENT per la tabella `volontarioprogetto`
+--
+ALTER TABLE `sediprogetti`
+  MODIFY `id_sedeprogetto` int(11) NOT NULL AUTO_INCREMENT;
+  
 --
 -- Limiti per le tabelle scaricate
 --
