@@ -67,6 +67,13 @@
 					</div>
 
 					<div class="form-group">
+						<label for="exampleFormControlSelect3">Sede di assegnazione</label>
+						<select class="form-control" id="seleziona_sedi_progetti" name="id_sedeprogetto">
+							<option value="-1">-</option>
+						</select>
+					</div>
+
+					<div class="form-group">
 						<label for="exampleFormControlInput1">Nome</label>
 						<input type="text" class="form-control" name="nome">
 					</div>
@@ -87,6 +94,7 @@
 							<option value="-1">-</option>
 							<option value="M">M</option>
 							<option value="F">F</option>
+							<option value="F">Altro</option>
 						</select>
 					</div>
 
@@ -209,27 +217,20 @@
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Sede di assegnazione</label>
-						<select class="form-control" id="seleziona_sedi_progetti" name="id_sedeprogetto">
-							<option value="-1">-</option>
-						</select>
+						<label for="exampleFormControlInput1">Codice IBAN</label>
+						<input type="text" class="form-control" name="codiceiban">
 					</div>
 
 					---------------da far scomparire se volontario è diverso da attivo----------------------------
 
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Nome OLP</label>
+						<label for="exampleFormControlInput1">Nome Referente Tutor</label>
 						<input type="text" class="form-control" name="nomeolp">
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Cognome OLP</label>
+						<label for="exampleFormControlInput1">Cognome Referente Tutor</label>
 						<input type="text" class="form-control" name="cognomeolp">
-					</div>
-
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Codice IBAN</label>
-						<input type="text" class="form-control" name="codiceiban">
 					</div>
 
 					--------------------------------------------------------------------------------------------
@@ -257,6 +258,7 @@
     <script src="dist/js/sb-admin-2.js"></script>
 	
 	<script type="text/javascript" src="js/libform.js"></script>
+	<script type="text/javascript" src="js/util.js"></script>
 
 </body>
 

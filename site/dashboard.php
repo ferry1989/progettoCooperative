@@ -52,43 +52,63 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Pannello di controllo per l' utente REGIONE</h2>
+					<h2 class="page-header text-primary">Benvenuto '<?php $_SESSION['username'] ?>'</h2>
 				</div>
 			</div>
 
 			<div class="row">
+				<input type="hidden" class="type" value="search">
 					 
 				<div class="col-lg-4">
-				  <form class="form-inline">
 				  <h3>Ricerca Ente</h3>
 				  <div class="form-group mx-sm-3 mb-2">
-				  <label for="inputPassword2" class="sr-only">Ente...</label>
-				  <input type="text" class="form-control" id="inputPassword2" placeholder="Ente">
+					<div class="ente">
+						<table>
+							<tr>
+								<td><input class="form-control" placeholder="Denominazione" name='denominazione' /></td>
+								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_enti">Cerca</button></td>
+							</tr>
+						</table>
+					</div>
 				  </div>
-				  <button type="submit" class="btn btn-primary mb-1">Cerca</button></form>
 				</div>
 
-				 <div class="col-lg-4">
-				  <form class="form-inline">
+				<div class="col-lg-4">
 				  <h3>Ricerca Progetto</h3>
 				  <div class="form-group mx-sm-3 mb-2">
-				  <label for="inputPassword2" class="sr-only">Progetto...</label>
-				  <input type="text" class="form-control" id="inputPassword2" placeholder="Progetto">
+					<div class="progetto">
+						<table>
+							<tr>
+								<td><input class="form-control" placeholder="Denominazione" name='titolo' /></td>
+								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_progetti">Cerca</button></td>
+							</tr>
+						</table>
+					</div>
 				  </div>
-				  <button type="submit" class="btn btn-primary mb-1">Cerca</button></form>
 				</div>
 
-				 <div class="col-lg-4">
-				  <form class="form-inline">
+				<div class="col-lg-4">
 				  <h3>Ricerca Volontario</h3>
 				  <div class="form-group mx-sm-3 mb-2">
-				  <label for="inputPassword2" class="sr-only">Volontario...</label>
-				  <input type="text" class="form-control" id="inputPassword2" placeholder="Volontario">
+					<div class="progetto">
+						<table>
+							<tr>
+								<td><input class="form-control" placeholder="Nome" name='nomevolontario' /></td>
+								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_volontari">Cerca</button></td>
+							</tr>
+						</table>
+					</div>
 				  </div>
-				  <button type="submit" class="btn btn-primary mb-1">Cerca</button></form>
 				</div>
 				
 			</div>
+
+			<table id="ricercati">
+				<thead>
+				</thead>
+				<tbody class="results">
+				</tbody>
+			</table>
 		</div>
 	</div>
 
@@ -109,6 +129,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
+	<script type="text/javascript" src="js/libform.js"></script>
 
 </body>
 

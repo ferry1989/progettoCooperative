@@ -60,7 +60,7 @@
 				<div class="ente">
 					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Ente proprietario</label>
+						<label for="exampleFormControlSelect3">Ente capofila</label>
 						<select class="form-control" id="seleziona_enti" name="id_ente">
 							<option value="-1">-</option>
 						</select>
@@ -77,13 +77,17 @@
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlInput1">N. Volontari assegnati</label>
-						<input type="text" class="form-control" name="numvolontari">
-					</div>
-
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Provincia</label>
-						<input type="text" class="form-control" name="provincia">
+					<label for="exampleFormControlInput1">Provincia</label>
+						<select class="form-control" name="provincia">
+							<option>-</option>
+							<option>Belluno</option>
+							<option>Padova</option>
+							<option>Venezia</option>
+							<option>Verona</option>
+							<option>Vicenza</option>
+							<option>Rovigo</option>
+							<option>Treviso</option>
+						</select>
 					</div>
 
 					<div class="form-group">

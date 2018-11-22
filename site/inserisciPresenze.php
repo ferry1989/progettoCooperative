@@ -97,32 +97,32 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Ore Permessi</label>
+						<label for="exampleFormControlInput1">Giorni Permessi</label>
 						<input type="text" class="form-control" name="numpermessi">
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Ore Permessi usu</label>
+						<label for="exampleFormControlInput1">Giorni Permessi usu</label>
 						<input type="text" class="form-control" name="numpermessiusu">
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Ore Permessi Donazione Sangue</label>
+						<label for="exampleFormControlInput1">Giorni Permessi Donazione Sangue</label>
 						<input type="text" class="form-control" name="perdonazsang">
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Ore Permessi Donazione Sangue usu</label>
+						<label for="exampleFormControlInput1">Giorni Permessi Donazione Sangue usu</label>
 						<input type="text" class="form-control" name="perdonazsangusu">
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Ore Permessi Studio</label>
+						<label for="exampleFormControlInput1">Giorni Permessi Studio</label>
 						<input type="text" class="form-control" name="perstudio">
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Ore Permessi Studio usu</label>
+						<label for="exampleFormControlInput1">Giorni Permessi Studio usu</label>
 						<input type="text" class="form-control" name="perstudiousu">
 					</div>
 					

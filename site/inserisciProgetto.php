@@ -89,8 +89,23 @@
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Altro Settore</label>
+						<label for="exampleFormControlInput1">Altro Settore</label>
 						<input type="text" class="form-control" name="altrosett">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">24 Ore > N. Volontari</label>
+						<input type="text" class="form-control" name="24sett">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">28 Ore > N. Volontari</label>
+						<input type="text" class="form-control" name="28sett">
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">38 Ore > N. Volontari</label>
+						<input type="text" class="form-control" name="36sett">
 					</div>
 
 					<button type="submit" class="btn btn-info" id="insert_progetto" >SALVA E CONFERMA</button>

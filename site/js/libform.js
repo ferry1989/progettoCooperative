@@ -125,6 +125,13 @@ $(document).ready(function() {
     //on click button we do different function
     $(document).on('click','.btn',buttonClick);
 
-	$('.datepicker').datetimepicker();
+    $('.datepicker').datetimepicker();
+
+    $('input[name="codiceiban"]').prop('disabled',true);
+    
+    $('input[name="stato"]').on('change',function(){
+        if( $('input[name="codiceiban"]').val() == 'Attivo' )
+            $('input[name="codiceiban"]').prop('disabled',false);
+    });
 
 });
