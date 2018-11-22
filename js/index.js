@@ -185,6 +185,7 @@ $(document).ready(function() {
 		var idProgetto = $('.presenza select[name*="progetto"]').val();
 		var dataOraInizio = $('.presenza input[name*="dataOraInizio"]').val(); //formato yyyymmddhhmmss (ad es 20180518200000)
 		var dataOraFine = $('.presenza input[name*="dataOraFine"]').val();	//formato yyyymmddhhmmss (ad es 20180518200000)
+		console.log(dataOraInizio);
 		var isApprovata = $('.presenza select[name*="approvata"]').val();
 		var presenza = {
 			"idVolontario": idVolontario,

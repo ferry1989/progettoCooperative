@@ -9,8 +9,10 @@
 			$foo = file_get_contents("php://input");
 
 			$presenza = json_decode($foo, true);
-			$dataOraInizio = trim(mysqli_real_escape_string($con, $presenza['dataOraInizio']));
-			$dataOraFine = mysqli_real_escape_string($con, $presenza['dataOraFine']);
+			$dataOraInizio = new DateTime($presenza['dataorainizio']);
+			$dataOraInizio = mysqli_real_escape_string($con,$dataOraInizio->format('Ymdhis'));
+			$dataOraFine = new DateTime($presenza['dataorafine']);
+			$dataOraFine = mysqli_real_escape_string($con,$dataOraFine->format('Ymdhis'));
 			$isApprovata = mysqli_real_escape_string($con, $presenza['isApprovata']);
 			$id_volontario = mysqli_real_escape_string($con, $presenza['id_volontario']);
 			$id_progetto = mysqli_real_escape_string($con, $presenza['id_progetto']);
@@ -28,7 +30,8 @@
 			$assenzaperserviziousu = mysqli_real_escape_string($con, $presenza['assenzaperserviziousu']);
 			$numgiornilutto = mysqli_real_escape_string($con, $presenza['numgiornilutto']);
 			$numgiorniluttousu = mysqli_real_escape_string($con, $presenza['numgiorniluttousu']);
-			$maternita = mysqli_real_escape_string($con, $presenza['maternita']);
+			$maternita = new DateTime($presenza['maternita']);
+			$maternita = mysqli_real_escape_string($con,$maternita->format('Ymdhis'));
 			$infortunio = mysqli_real_escape_string($con, $presenza['infortunio']);
 			$compensomensile = mysqli_real_escape_string($con, $presenza['compensomensile']);
 			
@@ -60,7 +63,7 @@
 			}
 			
 			else{
-				$insertpresenza = "INSERT INTO presenza (IBAN, cf, nomecognome, dataOraInizio, dataOraFine, isApprovata, id_volontario, id_progetto, numpermessi, numpermessiusu, perdonazsang, perdonazsangusu, perstudio, perstudiousu, giornimalatt, giornimalattusu, malattnonretrib, malattnonretribusu, assenzaperservizio, assenzaperserviziousu, numgiornilutto, numgiorniluttousu, maternita, infortunio, compensomensile) VALUES ('$iban', '$cf', '$nomecognome', '2018-01-01', '2018-01-01', false, '$id_volontario', '$id_progetto',  '$numpermessi', '$numpermessiusu', '$perdonazsang', '$perdonazsangusu', '$perstudio', '$perstudiousu', '$giornimalatt', '$giornimalattusu', '$malattnonretrib', '$malattnonretribusu', '$assenzaperservizio', '$assenzaperserviziousu', '$numgiornilutto', '$numgiorniluttousu', '2018-01-01', '$infortunio', '$compensomensile')";
+				$insertpresenza = "INSERT INTO presenza (IBAN, cf, nomecognome, dataOraInizio, dataOraFine, isApprovata, id_volontario, id_progetto, numpermessi, numpermessiusu, perdonazsang, perdonazsangusu, perstudio, perstudiousu, giornimalatt, giornimalattusu, malattnonretrib, malattnonretribusu, assenzaperservizio, assenzaperserviziousu, numgiornilutto, numgiorniluttousu, maternita, infortunio, compensomensile) VALUES ('$iban', '$cf', '$nomecognome', '$dataOraInizio', '$dataOraFine', false, '$id_volontario', '$id_progetto',  '$numpermessi', '$numpermessiusu', '$perdonazsang', '$perdonazsangusu', '$perstudio', '$perstudiousu', '$giornimalatt', '$giornimalattusu', '$malattnonretrib', '$malattnonretribusu', '$assenzaperservizio', '$assenzaperserviziousu', '$numgiornilutto', '$numgiorniluttousu', '$maternita', '$infortunio', '$compensomensile')";
 				if (!mysqli_query($con,$insertpresenza)) {
 					$msg = array("error"=>mysqli_error($con));
 				}

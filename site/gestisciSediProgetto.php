@@ -52,50 +52,55 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Inserisci Progetto</h2>
+					<h2 class="page-header text-primary">Pannello di controllo per l' utente REGIONE</h2>
 				</div>
 			</div>
 
-			<div class="row">	
-				<div class="progetto">
-					<input type="hidden" class="type" value="insert">
-					<div class="form-group">
-						<label for="exampleFormControlSelect3">Ente</label>
-						<select class="form-control" id="seleziona_enti" name="id_ente">
-							<option value="-1">-</option>
-						</select>
+			<div class="row">
+					 
+				<div class="col-lg-4">
+				  <h3>Ricerca Sede Progetto</h3>
+				  <div class="form-group mx-sm-3 mb-2">
+					<div class="ente">
+						<input type="hidden" class="type" value="search">
+						<input type="hidden" class="file" value="progettosede">
+						<table>
+							<tr>
+								<td>SEDE</td>
+								<td>PROGETTO</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><select class="form-control" placeholder="settore intervento" id="seleziona_sedi" name='id_sede' >
+										<option value="-1">-</option>
+									</select>
+								</td>
+								<td><select class="form-control" placeholder="settore intervento" id="seleziona_progetti" name='id_progetto' >
+										<option value="-1">-</option>
+									</select>
+								</td>
+								
+								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_sedi_progetti">Cerca</button></td>
+							</tr>
+						</table>
 					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Titolo</label>
-					<input type="text" class="form-control" name="titolo">
-					</div>
-					
-					<div class="form-group">
-						<label for="exampleFormControlSelect3">Anno Bando</label>
-						<input type="text" class="form-control" name="annobando">
-					</div>
-					
-					<div class="form-group">
-					<label for="exampleFormControlSelect3">Settore Prevalente Campi</label>
-					<select class="form-control" name="settprev">
-						<option></option>
-						<option>Assistenza e servizio sociale</option>
-						<option>Valorizzazione del patrimonio storico, artistico e ambientale</option>
-						<option>Promozione ed organizzazione di attività educative e culturali</option>
-						<option>Promozione ed organizzazione di attività dell’economia solidale</option>
-						<option>Promozione ed organizzazione di attività di protezione civile</option>
-					</select>
-					</div>
-
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Altro Settore</label>
-						<input type="text" class="form-control" name="altrosett">
-					</div>
-
-					<button type="submit" class="btn btn-info" id="insert_progetto" >SALVA E CONFERMA</button>
+				  </div>
 				</div>
+				
 			</div>
+			
+			<table id="ricercati">
+				<thead>
+					<th>Progetto</th>
+					<th>Sede</th>
+					
+					<th>Modifica</th>
+					<th>Elimina</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+
 		</div>
 	</div>
 
@@ -109,13 +114,11 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="vendor/raphael/raphael.min.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
-	
 	<script type="text/javascript" src="js/libform.js"></script>
+	<script type="text/javascript" src="js/jquery.dynatable.js"></script>
+	
 
 </body>
 

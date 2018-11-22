@@ -31,7 +31,7 @@
 		$msg = array();
 		array_push($msg,array("fillForm"=>$fillForm));
 		while($row = $result->fetch_assoc()) {
-			$addSede = array("id_sede"=>$row["id_sede"], "id_ente"=>$row["id_ente"], "indirizzo"=>$row["indirizzo"]);
+			$addSede = array("id_sede"=>$row["id_sede"], "id_ente"=>$row["id_ente"], "indirizzo"=>$row["indirizzo"], "denominazione"=>$row["denominazione"]);
 			array_push($msg, $addSede);
 		}
 		

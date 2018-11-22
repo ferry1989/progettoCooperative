@@ -52,13 +52,20 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Inserisci Progetto</h2>
+					<h2 class="page-header text-primary">Collega Progetto a Sede</h2>
 				</div>
 			</div>
 
 			<div class="row">	
-				<div class="progetto">
+				<div class="progettosede">
 					<input type="hidden" class="type" value="insert">
+					<div class="form-group">
+						<label for="exampleFormControlSelect3">Progetto</label>
+						<select class="form-control" id="seleziona_progetti" name="id_progetto">
+							<option value="-1">-</option>
+						</select>
+					</div>
+					
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Ente</label>
 						<select class="form-control" id="seleziona_enti" name="id_ente">
@@ -67,33 +74,13 @@
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Titolo</label>
-					<input type="text" class="form-control" name="titolo">
-					</div>
-					
-					<div class="form-group">
-						<label for="exampleFormControlSelect3">Anno Bando</label>
-						<input type="text" class="form-control" name="annobando">
-					</div>
-					
-					<div class="form-group">
-					<label for="exampleFormControlSelect3">Settore Prevalente Campi</label>
-					<select class="form-control" name="settprev">
-						<option></option>
-						<option>Assistenza e servizio sociale</option>
-						<option>Valorizzazione del patrimonio storico, artistico e ambientale</option>
-						<option>Promozione ed organizzazione di attività educative e culturali</option>
-						<option>Promozione ed organizzazione di attività dell’economia solidale</option>
-						<option>Promozione ed organizzazione di attività di protezione civile</option>
-					</select>
+						<label for="exampleFormControlSelect3">Sede di attuazione</label>
+						<select class="form-control" id="seleziona_sedi" name="id_sede">
+							<option value="-1">-</option>
+						</select>
 					</div>
 
-					<div class="form-group">
-					<label for="exampleFormControlInput1">Altro Settore</label>
-						<input type="text" class="form-control" name="altrosett">
-					</div>
-
-					<button type="submit" class="btn btn-info" id="insert_progetto" >SALVA E CONFERMA</button>
+					<button type="submit" class="btn btn-info" id="insert_progetto_sede" >SALVA E CONFERMA</button>
 				</div>
 			</div>
 		</div>
@@ -115,7 +102,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 	
-	<script type="text/javascript" src="js/libform.js"></script>
+	<script type="text/javascript" src="js/multijoin.js"></script>
 
 </body>
 

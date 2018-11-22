@@ -6,23 +6,22 @@
 		$foo = file_get_contents("php://input");
 
 		$filtri = json_decode($foo, true);
-		$id_regione = mysqli_real_escape_string($con, $filtri['id_regione']);
+		$id_sede = mysqli_real_escape_string($con, $filtri['id_sede']);
 		$id_progetto = mysqli_real_escape_string($con, $filtri['id_progetto']);
 
-		$selezionaRegioniProgetti = "SELECT * FROM regioneprogetto rp JOIN regione r on rp.id_regione = r.id_regione JOIN progetto p on p.id_progetto = rp.id_progetto WHERE 1=1 ";
-		if($id_regione != null && $id_regione != ""){
-			$selezionaRegioniProgetti .= "and rp.id_regione='$id_regione'";
+		$selezionaRegioniProgetti = "SELECT * FROM sediprogetti sp JOIN sede s on sp.id_sede = s.id_sede JOIN progetto p on p.id_progetto = sp.id_progetto WHERE 1=1 ";
+		if($id_sede != null && $id_sede != "" && $id_sede != "-1"){
+			$selezionaRegioniProgetti .= "and sp.id_sede='$id_sede'";
 		}
-		if($id_progetto != null && $id_progetto != ""){
-			$selezionaRegioniProgetti .= "and rp.id_progetto='$id_progetto'";
+		if($id_progetto != null && $id_progetto != "" && $id_progetto != "-1"){
+			$selezionaRegioniProgetti .= "and sp.id_progetto='$id_progetto'";
 		}
 		$result = mysqli_query($con,$selezionaRegioniProgetti);
 		$msg = array();
+		array_push($msg,array("fillForm"=>"select"));
 		while($row = $result->fetch_assoc()) {
-			$addRegione = array("id_regione"=>$row["id_regione"], "ragioneSociale"=>$row["ragioneSociale"], "piva"=>$row["piva"], "telefono"=>$row["telefono"], "id_utente"=>$row["id_utente"]);
-			$addProgetto = array("id_progetto"=>$row["id_progetto"], "titolo"=>$row["titolo"]);
-			$addRegioneProgetto = array("regione"=>$addRegione ,"progetto"=>$addProgetto);
-			array_push($msg, $addRegioneProgetto);
+			$addSedeProgetto = array("id_sedeprogetto"=>$row["id_sedeprogetto"], "denominazione"=>$row["denominazione"], "titolo"=>$row["titolo"]);
+			array_push($msg, $addSedeProgetto);
 		}
 		
 		mysqli_close($con);

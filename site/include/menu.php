@@ -54,6 +54,12 @@
                         <li>
                             <a href="inserisciProgetto.php"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Inserisci Progetto</i></a>
                         </li>
+						<li>
+                            <a href="inserisciSediProgetto.php"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Collega Progetto a sedi</i></a>
+                        </li>
+						<li>
+                            <a href="gestisciSediProgetto.php"><i class="fa fa-th-list fa-fw"></i> <span data-toggle="modal" data-target="#inserisciprogetto">Gestisci sedi progetto</i></a>
+                        </li>
 					<?php	}
 					?>
 						<!-- Sezione di menu dedicata all'ente e all'admin -->

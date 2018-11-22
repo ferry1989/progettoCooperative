@@ -9,10 +9,10 @@
 			$foo = file_get_contents("php://input");
 
 			$regioneprogetto = json_decode($foo, true);
-			$idRegione = trim(mysqli_real_escape_string($con, $regioneprogetto['idRegione']));
-			$idProgetto = mysqli_real_escape_string($con, $regioneprogetto['idProgetto']);
+			$id_sede = trim(mysqli_real_escape_string($con, $regioneprogetto['id_sede']));
+			$id_progetto = mysqli_real_escape_string($con, $regioneprogetto['id_progetto']);
 			
-			$verificaRegione = "SELECT id_regione FROM regione where id_regione='$idRegione'";
+			$verificaRegione = "SELECT id_sede FROM sede where id_sede='$id_sede'";
 			$result = mysqli_query($con,$verificaRegione);
 
 			if ($result->num_rows == 0) {
@@ -22,7 +22,7 @@
 				return;
 			}
 			
-			$verificaProgetto = "SELECT id_progetto FROM progetto where id_progetto='$idProgetto'";
+			$verificaProgetto = "SELECT id_progetto FROM progetto where id_progetto='$id_progetto'";
 			$result = mysqli_query($con,$verificaProgetto);
 
 			if ($result->num_rows == 0) {
@@ -32,7 +32,7 @@
 				return;
 			}
 			
-			$verificaRegioneProgetto = "SELECT id_regioneprogetto FROM regioneprogetto where id_progetto='$idProgetto' and id_regione='$idRegione'";
+			$verificaRegioneProgetto = "SELECT id_sedeprogetto FROM sediprogetti where id_progetto='$id_progetto' and id_sede='$id_sede'";
 			$result = mysqli_query($con,$verificaRegioneProgetto);
 
 			if ($result->num_rows > 0) {
@@ -43,7 +43,7 @@
 			}
 			
 			else{
-				$insertprogettoregione = "INSERT INTO regioneprogetto (id_regione,id_progetto) VALUES ('$idRegione','$idProgetto')";
+				$insertprogettoregione = "INSERT INTO sediprogetti (id_sede,id_progetto) VALUES ('$id_sede','$id_progetto')";
 				if (!mysqli_query($con,$insertprogettoregione)) {
 					$msg = array("error"=>mysqli_error($con));
 				}
