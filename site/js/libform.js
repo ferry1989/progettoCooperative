@@ -127,11 +127,4 @@ $(document).ready(function() {
 
     $('.datepicker').datetimepicker();
 
-    $('input[name="codiceiban"]').prop('disabled',true);
-    
-    $('input[name="stato"]').on('change',function(){
-        if( $('input[name="codiceiban"]').val() == 'Attivo' )
-            $('input[name="codiceiban"]').prop('disabled',false);
-    });
-
 });
