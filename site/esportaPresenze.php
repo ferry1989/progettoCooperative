@@ -75,6 +75,12 @@
 				<div class="col-lg-4">
 					<form action="../script/esporta_presenze.php" method="post">
 					  <h3>Esporta Presenze</h3>
+					  <div class="form-group mx-sm-3 mb-2">
+							<label for="exampleFormControlInput1">Progetto</label>
+							<select class="form-control" placeholder="settore intervento" id="seleziona_progetti" name='id_progetto' >
+								<option value="-1">-</option>
+							</select>
+						</div>	
 						<div class="form-group mx-sm-3 mb-2">
 							<label for="exampleFormControlInput1">Data Ora Inizio</label>
 							<select class="form-control" name="operatorDataInizio">

@@ -12,7 +12,11 @@
 		$dataOraFine = new DateTime($_POST['dataorafine']);
 		$dataOraFine = mysqli_real_escape_string($con,$dataOraFine->format('Ymdhis'));
 		$operatorDataFine = mysqli_real_escape_string($con, $_POST['operatorDataFine']);
+		$id_progetto = mysqli_real_escape_string($con, $_POST['id_progetto']);
 		
+		if($id_progetto != null && $id_progetto != '' && $id_progetto != '-1'){
+			$selezionaPresenze .= " AND id_progetto = $id_progetto";
+		}
 		if($_POST['dataorainizio'] != null && $_POST['dataorainizio'] != ''){
 			$selezionaPresenze .= " AND dataorainizio $operatorDataInizio '$dataOraInizio'";
 		}
