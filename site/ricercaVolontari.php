@@ -52,7 +52,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Pannello di controllo per l' utente REGIONE</h2>
+					<h2 class="page-header text-primary">Ricerca Volontari</h2>
 				</div>
 			</div>
 

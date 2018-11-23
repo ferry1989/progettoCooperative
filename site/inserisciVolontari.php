@@ -96,7 +96,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Estero</label>
+						<label for="exampleFormControlInput1">Estero nascita</label>
 						<select class="form-control" name="esteronasc">
 							<option value="-1">-</option>
 							<option value="0">NO</option>
@@ -115,7 +115,7 @@
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Estero</label>
+					<label for="exampleFormControlInput1">Estero residenza</label>
 						<select class="form-control" name="esterores">
 							<option value="-1">-</option>
 							<option value="0">NO</option>
@@ -257,6 +257,8 @@
     <script src="dist/js/sb-admin-2.js"></script>
 	
 	<script type="text/javascript" src="js/libform.js"></script>
+	
+	<script type="text/javascript" src="js/sediprogetti.js"></script>
 
 </body>
 
