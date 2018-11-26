@@ -6,10 +6,9 @@
 		$foo = file_get_contents("php://input");
 
 		$volontario = json_decode($foo, true);
-		$idVolontario = mysqli_real_escape_string($con, $volontario['idVolontario']);
+		$idVolontario = mysqli_real_escape_string($con, $volontario['id_volontario']);
 		$nome = mysqli_real_escape_string($con, $volontario['nome']);
 		$cognome = mysqli_real_escape_string($con, $volontario['cognome']);
-		$dataNascita = mysqli_real_escape_string($con, $volontario['dataNascita']);
 		$codFiscale = mysqli_real_escape_string($con, $volontario['codFiscale']);
 		
 		$verificaVolontario = "SELECT id_volontario FROM volontario where id_volontario='$idVolontario'";
@@ -23,7 +22,7 @@
 		}
 		
 		else{
-			$updateVolontario = "update volontario set nome = '$nome', cognome = '$cognome', dataNascita = '$dataNascita', codFiscale = '$codFiscale' where id_volontario = '$idVolontario'";
+			$updateVolontario = "update volontario set nome = '$nome', cognome = '$cognome', codFiscale = '$codFiscale' where id_volontario = '$idVolontario'";
 			if (!mysqli_query($con,$updateVolontario)) {
 				$msg = array("error"=>mysqli_error($con));
 			}

@@ -59,9 +59,10 @@
 			<div class="row">
 					 
 				<div class="col-lg-4">
-				  <h3>Ricerca Ente</h3>
+				  <h3>Ricerca Volontari</h3>
 				  <div class="form-group mx-sm-3 mb-2">
 					<div class="ente">
+						<input type="hidden" class="file" value="volontario">
 						<input type="hidden" class="type" value="search">
 						<table>
 							<tr>

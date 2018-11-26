@@ -6,13 +6,13 @@
 		$foo = file_get_contents("php://input");
 
 		$volontario = json_decode($foo, true);
-		$idVolontario = mysqli_real_escape_string($con, $volontario['idVolontario']);
+		$idVolontario = mysqli_real_escape_string($con, $volontario['id_volontario']);
 		
 		$verificavolontario = "SELECT id_volontario FROM volontario where id_volontario = '$idVolontario'";
 		$result = mysqli_query($con,$verificavolontario);
 
 		if ($result->num_rows == 0) {
-			$msg = array("error"=>"volontario non trovata!");
+			$msg = array("error"=>"volontario non trovato!");
 			echo json_encode($msg);
 			mysqli_close($con);
 			return;
@@ -24,7 +24,7 @@
 				$msg = array("error"=>mysqli_error($con));
 			}
 			else{
-				$msg = array("success"=>"volontario eliminata");
+				$msg = array("success"=>"volontario eliminato");
 			}
 		}
 		mysqli_close($con);

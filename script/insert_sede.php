@@ -12,7 +12,6 @@
 			$indirizzo = trim(mysqli_real_escape_string($con, $sede['indirizzo']));
 			$id_ente = mysqli_real_escape_string($con, $sede['id_ente']);
 			$denominazione = mysqli_real_escape_string($con, $sede['denominazione']);
-			$numvolontari = mysqli_real_escape_string($con, $sede['numvolontari']);
 			$provincia = mysqli_real_escape_string($con, $sede['provincia']);
 			$comune = mysqli_real_escape_string($con, $sede['comune']);
 			$numcivico = mysqli_real_escape_string($con, $sede['numcivico']);
@@ -32,7 +31,7 @@
 				mysqli_close($con);
 				return;
 			}else{
-				$insertSede = "INSERT INTO sede (indirizzo,id_ente,denominazione,numvolontari,provincia,comune,numcivico,capsede,telefono,fax,titologiuridico,sitoweb,emailordinaria) VALUES ('$indirizzo','$id_ente','$denominazione','$numvolontari','$provincia','$comune','$numcivico','$capsede','$fax','$titologiuridico','$titologiuridico','$sitoweb','$emailordinaria')";
+				$insertSede = "INSERT INTO sede (indirizzo,id_ente,denominazione,provincia,comune,numcivico,capsede,telefono,fax,titologiuridico,sitoweb,emailordinaria) VALUES ('$indirizzo','$id_ente','$denominazione','$provincia','$comune','$numcivico','$capsede','$fax','$titologiuridico','$titologiuridico','$sitoweb','$emailordinaria')";
 				if (!mysqli_query($con,$insertSede)) {
 					$msg = array("error"=>mysqli_error($con));
 				}
