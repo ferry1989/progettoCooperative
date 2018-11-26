@@ -40,10 +40,10 @@
                             <a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i>Pannello di Controllo</a>
                         </li>
 						<li>
-                            <a href="inserisciUtente.php"><i class="fa fa-user fa-fw"></i><span data-toggle="modal" data-target="#inserisciente">Inserisci Utente</span></a>
+                            <a href="inserisciUtente.php"><i class="fa fa-user fa-fw"></i><span data-toggle="modal" data-target="#inserisciente">Crea accessi Ente</span></a>
                         </li>
 						 <li>
-                            <a href="inserisciEnte.php"><i class="fa fa-user fa-fw"></i><span data-toggle="modal" data-target="#inserisciente">Inserisci Ente</span></a>
+                            <a href="inserisciEnte.php"><i class="fa fa-user fa-fw"></i><span data-toggle="modal" data-target="#inserisciente">Inserisci dati Ente</span></a>
                         </li>
 						<li>
                             <a href="ricercaEnte.php"><i class="fa fa-user fa-fw"></i>Ricerca Ente</a>

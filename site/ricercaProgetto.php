@@ -52,7 +52,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Ricerca Progetto</h2>
+					<h2 class="page-header text-primary">Benvenuto <?php $_SESSION['username'] ?></h2>
 				</div>
 			</div>
 
@@ -61,7 +61,7 @@
 				<div class="col-lg-4">
 				  <h3>Ricerca Progetto</h3>
 				  <div class="form-group mx-sm-3 mb-2">
-					<div class="ente">
+					<div class="progetto">
 						<input type="hidden" class="type" value="search">
 						<input type="hidden" class="file" value="progetto">
 						<table>

@@ -125,6 +125,6 @@ $(document).ready(function() {
     //on click button we do different function
     $(document).on('click','.btn',buttonClick);
 
-	$('.datepicker').datetimepicker();
+    $('.datepicker').datetimepicker();
 
 });

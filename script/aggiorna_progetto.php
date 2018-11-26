@@ -11,6 +11,9 @@
 		$annobando = trim(mysqli_real_escape_string($con, $progetto['annobando']));
 		$settoreprevalente = trim(mysqli_real_escape_string($con, $progetto['settprev']));
 		$altrosettore = trim(mysqli_real_escape_string($con, $progetto['altrosett']));
+		$sett24 = trim(mysqli_real_escape_string($con, $progetto['24sett']));
+		$sett28 = trim(mysqli_real_escape_string($con, $progetto['28sett']));
+		$sett36 = trim(mysqli_real_escape_string($con, $progetto['36sett']));
 		$sedidiattuazione = trim(mysqli_real_escape_string($con, $progetto['id_sede']));
 		
 		$verificaProgetto = "SELECT id_progetto FROM progetto where id_progetto='$id_progetto'";
@@ -24,7 +27,7 @@
 		}
 		
 		else{
-			$updatePresenza="update progetto set titolo = '$titolo', annobando = '$annobando', settprev = '$settprev', altrosettore = '$altrosettore', id_sede = '$id_sede' where id_progetto = '$idProgetto'";
+			$updatePresenza="update progetto set titolo = '$titolo', annobando = '$annobando', settprev = '$settprev', altrosettore = '$altrosettore', 24sett = '$sett24', 28sett = '$sett28', 36sett = '$sett36', id_sede = '$id_sede' where id_progetto = '$idProgetto'";
 			if (!mysqli_query($con,$updatePresenza)) {
 				$msg = array("error"=>mysqli_error($con));
 			}
