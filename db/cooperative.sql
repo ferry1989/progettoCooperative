@@ -378,10 +378,11 @@ ALTER TABLE `volontarioprogetto`
 
 
 --
--- AUTO_INCREMENT per la tabella `volontarioprogetto`
+-- AUTO_INCREMENT per la tabella `sediprogetti`
 --
 ALTER TABLE `sediprogetti`
-  MODIFY `id_sedeprogetto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sedeprogetto` int(255) NOT NULL AUTO_INCREMENT;
+COMMIT;
   
 --
 -- Limiti per le tabelle scaricate

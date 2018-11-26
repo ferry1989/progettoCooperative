@@ -32,6 +32,8 @@
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,8 +63,21 @@
 				<div class="col-lg-4">
 					<form action="../script/esporta_presenze.php" method="post">
 					  <h3>Esporta Presenze</h3>
+					  <div class="form-group mx-sm-3 mb-2">
+							<label for="exampleFormControlInput1">Progetto</label>
+							<select class="form-control" placeholder="settore intervento" id="seleziona_progetti" name='id_progetto' >
+								<option value="-1">-</option>
+							</select>
+						</div>	
 						<div class="form-group mx-sm-3 mb-2">
 							<label for="exampleFormControlInput1">Data Ora Inizio</label>
+							<select class="form-control" name="operatorDataInizio">
+								<option>=</option>
+								<option>>=</option>
+								<option><=</option>
+								<option>></option>
+								<option><</option>
+							</select><br>
 							<div class="input-group date" data-provide="datepicker">
 								<input type="text" class="form-control datepicker" name="dataorainizio">
 								<div class="input-group-addon">
@@ -72,6 +87,13 @@
 						</div>
 						<div class="form-group mx-sm-3 mb-2">
 							<label for="exampleFormControlInput1">Data Ora fine</label>
+							<select class="form-control" name="operatorDataFine">
+								<option>=</option>
+								<option>>=</option>
+								<option><=</option>
+								<option>></option>
+								<option><</option>
+							</select><br>
 							<div class="input-group date" data-provide="datepicker">
 								<input type="text" class="form-control datepicker" name="dataorafine">
 								<div class="input-group-addon">
@@ -98,6 +120,10 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="vendor/metisMenu/metisMenu.min.js"></script>
+	
+	<!-- Boostrap daterimepicker -->
+	<script src="vendor/datepicker/moment.js"></script>
+	<script src="vendor/datepicker/bootstrap-datetimepicker.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
