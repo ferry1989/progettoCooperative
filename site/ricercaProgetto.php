@@ -93,7 +93,7 @@
 					<th>Modifica</th>
 					<th>Elimina</th>
 				</thead>
-				<tbody>
+				<tbody class="results">
 				</tbody>
 			</table>
 
