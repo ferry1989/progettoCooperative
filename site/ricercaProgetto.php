@@ -83,7 +83,7 @@
 			</div>
 			
 			<table id="ricercati">
-				<thead>
+				<thead class="title">
 					<th>Progetto</th>
 					<th>Ente Titolare</th> 
 					<th>Anno Bando</th> 

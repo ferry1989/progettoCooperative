@@ -32,13 +32,14 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
-				<?php
-					if($_SESSION['isAdmin'] == 1){
-				?>
+
 					<!-- Sezione di menu dedicata alla regione e all'admin -->
                         <li>
                             <a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i>Ricerca e Modifica</a>
                         </li>
+                        <?php
+					        if($_SESSION['isAdmin'] == 1){
+				        ?>
 						<li>
                             <a href="inserisciUtente.php"><i class="fa fa-user fa-fw"></i><span data-toggle="modal" data-target="#inserisciente">Crea accessi Ente</span></a>
                         </li>
