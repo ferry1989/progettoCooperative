@@ -91,7 +91,6 @@ function buttonClick() {
     let formClick = $(this)[0];
     let id = formClick.id;
     let divisor = $('.'+id).find('input');
-    console.log(divisor);
     let type, forms;
     let url = '../script/' + id + '.php';
     let json = {};
@@ -125,7 +124,6 @@ function buttonClick() {
             let row = $(this)[0].name;
             let form = $('.'+row)[1].value;
             let file = $('.file').val();
-            console.log(row)
             let id_form = 'id_'+file;
             json[id_form] = form;
             $('.'+row).slideUp('slow').trigger('change');
