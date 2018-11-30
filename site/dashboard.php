@@ -100,6 +100,20 @@
 					</div>
 				  </div>
 				</div>
+
+				<div class="col-lg-4">
+				  <h3>Ricerca Sedi</h3>
+				  <div class="form-group mx-sm-3 mb-2">
+					<div class="progetto">
+						<table>
+							<tr>
+								<td><input class="form-control" placeholder="Nome" name='nomesede' /></td>
+								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_sedi">Cerca</button></td>
+							</tr>
+						</table>
+					</div>
+				  </div>
+				</div>
 				
 			</div>
 

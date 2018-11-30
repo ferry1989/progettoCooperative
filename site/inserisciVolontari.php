@@ -68,13 +68,6 @@
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Sede di assegnazione</label>
-						<select class="form-control" id="seleziona_sedi_progetti" name="id_sedeprogetto">
-							<option value="-1">-</option>
-						</select>
-					</div>
-
-					<div class="form-group">
 						<label for="exampleFormControlInput1">Nome</label>
 						<input type="text" class="form-control" name="nome">
 					</div>
@@ -235,7 +228,16 @@
 						</select>
 					</div>
 
+<<<<<<< HEAD
 					---------------da far scomparire se volontario è diverso da attivo--------------------------
+=======
+					<div class="form-group">
+						<label for="exampleFormControlSelect3">Sede di assegnazione</label>
+						<select class="form-control" id="seleziona_sedi_progetti" name="id_sedeprogetto">
+							<option value="-1">-</option>
+						</select>
+					</div>
+>>>>>>> 3fa559966336ce27e1133bfb1a6fa89dae5881cc
 
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Nome Referente Tutor</label>
@@ -246,8 +248,6 @@
 						<label for="exampleFormControlInput1">Cognome Referente Tutor</label>
 						<input type="text" class="form-control" name="cognomeolp">
 					</div>
-
-					--------------------------------------------------------------------------------------------
 					
 					<button type="submit" class="btn btn-info" id="insert_volontario" >SALVA E CONFERMA</button>
 				</div>
