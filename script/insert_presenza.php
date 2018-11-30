@@ -33,7 +33,6 @@
 			$maternita = new DateTime($presenza['maternita']);
 			$maternita = mysqli_real_escape_string($con,$maternita->format('Ymdhis'));
 			$infortunio = mysqli_real_escape_string($con, $presenza['infortunio']);
-			$compensomensile = mysqli_real_escape_string($con, $presenza['compensomensile']);
 			
 			
 			$verificaVolontario = "SELECT * FROM volontario where id_volontario='$id_volontario'";
@@ -63,7 +62,7 @@
 			}
 			
 			else{
-				$insertpresenza = "INSERT INTO presenza (IBAN, cf, nomecognome, dataOraInizio, dataOraFine, isApprovata, id_volontario, id_progetto, numpermessi, numpermessiusu, perdonazsang, perdonazsangusu, perstudio, perstudiousu, giornimalatt, giornimalattusu, malattnonretrib, malattnonretribusu, assenzaperservizio, assenzaperserviziousu, numgiornilutto, numgiorniluttousu, maternita, infortunio, compensomensile) VALUES ('$iban', '$cf', '$nomecognome', '$dataOraInizio', '$dataOraFine', false, '$id_volontario', '$id_progetto',  '$numpermessi', '$numpermessiusu', '$perdonazsang', '$perdonazsangusu', '$perstudio', '$perstudiousu', '$giornimalatt', '$giornimalattusu', '$malattnonretrib', '$malattnonretribusu', '$assenzaperservizio', '$assenzaperserviziousu', '$numgiornilutto', '$numgiorniluttousu', '$maternita', '$infortunio', '$compensomensile')";
+				$insertpresenza = "INSERT INTO presenza (IBAN, cf, nomecognome, dataOraInizio, dataOraFine, isApprovata, id_volontario, id_progetto, numpermessi, numpermessiusu, perdonazsang, perdonazsangusu, perstudio, perstudiousu, giornimalatt, giornimalattusu, malattnonretrib, malattnonretribusu, assenzaperservizio, assenzaperserviziousu, numgiornilutto, numgiorniluttousu, maternita, infortunio) VALUES ('$iban', '$cf', '$nomecognome', '$dataOraInizio', '$dataOraFine', false, '$id_volontario', '$id_progetto',  '$numpermessi', '$numpermessiusu', '$perdonazsang', '$perdonazsangusu', '$perstudio', '$perstudiousu', '$giornimalatt', '$giornimalattusu', '$malattnonretrib', '$malattnonretribusu', '$assenzaperservizio', '$assenzaperserviziousu', '$numgiornilutto', '$numgiorniluttousu', '$maternita', '$infortunio')";
 				if (!mysqli_query($con,$insertpresenza)) {
 					$msg = array("error"=>mysqli_error($con));
 				}

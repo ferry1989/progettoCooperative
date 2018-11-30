@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Nov 26, 2018 alle 03:37
+-- Creato il: Nov 30, 2018 alle 03:24
 -- Versione del server: 5.7.23
 -- Versione PHP: 7.1.21
 
@@ -25,6 +25,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `contratto`
+--
+
+CREATE TABLE `contratto` (
+  `id_contratto` int(11) NOT NULL,
+  `tipo` text NOT NULL,
+  `compenso` double DEFAULT NULL,
+  `costoassenza` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `ente`
 --
 
@@ -39,16 +52,9 @@ CREATE TABLE `ente` (
   `web` text NOT NULL,
   `email` text NOT NULL,
   `pec` text NOT NULL,
-  `fax` text NOT NULL
+  `fax` text NOT NULL,
+  `id_utente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dump dei dati per la tabella `ente`
---
-
-INSERT INTO `ente` (`id_ente`, `telefono`, `nomeEnte`, `codfis`, `tipo`, `rapplegale`, `cod`, `web`, `email`, `pec`, `fax`) VALUES
-(3, '324324', 'proloco padova', 'dslkfjdfjkjlkjlk', '', 'Marco Andrea', '234', 'www.totboobobo.it', 'ciao@gmail.com', 'ciao@gmail.com', '234324'),
-(4, 'sdf', 'dfsd', 'ff', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -77,33 +83,24 @@ CREATE TABLE `presenza` (
   `id_progetto` int(11) NOT NULL,
   `nomecognome` text NOT NULL,
   `cf` text NOT NULL,
-  `numpermessi` text NOT NULL,
-  `numpermessiusu` text NOT NULL,
-  `perdonazsang` text NOT NULL,
-  `perdonazsangusu` text NOT NULL,
-  `perstudio` text NOT NULL,
-  `perstudiousu` text NOT NULL,
-  `giornimalatt` text NOT NULL,
-  `giornimalattusu` text NOT NULL,
-  `malattnonretrib` text NOT NULL,
-  `malattnonretribusu` text NOT NULL,
-  `assenzaperservizio` text NOT NULL,
-  `assenzaperserviziousu` text NOT NULL,
-  `numgiornilutto` text NOT NULL,
-  `numgiorniluttousu` text NOT NULL,
+  `numpermessi` int(11) NOT NULL,
+  `numpermessiusu` int(11) NOT NULL,
+  `perdonazsang` int(11) NOT NULL,
+  `perdonazsangusu` int(11) NOT NULL,
+  `perstudio` int(11) NOT NULL,
+  `perstudiousu` int(11) NOT NULL,
+  `giornimalatt` int(11) NOT NULL,
+  `giornimalattusu` int(11) NOT NULL,
+  `malattnonretrib` int(11) NOT NULL,
+  `malattnonretribusu` int(11) NOT NULL,
+  `assenzaperservizio` int(11) NOT NULL,
+  `assenzaperserviziousu` int(11) NOT NULL,
+  `numgiornilutto` int(11) NOT NULL,
+  `numgiorniluttousu` int(11) NOT NULL,
   `maternita` date NOT NULL,
   `infortunio` text NOT NULL,
-  `IBAN` text NOT NULL,
-  `compensomensile` double NOT NULL
+  `IBAN` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dump dei dati per la tabella `presenza`
---
-
-INSERT INTO `presenza` (`id_presenza`, `dataOraInizio`, `dataOraFine`, `isApprovata`, `id_volontario`, `id_progetto`, `nomecognome`, `cf`, `numpermessi`, `numpermessiusu`, `perdonazsang`, `perdonazsangusu`, `perstudio`, `perstudiousu`, `giornimalatt`, `giornimalattusu`, `malattnonretrib`, `malattnonretribusu`, `assenzaperservizio`, `assenzaperserviziousu`, `numgiornilutto`, `numgiorniluttousu`, `maternita`, `infortunio`, `IBAN`, `compensomensile`) VALUES
-(2, '2018-11-23 12:14:00', '2018-11-23 12:14:00', 0, 1, 2, 'Marco Rossi', 'sfaaf', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-11-23', '', '', 1),
-(3, '2018-11-22 12:31:00', '2018-11-29 12:31:00', 0, 1, 2, 'Marco Rossi', 'sfaaf', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2018-11-29', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -127,14 +124,6 @@ CREATE TABLE `progetto` (
   `36sett` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dump dei dati per la tabella `progetto`
---
-
-INSERT INTO `progetto` (`id_progetto`, `titolo`, `id_ente`, `annobando`, `settoreprevalente`, `altrosettore`, `sedidiattuazione`, `numerovolontari`, `numgiornidiservizio`, `nhorestettiman`, `24sett`, `28sett`, `36sett`) VALUES
-(2, 'Progetto10', '2', '2018', 'Assistenza e servizio sociale', '', '1', '0', '0', '0', '', '', ''),
-(3, 'test', '3', '121', 'Valorizzazione del patrimonio storico, artistico e ambientale', 'df', '', '0', '0', '0', '12', '22', '22');
-
 -- --------------------------------------------------------
 
 --
@@ -157,15 +146,6 @@ CREATE TABLE `sede` (
   `sitoweb` text NOT NULL,
   `emailordinaria` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dump dei dati per la tabella `sede`
---
-
-INSERT INTO `sede` (`id_sede`, `id_ente`, `indirizzo`, `denominazione`, `numvolontari`, `provincia`, `comune`, `numcivico`, `capsede`, `telefono`, `fax`, `titologiuridico`, `sitoweb`, `emailordinaria`) VALUES
-(1, 2, 'via 1 sede', 'Sede 1', 3, 'padova', 'padoca', '12', '30179', '', 'Atto di affido', 'Atto di affido', '', 'a@bello.it'),
-(2, 2, '', 'SEDE222', 2, 'venezia', 'venezia', '22', '', '', 'Atto di affido', 'Atto di affido', '', ''),
-(3, 3, '', 'sfds', NULL, 'Belluno', '', '', '', '', '-', '-', '', '');
 
 -- --------------------------------------------------------
 
@@ -191,13 +171,6 @@ CREATE TABLE `sediprogetti` (
   `id_progetto` int(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dump dei dati per la tabella `sediprogetti`
---
-
-INSERT INTO `sediprogetti` (`id_sedeprogetto`, `id_sede`, `id_progetto`) VALUES
-(3, 3, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -210,16 +183,6 @@ CREATE TABLE `utente` (
   `password` text NOT NULL,
   `isAdmin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dump dei dati per la tabella `utente`
---
-
-INSERT INTO `utente` (`id_utente`, `user`, `password`, `isAdmin`) VALUES
-(3, 'regione', '123', 1),
-(4, 'enteprova', '123', 0),
-(5, 'comunevigonza', '123', 0),
-(6, 'test', '2123', -1);
 
 -- --------------------------------------------------------
 
@@ -253,18 +216,9 @@ CREATE TABLE `volontario` (
   `indirizzodomicilio` text NOT NULL,
   `id_sedeprogetto` int(255) NOT NULL,
   `numcivicodomic` text NOT NULL,
-  `capdomic` text NOT NULL
+  `capdomic` text NOT NULL,
+  `id_contratto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dump dei dati per la tabella `volontario`
---
-
-INSERT INTO `volontario` (`id_volontario`, `nome`, `cognome`, `codFiscale`, `sesso`, `titolodistudio`, `stato`, `giornidiservizio`, `nomeolp`, `cognomeolp`, `codiceiban`, `provincianazionenascita`, `esteronasc`, `comuneesteronascita`, `provincianazioneresidenza`, `esterores`, `comuneesteroresidenta`, `indirizzoresidenza`, `numcivicoresidenza`, `capresidenza`, `provinciadomicilio`, `comunedomicilio`, `indirizzodomicilio`, `id_sedeprogetto`, `numcivicodomic`, `capdomic`) VALUES
-(2, 'sdfsdfs', 'cognomeefs', 'cfsds', 'M', 'Laurea magistrale', 'Attivo', '0', 'olp', 'owe', 'sdfs', 'sdfsd', 0, 'sdf', 'sdfs', 0, 'sdf', 'sdfs', '23', '2342', 'Belluno', 'sdf', 'fds', -1, '23', '23'),
-(3, '', '', '', '-1', '', '', '0', '', '', '', '', -1, '', '', -1, '', '', '', '', '-', '', '', 1, '', ''),
-(4, 'werw', 'rw', 'wew', 'F', '', '', '0', '', '', '', '', -1, '', '', -1, '', '', '', '', '-', '', '', 3, '', ''),
-(5, 'werw', 'rw', 'wewrwe', 'F', '', '', '0', 'tete', 'werwer', '', '', -1, '', '', -1, '', '', '', '', '-', '', '', 3, '', '');
 
 -- --------------------------------------------------------
 
@@ -281,6 +235,12 @@ CREATE TABLE `volontarioprogetto` (
 --
 -- Indici per le tabelle scaricate
 --
+
+--
+-- Indici per le tabelle `contratto`
+--
+ALTER TABLE `contratto`
+  ADD PRIMARY KEY (`id_contratto`);
 
 --
 -- Indici per le tabelle `ente`
@@ -352,46 +312,52 @@ ALTER TABLE `volontarioprogetto`
 --
 
 --
+-- AUTO_INCREMENT per la tabella `contratto`
+--
+ALTER TABLE `contratto`
+  MODIFY `id_contratto` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT per la tabella `ente`
 --
 ALTER TABLE `ente`
-  MODIFY `id_ente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_ente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `presenza`
 --
 ALTER TABLE `presenza`
-  MODIFY `id_presenza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_presenza` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `progetto`
 --
 ALTER TABLE `progetto`
-  MODIFY `id_progetto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_progetto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `sede`
 --
 ALTER TABLE `sede`
-  MODIFY `id_sede` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_sede` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `sediprogetti`
 --
 ALTER TABLE `sediprogetti`
-  MODIFY `id_sedeprogetto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_sedeprogetto` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `utente`
 --
 ALTER TABLE `utente`
-  MODIFY `id_utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_utente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `volontario`
 --
 ALTER TABLE `volontario`
-  MODIFY `id_volontario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_volontario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `volontarioprogetto`
