@@ -65,6 +65,13 @@
 					</div>
 
 					<div class="form-group">
+						<label for="exampleFormControlSelect3">Ente</label>
+						<select class="form-control" id="seleziona_utenti" name="id_utente">
+							<option value="-1">-</option>
+						</select>
+					</div>
+
+					<div class="form-group">
 					<label for="exampleFormControlInput1">Telefono</label>
 					<input type="text" class="form-control" name="telefono">
 					</div>
@@ -108,6 +115,8 @@
 					<label for="exampleFormControlInput1">Fax</label>
 						<input type="text" class="form-control" name="fax">
 					</div>
+
+
 					
 					<button type="submit" class="btn btn-info" id="insert_ente" >SALVA E CONFERMA</button>
 				</div>

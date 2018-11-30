@@ -18,6 +18,9 @@
 			if($titolo != null && $titolo != ""){
 				$selezionaProgetti .= "and titolo LIKE '%$titolo%'";
 			}
+			if($_SESSION["id_ente"] != null && $_SESSION["id_ente"] != ""){
+				$selezionaProgetti .= "and id_ente = ".$_SESSION["id_ente"];
+			}
 			if($id_ente != null && $id_ente != ""){
 				$selezionaEnti .= "and trim(id_ente) LIKE '%$id_ente%'";
 			}

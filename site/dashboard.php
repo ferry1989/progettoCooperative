@@ -52,20 +52,29 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Benvenuto '<?php $_SESSION['username'] ?>'</h2>
+					<h2 class="page-header text-primary">Benvenuto <?php echo $_SESSION['nomeEnte'] ?></h2>
 				</div>
 			</div>
 
 			<div class="row">
 				<input type="hidden" class="type" value="search">
+
+				<?php
+					if($_SESSION['isAdmin'] == 1){
+				?>
 					 
 				<div class="col-lg-4">
 				  <h3>Ricerca Ente</h3>
 				  <div class="form-group mx-sm-3 mb-2">
-					<div class="ente">
+					<div class="ente seleziona_enti">
+						<input type="hidden" class="file" value="ente">
+						<input type="hidden" class="type" value="search">
 						<table>
 							<tr>
 								<td><input class="form-control" placeholder="Denominazione" name='denominazione' /></td>
+								<td><input class="form-control" placeholder="Codice Fiscale" name='codFisc' /></td>
+								<td><input class="form-control" placeholder="Email" name='email' /></td>
+								<td><input class="form-control" placeholder="Pec" name='pec' /></td>
 								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_enti">Cerca</button></td>
 							</tr>
 						</table>
@@ -73,13 +82,25 @@
 				  </div>
 				</div>
 
+				<?php	
+					}
+				?>
+
 				<div class="col-lg-4">
 				  <h3>Ricerca Progetto</h3>
 				  <div class="form-group mx-sm-3 mb-2">
-					<div class="progetto">
+					<div class="progetto seleziona_progetti">
+						<input type="hidden" class="file" value="progetto">
+						<input type="hidden" class="type" value="search">
 						<table>
 							<tr>
 								<td><input class="form-control" placeholder="Denominazione" name='titolo' /></td>
+								<td><select class="form-control" placeholder="settore intervento" id="seleziona_enti" name='id_ente' >
+										<option value="-1">-</option>
+									</select>
+								</td>
+								<td><input class="form-control" placeholder="settore intervento" name='settoreprevalente' /></td>
+								
 								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_progetti">Cerca</button></td>
 							</tr>
 						</table>
@@ -88,12 +109,17 @@
 				</div>
 
 				<div class="col-lg-4">
-				  <h3>Ricerca Volontario</h3>
+				  <h3>Ricerca Volontari</h3>
 				  <div class="form-group mx-sm-3 mb-2">
-					<div class="progetto">
+					<div class="ente seleziona_volontari">
+						<input type="hidden" class="file" value="volontario">
+						<input type="hidden" class="type" value="search">
 						<table>
 							<tr>
 								<td><input class="form-control" placeholder="Nome" name='nomevolontario' /></td>
+								<td><input class="form-control" placeholder="Cognome" name='cognomevolontario' /></td>
+								<td><input class="form-control" placeholder="stato" name='statovolontario' /></td>
+								<td><input class="form-control" placeholder="progetto" name='progettovolontario' /></td>
 								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_volontari">Cerca</button></td>
 							</tr>
 						</table>
@@ -104,7 +130,9 @@
 				<div class="col-lg-4">
 				  <h3>Ricerca Sedi</h3>
 				  <div class="form-group mx-sm-3 mb-2">
-					<div class="progetto">
+					<div class="sede seleziona_sedi">
+						<input type="hidden" class="file" value="sede">
+						<input type="hidden" class="type" value="search">
 						<table>
 							<tr>
 								<td><input class="form-control" placeholder="Nome" name='nomesede' /></td>
@@ -118,7 +146,7 @@
 			</div>
 
 			<table id="ricercati">
-				<thead>
+				<thead class="title">
 				</thead>
 				<tbody class="results">
 				</tbody>
@@ -144,6 +172,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 	<script type="text/javascript" src="js/libform.js"></script>
+	<script type="text/javascript" src="js/util.js"></script>
 
 </body>
 

@@ -39,7 +39,8 @@ var fillForm = function (rows) {
 		if(skip > 0){
 			let values = '';
 			$.each(row, function(k, v) {
-				values += v+' ';
+                if( k == 'nomeEnte' || k == 'titolo' || k == 'denominazione' || k == 'nome' || k == 'user')
+				    values += v+' ';
 			});
             $('select[name*='+form+']').append('<option value=' + row[form] + '>' + values +'</option>');
         }else{
@@ -65,23 +66,54 @@ function fillSelect (forms) {
     }
 }
 
+//title for select form in dashboard
+function title(title) {
+    if( title == 'progetto'){
+        $('.title').html('');
+        $('.title').append('<th>Progetto</th><th>Ente Titolare</th><th>Anno Bando</th><th>Ente Titolare</th><th>Sede Attuazione</th><th>Modifica</th><th>Elimina</th>');
+    }
+    if(title == 'volontario'){
+        $('.title').html('');
+        $('.title').append('<th>Nome</th><th>Cognome</th><th>Codice Fiscale</th><th>Sesso</th><th>Nazionalita</th><th>Titolo Studio</th><th>Nome OLP</th><th>Cognome OLP</th><th>COD IBAN</th><th>Modifica</th><th>Elimina</th>');
+    }
+    if(title == 'ente'){
+        $('.title').html('');
+        $('.title').append('<th>ID</th><th>Telefono</th><th>Denominazione</th><th>Cod. Fiscale</th><th>Tipo</th><th>Rapp. Legale</th><th>Cod</th><th>Web</th><th>Email</th><th>Pec</th><th>Fax</th><th>Modifica</th><th>Elimina</th>');
+    }
+    if(title == 'sede'){
+        $('.title').html('');
+        $('.title').append('<th>Progetto</th><th>Sede</th><th>Modifica</th><th>Elimina</th>');
+    }
+}
+
 //function used for insert or remove or select rows from db
 function buttonClick() {
     let formClick = $(this)[0];
     let id = formClick.id;
+    let divisor = $('.'+id).find('input');
+    let type, forms;
     let url = '../script/' + id + '.php';
     let json = {};
     let success = generalInsert;
 
     if( ( id.indexOf('insert') > -1 ) || ( id.indexOf('seleziona') > -1 ) ) {
-        let type = $('.type').val();
-        let forms = $('.form-control');
+
+        if( id.indexOf('seleziona') > -1 ){
+            type = divisor[1].value;
+            forms = divisor.find('.form-control');
+            success= selectForm;
+            title(divisor[0].value);
+        }
+
+        if( id.indexOf('insert') > -1 ){
+            type = $('.type').val();
+            forms = $('.form-control');
+        }
+
         json = {'type':type,'fillForm':'select'};
         for (var form of forms)
             json[form.name] = form.value;
 
-        if( id.indexOf('seleziona') > -1 )
-            success= selectForm;
     }else{
         if( id.indexOf('aggiorna') > -1 ) {
             let row = $(this)[0].name;
@@ -94,6 +126,7 @@ function buttonClick() {
             let file = $('.file').val();
             let id_form = 'id_'+file;
             json[id_form] = form;
+            $('.'+row).slideUp('slow').trigger('change');
         }
     }
 

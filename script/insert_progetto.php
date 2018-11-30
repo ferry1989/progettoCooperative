@@ -18,7 +18,6 @@
 			$sett28 = trim(mysqli_real_escape_string($con, $progetto['28sett']));
 			$sett36 = trim(mysqli_real_escape_string($con, $progetto['36sett']));
 			$sedidiattuazione = trim(mysqli_real_escape_string($con, $progetto['id_sede']));
-			
 			$titolo = mysqli_real_escape_string($con, $progetto['titolo']);
 			
  			$verificaProgetto = "SELECT titolo FROM progetto where titolo='$titolo'";

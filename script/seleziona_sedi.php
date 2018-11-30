@@ -18,6 +18,9 @@
 			if($id_sede != null && $id_sede != ""){
 				$selezionaSedi .= "and id_sede='$id_sede'";
 			}
+			if($_SESSION["id_ente"] != null && $_SESSION["id_ente"] != ""){
+				$selezionaSedi .= "and id_ente = ".$_SESSION["id_ente"];
+			}
 			if($id_ente != null && $id_ente != ""){
 				$selezionaSedi .= "and id_ente='$id_ente'";
 			}
