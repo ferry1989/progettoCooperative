@@ -8,7 +8,7 @@ var selectForm = function(rows) {
     if(rows.error) {
         alert(rows.error)
     }else{
-        $('.results').html('')
+        $('.results').html('');
         var skip = 0;
         var lines = 0;
         let file = $('.file').val();

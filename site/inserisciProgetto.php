@@ -108,6 +108,16 @@
 						<input type="text" class="form-control" name="36sett">
 					</div>
 
+					<div class="form-group">
+					<label for="exampleFormControlSelect3">Stato progetto</label>
+					<select class="form-control" name="settprev">
+						<option></option>
+						<option>Attivo</option>
+						<option>Concluso</option>
+						<option>Ritirato</option>
+					</select>
+					</div>
+
 					<button type="submit" class="btn btn-info" id="insert_progetto" >SALVA E CONFERMA</button>
 				</div>
 			</div>
