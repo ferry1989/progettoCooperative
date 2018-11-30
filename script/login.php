@@ -6,13 +6,17 @@ $msg = "";
 	if($con != null){
 		$username = mysqli_real_escape_string($con, $_POST['username']);
 		$password = mysqli_real_escape_string($con, $_POST['password']);
-		$verificaUtente = "SELECT isAdmin,user FROM utente where user = '$username' and password = '$password'";
+		$verificaUtente = "SELECT u.isAdmin,u.user , e.id_ente ".
+						"	FROM utente u ".
+						"	left join ente e on u.id_utente = e.id_utente ".
+						"	where u.user = '$username' and u.password = '$password'";
 		$result = mysqli_query($con,$verificaUtente);
 
 		if ($row = $result->fetch_assoc()) {
 			session_start();
 			$_SESSION['isAdmin'] = $row["isAdmin"];
 			$_SESSION['username'] = trim($row["user"]);
+			$_SESSION['id_ente'] = trim($row["id_ente"]);
 			$msg = array("success"=>"Login Effettuato");
 			header("location: ../site/dashboard.php");
 		}

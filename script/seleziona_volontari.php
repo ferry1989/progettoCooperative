@@ -18,7 +18,10 @@
 			$codFiscale = trim(mysqli_real_escape_string($con, $filtri['codFiscale']));
 			$id_ente = trim(mysqli_real_escape_string($con, $filtri['id_ente']));
 
-			$selezionaVolontari = "SELECT * FROM volontario WHERE 1=1 ";
+			$selezionaVolontari = "select v.*, e.id_ente ".
+									"from volontario v ".
+									"join progetto p on v.id_progetto = p.id_progetto ".
+									"join ente e on p.id_ente = e.id_ente WHERE 1=1 ";
 			if($id_volontario != null && $id_volontario != ""){
 				$selezionaVolontari .= "and id_volontario='$id_volontario'";
 			}
@@ -34,8 +37,8 @@
 			if($codFiscale != null && $codFiscale != ""){
 				$selezionaVolontari .= "and trim(codFiscale) LIKE '%$codFiscale%'";
 			}
-			if($id_ente != null && $id_ente != ""){
-				$selezionaVolontari .= "and id_ente='$id_ente'";
+			if($_SESSION["id_ente"] != null && $_SESSION["id_ente"] != ""){
+				$selezionaVolontari .= "and e.id_ente = ".$_SESSION["id_ente"];
 			}
 		}else{
 			$selezionaVolontari = "SELECT * FROM volontario WHERE 1=1 ";

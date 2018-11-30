@@ -19,6 +19,7 @@
 			$email = mysqli_real_escape_string($con, $ente['email']);
 			$pec = mysqli_real_escape_string($con, $ente['pec']);
 			$fax = mysqli_real_escape_string($con, $ente['fax']);
+			$id_utente = mysqli_real_escape_string($con, $ente['id_utente']);
 			
 			$verificaEnte = "SELECT id_ente FROM ente where trim(codfis)='$codfis'";
 			$result = mysqli_query($con,$verificaEnte);
@@ -30,7 +31,7 @@
 				return;
 			}
 			
-			$insertente = "INSERT INTO ente (nomeEnte, telefono, codfis, tipo, rapplegale, cod, web, email, pec, fax)  VALUES ('$nomeEnte', '$telefono', '$codfis', '$tipo', '$rapplegale', '$cod', '$web', '$email', '$pec', '$fax')";
+			$insertente = "INSERT INTO ente (nomeEnte, telefono, codfis, tipo, rapplegale, cod, web, email, pec, fax, id_utente)  VALUES ('$nomeEnte', '$telefono', '$codfis', '$tipo', '$rapplegale', '$cod', '$web', '$email', '$pec', '$fax', '$id_utente')";
 
 			if (!mysqli_query($con,$insertente)) {
 				$msg = array("error"=>mysqli_error($con));

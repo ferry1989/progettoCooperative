@@ -39,7 +39,7 @@ var fillForm = function (rows) {
 		if(skip > 0){
 			let values = '';
 			$.each(row, function(k, v) {
-                if( k == 'nomeEnte' || k == 'titolo' || k == 'denominazione' || k == 'nome')
+                if( k == 'nomeEnte' || k == 'titolo' || k == 'denominazione' || k == 'nome' || k == 'user')
 				    values += v+' ';
 			});
             $('select[name*='+form+']').append('<option value=' + row[form] + '>' + values +'</option>');
