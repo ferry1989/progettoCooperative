@@ -228,16 +228,13 @@
 						</select>
 					</div>
 
-<<<<<<< HEAD
-					---------------da far scomparire se volontario è diverso da attivo--------------------------
-=======
+
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Sede di assegnazione</label>
 						<select class="form-control" id="seleziona_sedi_progetti" name="id_sedeprogetto">
 							<option value="-1">-</option>
 						</select>
 					</div>
->>>>>>> 3fa559966336ce27e1133bfb1a6fa89dae5881cc
 
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Nome Referente Tutor</label>
