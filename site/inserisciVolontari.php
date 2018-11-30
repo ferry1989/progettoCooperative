@@ -3,6 +3,7 @@
 	if(empty($_SESSION['username'])){
 		header("location: /site/index.html"); 
 	}
+	include_once '../config/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -220,8 +221,21 @@
 						<label for="exampleFormControlInput1">Codice IBAN</label>
 						<input type="text" class="form-control" name="codiceiban">
 					</div>
+					
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Tipo Contratto</label>
+						<select class="form-control" name="id_contratto">
+							<option value="-1">-</option>
+							<?php 
+								$result = mysqli_query($con,"select * from contratto");
+								while($row = $result->fetch_assoc()) {
+									echo "<option value=".$row["id_contratto"].">".$row["tipo"]."</option>";
+								}
+							?>
+						</select>
+					</div>
 
-					---------------da far scomparire se volontario è diverso da attivo----------------------------
+					---------------da far scomparire se volontario è diverso da attivo--------------------------
 
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Nome Referente Tutor</label>

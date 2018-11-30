@@ -33,6 +33,7 @@
 			$id_sedeprogetto = mysqli_real_escape_string($con, $volontario['id_sedeprogetto']);
 			$numcivicodomic = mysqli_real_escape_string($con, $volontario['numcivicodomic']);
 			$capdomic = mysqli_real_escape_string($con, $volontario['capdomic']);
+			$id_contratto = mysqli_real_escape_string($con, $volontario['id_contratto']);
 
 			$verificaVolontario = "SELECT codFiscale FROM volontario where codFiscale='$codFiscale'";
 			$result = mysqli_query($con,$verificaVolontario);
@@ -40,7 +41,7 @@
 			if ($result->num_rows > 0) {
 				$msg = array("error"=>"Volontario già creato!");
 			}else{
-				$insertvolontario = "INSERT INTO volontario (nome,cognome,codFiscale,sesso,titolodistudio,stato,nomeolp,cognomeolp,codiceiban,provincianazionenascita,esteronasc,comuneesteronascita,provincianazioneresidenza,esterores,comuneesteroresidenta,indirizzoresidenza,numcivicoresidenza,capresidenza,provinciadomicilio,comunedomicilio,indirizzodomicilio,giornidiservizio,id_sedeprogetto,numcivicodomic,capdomic) VALUES ('$nome','$cognome','$codFiscale','$sesso','$titolodistudio','$stato','$nomeolp','$cognomeolp','$codiceiban','$provincianazionenascita','$esterores','$comuneesteronascita','$provincianazioneresidenza','$esterores','$comuneesteroresidenta','$indirizzoresidenza','$numcivicoresidenza','$capresidenza','$provinciadomicilio','$comunedomicilio','$indirizzodomicilio','0','$id_sedeprogetto','$numcivicodomic','$capdomic')";
+				$insertvolontario = "INSERT INTO volontario (nome,cognome,codFiscale,sesso,titolodistudio,stato,nomeolp,cognomeolp,codiceiban,provincianazionenascita,esteronasc,comuneesteronascita,provincianazioneresidenza,esterores,comuneesteroresidenta,indirizzoresidenza,numcivicoresidenza,capresidenza,provinciadomicilio,comunedomicilio,indirizzodomicilio,giornidiservizio,id_sedeprogetto,numcivicodomic,capdomic,id_contratto) VALUES ('$nome','$cognome','$codFiscale','$sesso','$titolodistudio','$stato','$nomeolp','$cognomeolp','$codiceiban','$provincianazionenascita','$esterores','$comuneesteronascita','$provincianazioneresidenza','$esterores','$comuneesteroresidenta','$indirizzoresidenza','$numcivicoresidenza','$capresidenza','$provinciadomicilio','$comunedomicilio','$indirizzodomicilio','0','$id_sedeprogetto','$numcivicodomic','$capdomic','$id_contratto')";
 				if (!mysqli_query($con,$insertvolontario)) {
 						$msg = array("error"=>mysqli_error($con));
 					}else{

@@ -98,72 +98,72 @@
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Permessi</label>
-						<input type="text" class="form-control" name="numpermessi">
+						<input type="text" class="form-control" name="numpermessi" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Permessi usu</label>
-						<input type="text" class="form-control" name="numpermessiusu">
+						<input type="text" class="form-control" name="numpermessiusu" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Permessi Donazione Sangue</label>
-						<input type="text" class="form-control" name="perdonazsang">
+						<input type="text" class="form-control" name="perdonazsang" value="0">
 					</div>
 
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Permessi Donazione Sangue usu</label>
-						<input type="text" class="form-control" name="perdonazsangusu">
+						<input type="text" class="form-control" name="perdonazsangusu" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Permessi Studio</label>
-						<input type="text" class="form-control" name="perstudio">
+						<input type="text" class="form-control" name="perstudio" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Permessi Studio usu</label>
-						<input type="text" class="form-control" name="perstudiousu">
+						<input type="text" class="form-control" name="perstudiousu" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Malattia</label>
-						<input type="text" class="form-control" name="giornimalatt">
+						<input type="text" class="form-control" name="giornimalatt" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Malattia usu</label>
-						<input type="text" class="form-control" name="giornimalattusu">
+						<input type="text" class="form-control" name="giornimalattusu" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Malattia non Retribuita</label>
-						<input type="text" class="form-control" name="malattnonretrib">
+						<input type="text" class="form-control" name="malattnonretrib" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Malattia non Retribuita usu</label>
-						<input type="text" class="form-control" name="malattnonretribusu">
+						<input type="text" class="form-control" name="malattnonretribusu" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Assenza per Servizio</label>
-						<input type="text" class="form-control" name="assenzaperservizio">
+						<input type="text" class="form-control" name="assenzaperservizio" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Assenza per Servizio usu</label>
-						<input type="text" class="form-control" name="assenzaperserviziousu">
+						<input type="text" class="form-control" name="assenzaperserviziousu" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Lutto</label>
-						<input type="text" class="form-control" name="numgiornilutto">
+						<input type="text" class="form-control" name="numgiornilutto" value="0">
 					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Lutto usu</label>
-						<input type="text" class="form-control" name="numgiorniluttousu">
+						<input type="text" class="form-control" name="numgiorniluttousu" value="0">
 					</div>
 					
 					<div class="form-group">
@@ -178,12 +178,7 @@
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Infortunio</label>
-						<input type="text" class="form-control" name="infortunio">
-					</div>
-					
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Compenso Mensile</label>
-						<input type="text" class="form-control" name="compensomensile">
+						<input type="text" class="form-control" name="infortunio" value="0">
 					</div>
 					
 					<button type="submit" class="btn btn-info" id="insert_presenza" >SALVA E CONFERMA</button>

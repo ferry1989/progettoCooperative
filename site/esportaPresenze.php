@@ -107,6 +107,17 @@
 					</form>
 				</div>
 			</div>
+			
+			<div class="row">
+				<div class="col-lg-4">
+					<form action="../script/esporta_presenze_meseprec.php" method="post">
+						<h3>Esporta Presenze Mese precedente</h3>
+						<div class="form-group mx-sm-3 mb-2">
+							<button type="submit" class="btn btn-primary mb-1" id="seleziona_enti">Esporta</button>
+						</div>
+					</form>
+				</div>
+			</div>
 
 		</div>
 	</div>
