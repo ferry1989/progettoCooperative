@@ -23,7 +23,7 @@
 		$msg = array();
 		array_push($msg,array("fillForm"=>$fillForm));
 		while($row = $result->fetch_assoc()) {
-			$addSede = array("id_sede"=>$row["id_sede"], "id_ente"=>$row["id_ente"], "indirizzo"=>$row["indirizzo"], "denominazione"=>$row["denominazione"], "numvolontari"=>$row["numvolontari"], "provinicia"=>$row["provincia"], "comune"=>$row["comune"], "numcivico"=>$row["numcivico"], "capsede"=>$row["capsede"], "telefono"=>$row["telefono"], "fax"=>$row["fax"], "titologiuridico"=>$row["titologiuridico"], "sitoweb"=>$row["sitoweb"], "emailordinaria"=>$row["emailordinaria"]);
+			$addSede = array("id_sede"=>$row["id_sede"], "id_ente"=>$row["id_ente"], "indirizzo"=>$row["indirizzo"], "denominazione"=>$row["denominazione"], "numvolontari"=>$row["numvolontari"], "provincia"=>$row["provincia"], "comune"=>$row["comune"], "numcivico"=>$row["numcivico"], "capsede"=>$row["capsede"], "telefono"=>$row["telefono"], "fax"=>$row["fax"], "titologiuridico"=>$row["titologiuridico"], "sitoweb"=>$row["sitoweb"], "emailordinaria"=>$row["emailordinaria"]);
 			array_push($msg, $addSede);
 		}
 		

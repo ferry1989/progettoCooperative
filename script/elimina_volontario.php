@@ -6,9 +6,9 @@
 		$foo = file_get_contents("php://input");
 
 		$volontario = json_decode($foo, true);
-		$idVolontario = mysqli_real_escape_string($con, $volontario['id_volontario']);
+		$id_volontario = mysqli_real_escape_string($con, $volontario['id_volontario']);
 		
-		$verificavolontario = "SELECT id_volontario FROM volontario where id_volontario = '$idVolontario'";
+		$verificavolontario = "SELECT id_volontario FROM volontario where id_volontario = '$id_volontario'";
 		$result = mysqli_query($con,$verificavolontario);
 
 		if ($result->num_rows == 0) {
@@ -19,7 +19,7 @@
 		}
 		
 		else{
-			$deletePresenza ="delete from volontario where id_volontario = '$idVolontario'";
+			$deletePresenza ="delete from volontario where id_volontario = '$id_volontario'";
 			if (!mysqli_query($con,$deletePresenza)) {
 				$msg = array("error"=>mysqli_error($con));
 			}

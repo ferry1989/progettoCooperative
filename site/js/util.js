@@ -1,3 +1,28 @@
+
+function highlightRequiredFields(forms,labels) {
+    var cont = 0;
+
+    for(var form of forms) {
+        if( $(labels[cont])[0].innerHTML.indexOf('*') > -1 && ( form.value == "" || form.value == "-1") ){
+            $(form).addClass('required');
+        }
+        cont++;
+    }
+}
+
+function checkMandatoryFields(forms,labels) {
+    var cont = 0;
+
+    for(var form of forms) {
+        if( $(labels[cont])[0].innerHTML.indexOf('*') > -1 && form.value == "" ){
+            highlightRequiredFields(forms,labels);
+            return false;
+        }
+        cont++;
+    }
+    return true;
+}
+
 $(document).ready(function() {
 
     var state = $('select[name="stato"]');

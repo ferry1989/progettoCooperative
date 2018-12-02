@@ -6,7 +6,7 @@
 		$foo = file_get_contents("php://input");
 
 		$utente = json_decode($foo, true);
-		$idUtente = mysqli_real_escape_string($con, $utente['idUtente']);
+		$idUtente = mysqli_real_escape_string($con, $utente['id_utente']);
 		$user = mysqli_real_escape_string($con, $utente['user']);
 		$password = mysqli_real_escape_string($con, $utente['password']);
 		$isAdmin = mysqli_real_escape_string($con, $utente['isAdmin']);

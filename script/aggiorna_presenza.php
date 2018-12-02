@@ -6,12 +6,12 @@
 		$foo = file_get_contents("php://input");
 
 		$presenza = json_decode($foo, true);
-		$idPresenza = mysqli_real_escape_string($con, $presenza['idPresenza']);
+		$id_presenza = mysqli_real_escape_string($con, $presenza['id_presenza']);
 		$dataOraInizio = mysqli_real_escape_string($con, $presenza['dataOraInizio']);
 		$dataOraFine = mysqli_real_escape_string($con, $presenza['dataOraFine']);
 		$isApprovata = mysqli_real_escape_string($con, $presenza['isApprovata']);
 		
-		$verificaUtente = "SELECT id_presenza FROM presenza where id_presenza='$idPresenza'";
+		$verificaUtente = "SELECT id_presenza FROM presenza where id_presenza='$id_presenza'";
 		$result = mysqli_query($con,$verificaUtente);
 
 		if ($result->num_rows == 0) {
@@ -22,7 +22,7 @@
 		}
 		
 		else{
-			$updatePresenza="update presenza set dataOraInizio = '$dataOraInizio', dataOraFine = '$dataOraFine', isApprovata = '$isApprovata' where id_presenza = '$idPresenza'";
+			$updatePresenza="update presenza set dataOraInizio = '$dataOraInizio', dataOraFine = '$dataOraFine', isApprovata = '$isApprovata' where id_presenza = '$id_presenza'";
 			if (!mysqli_query($con,$updatePresenza)) {
 				$msg = array("error"=>mysqli_error($con));
 			}

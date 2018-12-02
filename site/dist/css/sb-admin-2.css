@@ -432,3 +432,7 @@ table.dataTable thead .sorting:after {
     border-left-width: 0;
   }
 }
+.required{
+  background-color: #ffe6e6;
+  border-color: #e60000;
+}
