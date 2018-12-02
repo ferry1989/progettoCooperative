@@ -58,7 +58,6 @@
 
 			<div class="row">	
 				<div class="progettosede">
-					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Progetto</label>
 						<select class="form-control" id="seleziona_progetti" name="id_progetto">
@@ -80,7 +79,7 @@
 						</select>
 					</div>
 
-					<button type="submit" class="btn btn-info" id="insert_progetto_sede" >SALVA E CONFERMA</button>
+					<button type="submit" class="btn btn-info center-block" id="insert_progetto_sede" >SALVA E CONFERMA</button>
 				</div>
 			</div>
 		</div>

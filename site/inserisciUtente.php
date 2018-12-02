@@ -58,7 +58,6 @@
 
 			<div class="row">	
 				<div class="utente">
-					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Username</label>
 						<input type="text" class="form-control" name="user" placeholder="Username">
@@ -78,7 +77,7 @@
 						</select>
 					</div>
 				  
-					<button type="submit" class="btn btn-info" id="insert_utente" >SALVA E CONFERMA</button>
+					<button type="submit" class="btn btn-info center-block" id="insert_utente" >SALVA E CONFERMA</button>
 				</div>	  
 			</div>
 		</div>

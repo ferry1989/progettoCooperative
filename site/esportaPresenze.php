@@ -102,7 +102,7 @@
 							</div>
 						</div>
 						<div class="form-group mx-sm-3 mb-2">
-							<button type="submit" class="btn btn-primary mb-1" id="seleziona_enti">Esporta</button>
+							<button type="submit" class="btn btn-primary mb-1 center-block" id="seleziona_enti">Esporta</button>
 						</div>
 					</form>
 				</div>
@@ -113,7 +113,7 @@
 					<form action="../script/esporta_presenze_meseprec.php" method="post">
 						<h3>Esporta Presenze Mese precedente</h3>
 						<div class="form-group mx-sm-3 mb-2">
-							<button type="submit" class="btn btn-primary mb-1" id="seleziona_enti">Esporta</button>
+							<button type="submit" class="btn btn-primary mb-1 center-block" id="seleziona_enti">Esporta</button>
 						</div>
 					</form>
 				</div>

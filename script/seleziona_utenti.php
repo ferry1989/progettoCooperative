@@ -6,30 +6,35 @@
 		$foo = file_get_contents("php://input");
 
 		$filtri = json_decode($foo, true);
-		$type = mysqli_real_escape_string($con, $filtri['type']);
-		$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
 
-		if($type && $type == 'search') {
+		if( !empty($filtri['fillForm']) ) {
+			$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
+		}
+		if( !empty($filtri['id_utente']) ) {
 			$id_utente = mysqli_real_escape_string($con, $filtri['id_utente']);
+		}
+		if( !empty($filtri['user']) ) {
 			$user = trim(mysqli_real_escape_string($con, $filtri['user']));
+		}
+		if( !empty($filtri['password']) ) {
 			$password = mysqli_real_escape_string($con, $filtri['password']);
+		}
+		if( !empty($filtri['isAdmin']) ) {
 			$isAdmin = mysqli_real_escape_string($con, $filtri['isAdmin']);
+		}
 
-			$selezionaUtenti = "SELECT * FROM utente WHERE 1=1 ";
-			if($id_utente != null && $id_utente != ""){
-				$selezionaUtenti .= "and id_utente='$id_utente'";
-			}
-			if($user != null && $user != ""){
-				$selezionaUtenti .= "and trim(user) LIKE '%$user%'";
-			}
-			if($password != null && $password != ""){
-				$selezionaUtenti .= "and password='$password'";
-			}
-			if($isAdmin != null && $isAdmin != ""){
-				$selezionaUtenti .= "and isAdmin='$isAdmin'";
-			}
-		}else{
-			$selezionaUtenti = "SELECT * FROM utente WHERE 1=1 ";
+		$selezionaUtenti = "SELECT * FROM utente WHERE 1=1 ";
+		if(!empty($id_utente)) {
+			$selezionaUtenti .= "and id_utente='$id_utente'";
+		}
+		if(!empty($user)) {
+			$selezionaUtenti .= "and trim(user) LIKE '%$user%'";
+		}
+		if(!empty($password)) {
+			$selezionaUtenti .= "and password='$password'";
+		}
+		if(!empty($isAdmin)) {
+			$selezionaUtenti .= "and isAdmin='$isAdmin'";
 		}
 
 		$result = mysqli_query($con,$selezionaUtenti);

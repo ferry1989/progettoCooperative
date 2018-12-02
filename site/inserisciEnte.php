@@ -58,14 +58,13 @@
 
 			<div class="row">	
 				<div class="ente">
-					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Ente</label>
 						<input type="text" class="form-control" name="nomeEnte">
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Ente</label>
+						<label for="exampleFormControlSelect3">Utente</label>
 						<select class="form-control" id="seleziona_utenti" name="id_utente">
 							<option value="-1">-</option>
 						</select>
@@ -118,7 +117,7 @@
 
 
 					
-					<button type="submit" class="btn btn-info" id="insert_ente" >SALVA E CONFERMA</button>
+					<button type="submit" class="btn btn-info center-block" id="insert_ente" >SALVA E CONFERMA</button>
 				</div>
 			</div>
 		</div>

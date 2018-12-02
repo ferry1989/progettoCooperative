@@ -57,27 +57,21 @@
 			</div>
 
 			<div class="row">
-				<input type="hidden" class="type" value="search">
 
 				<?php
 					if($_SESSION['isAdmin'] == 1){
 				?>
 					 
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 				  <h3>Ricerca Ente</h3>
 				  <div class="form-group mx-sm-3 mb-2">
 					<div class="ente seleziona_enti">
 						<input type="hidden" class="file" value="ente">
-						<input type="hidden" class="type" value="search">
-						<table>
-							<tr>
-								<td><input class="form-control" placeholder="Denominazione" name='denominazione' /></td>
-								<td><input class="form-control" placeholder="Codice Fiscale" name='codFisc' /></td>
-								<td><input class="form-control" placeholder="Email" name='email' /></td>
-								<td><input class="form-control" placeholder="Pec" name='pec' /></td>
-								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_enti">Cerca</button></td>
-							</tr>
-						</table>
+						<input class="form-control" placeholder="Denominazione" name='denominazione' /><br/>
+						<input class="form-control" placeholder="Codice Fiscale" name='codFisc' /><br/>
+						<input class="form-control" placeholder="Email" name='email' /><br/>
+						<input class="form-control" placeholder="Pec" name='pec' /><br/>
+						<button type="submit" class="btn btn-primary mb-1 center-block" id="seleziona_enti">Cerca</button>
 					</div>
 				  </div>
 				</div>
@@ -86,59 +80,41 @@
 					}
 				?>
 
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 				  <h3>Ricerca Progetto</h3>
 				  <div class="form-group mx-sm-3 mb-2">
 					<div class="progetto seleziona_progetti">
 						<input type="hidden" class="file" value="progetto">
-						<input type="hidden" class="type" value="search">
-						<table>
-							<tr>
-								<td><input class="form-control" placeholder="Denominazione" name='titolo' /></td>
-								<td><select class="form-control" placeholder="settore intervento" id="seleziona_enti" name='id_ente' >
-										<option value="-1">-</option>
-									</select>
-								</td>
-								<td><input class="form-control" placeholder="settore intervento" name='settoreprevalente' /></td>
-								
-								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_progetti">Cerca</button></td>
-							</tr>
-						</table>
+						<input class="form-control" placeholder="Denominazione" name='titolo' /><br/>
+						<select class="form-control" placeholder="settore intervento" id="seleziona_enti" name='id_ente' >
+							<option value="-1">-</option>
+						</select><br/>
+						<input class="form-control" placeholder="settore intervento" name='settoreprevalente' /><br/>
+						<button type="submit" class="btn btn-primary mb-1 center-block" id="seleziona_progetti">Cerca</button>
 					</div>
 				  </div>
 				</div>
 
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 				  <h3>Ricerca Volontari</h3>
 				  <div class="form-group mx-sm-3 mb-2">
 					<div class="ente seleziona_volontari">
 						<input type="hidden" class="file" value="volontario">
-						<input type="hidden" class="type" value="search">
-						<table>
-							<tr>
-								<td><input class="form-control" placeholder="Nome" name='nomevolontario' /></td>
-								<td><input class="form-control" placeholder="Cognome" name='cognomevolontario' /></td>
-								<td><input class="form-control" placeholder="stato" name='statovolontario' /></td>
-								<td><input class="form-control" placeholder="progetto" name='progettovolontario' /></td>
-								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_volontari">Cerca</button></td>
-							</tr>
-						</table>
+						<input class="form-control" placeholder="Nome" name='nome' /><br/>
+						<input class="form-control" placeholder="Cognome" name='cognome' /><br/>
+						<input class="form-control" placeholder="stato" name='stato' /><br/>
+						<button type="submit" class="btn btn-primary mb-1 center-block" id="seleziona_volontari">Cerca</button>
 					</div>
 				  </div>
 				</div>
 
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 				  <h3>Ricerca Sedi</h3>
 				  <div class="form-group mx-sm-3 mb-2">
 					<div class="sede seleziona_sedi">
 						<input type="hidden" class="file" value="sede">
-						<input type="hidden" class="type" value="search">
-						<table>
-							<tr>
-								<td><input class="form-control" placeholder="Nome" name='nomesede' /></td>
-								<td><button type="submit" class="btn btn-primary mb-1" id="seleziona_sedi">Cerca</button></td>
-							</tr>
-						</table>
+						<input class="form-control" placeholder="Denominazione" name='denominazione' /><br/>
+						<button type="submit" class="btn btn-primary mb-1 center-block" id="seleziona_sedi">Cerca</button>
 					</div>
 				  </div>
 				</div>
