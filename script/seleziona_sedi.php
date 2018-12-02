@@ -6,33 +6,21 @@
 		$foo = file_get_contents("php://input");
 
 		$filtri = json_decode($foo, true);
+
+		if( !empty($filtri['fillForm']) ) {
+			$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
+		}
+		if( !empty($filtri['denominazione']) ) {
+			$denominazione = mysqli_real_escape_string($con, $filtri['denominazione']);
+		}
+
 		$selezionaSedi = "SELECT * FROM sede WHERE 1=1 ";
 
-		$type = mysqli_real_escape_string($con, $filtri['type']);
-		$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
-		$id_sede = mysqli_real_escape_string($con, $filtri['id_sede']);
-		$id_ente = trim(mysqli_real_escape_string($con, $filtri['id_ente']));
-		$indirizzo = trim(mysqli_real_escape_string($con, $filtri['indirizzo']));
-		if($id_sede != null && $id_sede != ""){
-			$selezionaSedi .= "and id_sede='$id_sede'";
-		}
 		if(!empty($_SESSION["id_ente"])){
 			$selezionaSedi .= "and id_ente = ".$_SESSION["id_ente"];
 		}
-		if($id_ente != null && $id_ente != ""){
-			$selezionaSedi .= "and id_ente='$id_ente'";
-		}
-		if($indirizzo != null && $indirizzo != ""){
-			$selezionaSedi .= "and trim(indirizzo) LIKE '%$indirizzo%'";
-		}
-    if( !empty($filtri['denominazione']) ) {
-			$denominazione = mysqli_real_escape_string($con, $filtri['denominazione']);
-		}
-    if(!empty($denominazione)) {
-		  $selezionaSedi .= "and denominazione LIKE '%$denominazione%'";
-    }
-    if( !empty($filtri['fillForm']) ) {
-			$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
+		if(!empty($denominazione)) {
+			$selezionaSedi .= "and denominazione LIKE '%$denominazione%'";
 		}
 
 		$result = mysqli_query($con,$selezionaSedi);
