@@ -56,7 +56,7 @@
 					<h2 class="page-header text-primary">Inserisci Sede</h2>
 				</div>
 			</div>
-
+			<div class="response-message"></div>
 			<div class="row">	
 				<div class="ente">
 					<div class="form-group">

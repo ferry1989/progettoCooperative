@@ -1,7 +1,21 @@
 
 //----------------------SUCCESS FUNCTION-----------------------------------
+var messageResponse = function(msg,response) {
+    $('.response-message').html('');
+    $('.response-message').append('<label class="response">'+msg[response].toUpperCase()+'</label>');
+    $('.response-message').addClass(response);
+    let topOffset = $('.response-message').top;
+    $('html, body').animate({
+        scrollTop: topOffset - 25
+    },0);
+    setTimeout(function(){ 
+        $('.response-message').html(''); 
+        $('.response-message').removeClass(response); 
+    },3000);
+}
+
 var generalInsert = function(msg) {
-    msg.error ? alert(msg.error) : alert(msg.success);
+    (msg.error) ? messageResponse(msg,'error') : messageResponse(msg,'success');
 }
 
 var selectForm = function(rows) {

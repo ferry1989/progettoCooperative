@@ -2,3 +2,32 @@ input.form-control.required {
     background-color: #ffe6e6;
     border-color: #e60000;
 }
+
+label.textrequired {
+    color: #e60000;
+    font-size: 11px;
+    margin-left: 1%;
+}
+
+div.response-message {
+    height: 25px;
+    width: inherit;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+div.response-message.success {
+    background-color: #00cc00;
+}
+
+div.response-message.error {
+    background-color: #e62e00;
+}
+
+label.response {
+    margin-left: 35%;
+    font-size: 90%;
+    padding-top: 5px;
+    font-style: italic;
+    color: cornsilk;
+}

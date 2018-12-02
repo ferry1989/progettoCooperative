@@ -3,8 +3,9 @@ function highlightRequiredFields(forms,labels) {
     var cont = 0;
 
     for(var form of forms) {
-        if( $(labels[cont])[0].innerHTML.indexOf('*') > -1 && ( form.value == "" || form.value == "-1") ){
+        if( $(labels[cont])[0].innerHTML.indexOf('*') > -1 && ( form.value == "" || form.value == "-1" ) ){
             $(form).addClass('required');
+            $(form).parent().append('<label class="textrequired">CAMPO OBBLIGATORIO</label>');
         }
         cont++;
     }
@@ -14,7 +15,7 @@ function checkMandatoryFields(forms,labels) {
     var cont = 0;
 
     for(var form of forms) {
-        if( $(labels[cont])[0].innerHTML.indexOf('*') > -1 && form.value == "" ){
+        if( $(labels[cont])[0].innerHTML.indexOf('*') > -1 && ( form.value == "" || form.value == "-1" ) ){
             highlightRequiredFields(forms,labels);
             return false;
         }
@@ -43,8 +44,10 @@ $(document).ready(function() {
         var check = $(this);
         if( check.value == "" ){
             check.addClass('required');
+            check.parent().children('label.textrequired').remove();
         }else{
             check.removeClass('required');
+            check.parent().children('label.textrequired').remove();
         }
     });
 
