@@ -39,4 +39,7 @@ $(document).ready(function() {
         $('input[name="cognomeolp"]').prop('disabled', !(state.val() == 'Attivo'));
     });
 
+    $('.form-control').on('input',function(){
+    });
+
 });
