@@ -6,31 +6,36 @@
 		$foo = file_get_contents("php://input");
 
 		$filtri = json_decode($foo, true);
-		$type = mysqli_real_escape_string($con, $filtri['type']);
-		$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
 
-		if($type == 'select') {
+		if( !empty($filtri['fillForm']) ) {
+			$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
+		}
+		if( !empty($filtri['denominazione']) ) {
 			$denominazione = mysqli_real_escape_string($con, $filtri['denominazione']);
+		}
+		if( !empty($filtri['codFisc']) ) {
 			$codFisc = trim(mysqli_real_escape_string($con, $filtri['codFisc']));
+		}
+		if( !empty($filtri['email']) ) {
 			$email = mysqli_real_escape_string($con, $filtri['email']);
+		}
+		if( !empty($filtri['pec']) ) {
 			$pec = mysqli_real_escape_string($con, $filtri['pec']);
-	
-			$selezionaEnti = "SELECT * FROM ente WHERE 1=1 ";
-			
-			if($denominazione != null && $denominazione != ""){
-				$selezionaEnti .= "and trim(nomeEnte) LIKE '%$denominazione%'";
-			}
-			if($codFisc != null && $codFisc != ""){
-				$selezionaEnti .= "and trim(codfis) LIKE '%$codFisc%'";
-			}
-			if($email != null && $email != ""){
-				$selezionaEnti .= "and trim(email) LIKE '%$email%'";
-			}
-			if($pec != null && $pec != ""){
-				$selezionaEnti .= "and trim(pec) LIKE '%$pec%'";
-			}
-		}else{
-			$selezionaEnti = "SELECT * FROM ente WHERE 1=1 ";
+		}
+
+		$selezionaEnti = "SELECT * FROM ente WHERE 1=1 ";
+		
+		if(!empty($denominazione)) {
+			$selezionaEnti .= "and trim(nomeEnte) LIKE '%$denominazione%'";
+		}
+		if(!empty($codFisc)) {
+			$selezionaEnti .= "and trim(codfis) LIKE '%$codFisc%'";
+		}
+		if(!empty($email)) {
+			$selezionaEnti .= "and trim(email) LIKE '%$email%'";
+		}
+		if(!empty($pec)) {
+			$selezionaEnti .= "and trim(pec) LIKE '%$pec%'";
 		}
 
 		$result = mysqli_query($con,$selezionaEnti);

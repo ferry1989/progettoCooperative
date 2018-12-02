@@ -7,6 +7,7 @@
 		$foo = file_get_contents("php://input");
 
 		$filtri = json_decode($foo, true);
+    
 		$type = mysqli_real_escape_string($con, $filtri['type']);
 		$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
 		$id_volontario = mysqli_real_escape_string($con, $filtri['id_volontario']);
@@ -40,10 +41,24 @@
 		if(!empty($_SESSION["id_ente"])){
 			$selezionaVolontari .= "and e.id_ente = ".$_SESSION["id_ente"];
 		}
+    if( !empty($filtri['fillForm']) ) {
+			$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
+		}
+   
+    if( !empty($filtri['stato']) ) {
+			$stato = trim(mysqli_real_escape_string($con, $filtri['stato']));
+		}
+     if( !empty($stato) ) {
+			$selezionaVolontari .= "and v.stato LIKE '%$stato%'";
+    }
+    
 		$result = mysqli_query($con,$selezionaVolontari);
 		$msg = array();
 		array_push($msg,array("fillForm"=>$fillForm));
-
+		while($row = $result->fetch_assoc()) {
+			$addVolontario = array("id_volontario"=>$row["id_volontario"], "nome"=>$row["nome"], "cognome"=>$row["cognome"], "codFiscale"=>$row["codFiscale"], "sesso"=>$row["sesso"], "titolodistudio"=>$row["titolodistudio"], "stato"=>$row["stato"], "giornidiservizio"=>$row["giornidiservizio"], "nomeolp"=>$row["nomeolp"], "cognomeolp"=>$row["cognomeolp"], "codiceiban"=>$row["codiceiban"], "provincianazionenascita"=>$row["provincianazionenascita"], "esteronasc"=>$row["esteronasc"], "comuneesteronascita"=>$row["comuneesteronascita"], "provincianazioneresidenza"=>$row["provincianazioneresidenza"], "esterores"=>$row["esterores"], "comuneesteroresidenta"=>$row["comuneesteroresidenta"], "indirizzoresidenza"=>$row["indirizzoresidenza"], "numcivicoresidenza"=>$row["numcivicoresidenza"], "capresidenza"=>$row["capresidenza"], "provinciadomicilio"=>$row["provinciadomicilio"], "comunedomicilio"=>$row["comunedomicilio"], "indirizzodomicilio"=>$row["indirizzodomicilio"], "id_sedeprogetto"=>$row["id_sedeprogetto"], "numcivicodomic"=>$row["numcivicodomic"], "capdomic"=>$row["capdomic"], "id_contratto"=>$row["id_contratto"]);
+			array_push($msg, $addVolontario);
+		}
 		
 		mysqli_close($con);
 	}

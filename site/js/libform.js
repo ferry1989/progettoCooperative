@@ -56,9 +56,8 @@ function fillSelect (forms) {
         let id = form.id;
 
         if(!!id){
-            let type = $('.type').val();
             let url = '../script/' + id + '.php';
-            let json = {'type':type,'fillForm':form.name};
+            let json = {'fillForm':form.name};
             let success = fillForm;
 
             callAjax(json,url,success,form);
@@ -66,32 +65,11 @@ function fillSelect (forms) {
     }
 }
 
-//title for select form in dashboard
-function title(title) {
-    if( title == 'progetto'){
-        $('.title').html('');
-        $('.title').append('<th>Progetto</th><th>Ente Titolare</th><th>Anno Bando</th><th>Ente Titolare</th><th>Sede Attuazione</th><th>Modifica</th><th>Elimina</th>');
-    }
-    if(title == 'volontario'){
-        $('.title').html('');
-        $('.title').append('<th>Nome</th><th>Cognome</th><th>Codice Fiscale</th><th>Sesso</th><th>Nazionalita</th><th>Titolo Studio</th><th>Nome OLP</th><th>Cognome OLP</th><th>COD IBAN</th><th>Modifica</th><th>Elimina</th>');
-    }
-    if(title == 'ente'){
-        $('.title').html('');
-        $('.title').append('<th>ID</th><th>Telefono</th><th>Denominazione</th><th>Cod. Fiscale</th><th>Tipo</th><th>Rapp. Legale</th><th>Cod</th><th>Web</th><th>Email</th><th>Pec</th><th>Fax</th><th>Modifica</th><th>Elimina</th>');
-    }
-    if(title == 'sede'){
-        $('.title').html('');
-        $('.title').append('<th>Progetto</th><th>Sede</th><th>Modifica</th><th>Elimina</th>');
-    }
-}
-
 //function used for insert or remove or select rows from db
 function buttonClick() {
     let formClick = $(this)[0];
     let id = formClick.id;
-    let divisor = $('.'+id).find('input');
-    let type, forms;
+    let forms;
     let url = '../script/' + id + '.php';
     let json = {};
     let success = generalInsert;
@@ -99,18 +77,17 @@ function buttonClick() {
     if( ( id.indexOf('insert') > -1 ) || ( id.indexOf('seleziona') > -1 ) ) {
 
         if( id.indexOf('seleziona') > -1 ){
-            type = divisor[1].value;
-            forms = divisor.find('.form-control');
+            let inputForms = $('.'+id).find('input.form-control');
+            let file = $('.'+id).find('.file')[0].value;
+            forms = inputForms;
             success= selectForm;
-            title(divisor[0].value);
+            title(file);
         }
 
-        if( id.indexOf('insert') > -1 ){
-            type = $('.type').val();
+        if( id.indexOf('insert') > -1 )
             forms = $('.form-control');
-        }
 
-        json = {'type':type,'fillForm':'select'};
+        json = {'fillForm':'select'};
         for (var form of forms)
             json[form.name] = form.value;
 
@@ -123,13 +100,14 @@ function buttonClick() {
         }else{
             let row = $(this)[0].name;
             let form = $('.'+row)[1].value;
-            let file = $('.file').val();
+            let file = $('.file').val(); //da ricatturare il valore
             let id_form = 'id_'+file;
             json[id_form] = form;
             $('.'+row).slideUp('slow').trigger('change');
         }
     }
 
+    console.log(json);
     callAjax(json,url,success);
 }
 
@@ -161,3 +139,89 @@ $(document).ready(function() {
     $('.datepicker').datetimepicker();
 
 });
+
+//title for select form in dashboard
+function title(title) {
+    if( title == 'progetto'){
+        $('.title').html('');
+        $('.title').append('<th>ID Progetto</th>'+
+                            '<th>Titolo</th>'+
+                            '<th>Anno Bando</th>'+
+                            '<th>ID Ente</th>'+
+                            '<th>Settore Prevalente</th>'+
+                            '<th>Altro Settore</th>'+
+                            '<th>Sedi di Attuazione</th>'+
+                            '<th>No. Volontari</th>'+
+                            '<th>No. gg. Servizio</th>'+
+                            '<th>No. h ore Settimanali</th>'+
+                            '<th>24 sett</th>'+
+                            '<th>28 sett</th>'+
+                            '<th>36 sett</th>'+
+                            '<th>Modifica</th>'+
+                            '<th>Elimina</th>');
+    }
+    if(title == 'volontario'){
+        $('.title').html('');
+        $('.title').append('<th>ID Volontario</th>'+
+                            '<th>Nome</th>'+
+                            '<th>Cognome</th>'+
+                            '<th>Cod. Fiscale</th>'+
+                            '<th>Sesso</th>'+
+                            '<th>Titolo Studio</th>'+
+                            '<th>Stato</th>'+
+                            '<th>Giorni di servizio</th>'+
+                            '<th>Nome olp</th>'+
+                            '<th>Cognome olp</th>'+
+                            '<th>Cod. Iban</th>'+
+                            '<th>Provinicia Nazione Nascita</th>'+
+                            '<th>Estero Residenza</th>'+
+                            '<th>Comune Estero Residenza</th>'+
+                            '<th>Indirizzo Residenza</th>'+
+                            '<th>No. Civico Residenza</th>'+
+                            '<th>CAP Residenza</th>'+
+                            '<th>Provincia Domicilio</th>'+
+                            '<th>Comune Domicilio</th>'+
+                            '<th>Indirizzo Domicilio</th>'+
+                            '<th>ID Sede Progetto</th>'+
+                            '<th>No. Civico Domicilio</th>'+
+                            '<th>CAP Domicilio</th>'+
+                            '<th>ID Contratto</th>'+
+                            '<th>Modifica</th>'+
+                            '<th>Elimina</th>');
+    }
+    if(title == 'ente'){
+        $('.title').html('');
+        $('.title').append('<th>ID Ente</th>'+
+                            '<th>Telefono</th>'+
+                            '<th>Denominazione</th>'+
+                            '<th>Cod. Fiscale</th>'+
+                            '<th>Tipo</th>'+
+                            '<th>Rapp. Legale</th>'+
+                            '<th>Cod</th>'+
+                            '<th>Web</th>'+
+                            '<th>Email</th>'+
+                            '<th>Pec</th>'+
+                            '<th>Fax</th>'+
+                            '<th>Modifica</th>'+
+                            '<th>Elimina</th>');
+    }
+    if(title == 'sede'){
+        $('.title').html('');
+        $('.title').append('<th>ID Sede</th>'+
+                            '<th>ID Ente</th>'+
+                            '<th>Indirizzo</th>'+
+                            '<th>Denominazione</th>'+
+                            '<th>Numero Volontari</th>'+
+                            '<th>Provincia</th>'+
+                            '<th>Comune</th>'+
+                            '<th>No. Civico</th>'+
+                            '<th>Cap Sede</th>'+
+                            '<th>Telefono</th>'+
+                            '<th>Fax</th>'+
+                            '<th>Titolo Giuridico</th>'+
+                            '<th>Sito Web</th>'+
+                            '<th>Email Ordinaria</th>'+
+                            '<th>Modifica</th>'+
+                            '<th>Elimina</th>');
+    }
+}

@@ -52,13 +52,12 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Inserisci Ente</h2>
+					<h2 class="page-header text-primary">Inserisci Sede</h2>
 				</div>
 			</div>
 
 			<div class="row">	
 				<div class="ente">
-					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Ente capofila</label>
 						<select class="form-control" id="seleziona_enti" name="id_ente">
@@ -138,7 +137,7 @@
 						<input type="text" class="form-control" name="emailordinaria" type="email">
 					</div>
 					
-					<button type="submit" class="btn btn-info" id="insert_sede" >SALVA E CONFERMA</button>
+					<button type="submit" class="btn btn-info center-block" id="insert_sede" >SALVA E CONFERMA</button>
 				</div>
 			</div>
 		</div>

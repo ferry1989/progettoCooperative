@@ -59,7 +59,6 @@
 
 			<div class="row">	
 				<div class="ente">
-					<input type="hidden" class="type" value="insert">
 					<div class="form-group">
 						<label for="exampleFormControlSelect3">Progetto</label>
 						<select class="form-control" id="seleziona_progetti" name="id_progetto">
@@ -246,7 +245,7 @@
 						<input type="text" class="form-control" name="cognomeolp">
 					</div>
 					
-					<button type="submit" class="btn btn-info" id="insert_volontario" >SALVA E CONFERMA</button>
+					<button type="submit" class="btn btn-info center-block" id="insert_volontario" >SALVA E CONFERMA</button>
 				</div>
 			</div>
 		</div>

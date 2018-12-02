@@ -6,36 +6,35 @@
 		$foo = file_get_contents("php://input");
 
 		$filtri = json_decode($foo, true);
-		$type = mysqli_real_escape_string($con, $filtri['type']);
-		$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
-
-		if($type == 'select') {
+		if( !empty($filtri['fillForm']) ) {
+			$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
+		}
+		if( !empty($filtri['titolo']) ) {
 			$titolo = mysqli_real_escape_string($con, $filtri['titolo']);
+		}
+		if( !empty($filtri['id_ente']) ) {
 			$id_ente = trim(mysqli_real_escape_string($con, $filtri['id_ente']));
+		}
+		if( !empty($filtri['settoreprevalente']) ) {
 			$settoreprevalente = trim(mysqli_real_escape_string($con, $filtri['settoreprevalente']));
-
-			$selezionaProgetti = "SELECT * FROM progetto WHERE 1=1 ";
-			if($titolo != null && $titolo != ""){
-				$selezionaProgetti .= "and titolo LIKE '%$titolo%'";
-			}
-			if($_SESSION["id_ente"] != null && $_SESSION["id_ente"] != ""){
-				$selezionaProgetti .= "and id_ente = ".$_SESSION["id_ente"];
-			}
-			if($id_ente != null && $id_ente != ""){
-				$selezionaEnti .= "and trim(id_ente) LIKE '%$id_ente%'";
-			}
-			if($settoreprevalente != null && $settoreprevalente != ""){
-				$selezionaEnti .= "and trim(settoreprevalente) LIKE '%$settoreprevalente%'";
-			}
-		}else{
-			$selezionaEnti = "SELECT * FROM progetto WHERE 1=1 ";
 		}
 
-		$result = mysqli_query($con,$selezionaEnti);
+		$selezionaProgetti = "SELECT * FROM progetto WHERE 1=1 ";
+		if(!empty($titolo)) {
+			$selezionaProgetti .= "and titolo LIKE '%$titolo%'";
+		}
+		if(!empty($id_ente)) {
+			$selezionaProgetti .= "and id_ente = ".$id_ente;
+		}
+		if(!empty($settoreprevalente)) {
+			$selezionaProgetti .= "and trim(settoreprevalente) LIKE '%$settoreprevalente%'";
+		}
+
+		$result = mysqli_query($con,$selezionaProgetti);
 		$msg = array();
 		array_push($msg,array("fillForm"=>$fillForm));
 		while($row = $result->fetch_assoc()) {
-			$addProgetto = array("id_progetto"=>$row["id_progetto"], "settoreprevalente"=>$row["settoreprevalente"], "titolo"=>$row["titolo"], "id_ente"=>$row["id_ente"]);
+			$addProgetto = array("id_progetto"=>$row["id_progetto"], "titolo"=>$row["titolo"], "annobando"=>$row["annobando"],"id_ente"=>$row["id_ente"], "settoreprevalente"=>$row["settoreprevalente"], "altrosettore"=>$row["altrosettore"], "sedidiattuazione"=>$row["sedidiattuazione"], "numerovolontari"=>$row["numerovolontari"], "numgiornidiservizio"=>$row["numgiornidiservizio"], "nhorestettiman"=>$row["nhorestettiman"], "24sett"=>$row["24sett"], "28sett"=>$row["28sett"], "36sett"=>$row["36sett"]);
 			array_push($msg, $addProgetto);
 		}
 		
