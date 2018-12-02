@@ -1,6 +1,6 @@
 <?php
 	include_once '../config/db.php';
-	
+	session_start();
 	$msg = "";
 	if($con != null){
 		$foo = file_get_contents("php://input");
@@ -28,6 +28,9 @@
 		}
 		if(!empty($settoreprevalente)) {
 			$selezionaProgetti .= "and trim(settoreprevalente) LIKE '%$settoreprevalente%'";
+		}
+		if(!empty($_SESSION["id_ente"])){
+			$selezionaProgetti .= "and id_ente = ".$_SESSION["id_ente"]." ";
 		}
 
 		$result = mysqli_query($con,$selezionaProgetti);

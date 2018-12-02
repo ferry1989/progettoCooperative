@@ -39,7 +39,7 @@
 			$selezionaVolontari .= "and trim(codFiscale) LIKE '%$codFiscale%'";
 		}
 		if(!empty($_SESSION["id_ente"])){
-			$selezionaVolontari .= "and e.id_ente = ".$_SESSION["id_ente"];
+			$selezionaVolontari .= "and e.id_ente = ".$_SESSION["id_ente"]." ";
 		}
     if( !empty($filtri['fillForm']) ) {
 			$fillForm = mysqli_real_escape_string($con, $filtri['fillForm']);
