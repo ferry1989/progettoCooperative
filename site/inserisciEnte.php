@@ -65,7 +65,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Ente</label>
+						<label for="exampleFormControlSelect3">Utente</label>
 						<select class="form-control" id="seleziona_utenti" name="id_utente">
 							<option value="-1">-</option>
 						</select>
