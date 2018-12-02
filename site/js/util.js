@@ -40,6 +40,12 @@ $(document).ready(function() {
     });
 
     $('.form-control').on('input',function(){
+        var check = $(this);
+        if( check.value == "" ){
+            check.addClass('required');
+        }else{
+            check.removeClass('required');
+        }
     });
 
 });

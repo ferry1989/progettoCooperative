@@ -3,6 +3,6 @@
 	if(!empty($_SESSION['username'])){
 		unset($_SESSION["username"]);
 		unset($_SESSION["isAdmin"]);
-		header("location: ../site/index.html");
+		header("location: ../site/index.php");
 	}
 ?>

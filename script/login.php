@@ -22,7 +22,10 @@ $msg = "";
 			header("location: ../site/dashboard.php");
 		}
 		else{
+			session_start();
+			$_SESSION['message'] = 'Combinazione username/password errata!';
 			$msg = array("error"=>"Combinazione username/password errata!");
+			header("location: ../site/index.php");
 		}
 		mysqli_close($con);
 	}
