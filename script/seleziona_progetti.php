@@ -12,7 +12,7 @@
 		if( !empty($filtri['titolo']) ) {
 			$titolo = mysqli_real_escape_string($con, $filtri['titolo']);
 		}
-		if( !empty($filtri['id_ente']) ) {
+		if( !empty($filtri['id_ente']) && $filtri['id_ente'] != '-1' ) {
 			$id_ente = trim(mysqli_real_escape_string($con, $filtri['id_ente']));
 		}
 		if( !empty($filtri['settoreprevalente']) ) {

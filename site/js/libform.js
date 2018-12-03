@@ -91,10 +91,9 @@ function buttonClick() {
     if( ( id.indexOf('insert') > -1 ) || ( id.indexOf('seleziona') > -1 ) ) {
 
         if( id.indexOf('seleziona') > -1 ){
-            let inputForms = $('.'+id).find('input.form-control');
             let file = $('.'+id).find('.file')[0].value;
+            forms = $('.'+id).find('input,select');
             json = {'fillForm':file};
-            forms = inputForms;
             success= selectForm;
             title(file);
         }
