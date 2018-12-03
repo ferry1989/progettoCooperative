@@ -16,9 +16,6 @@
 		if( !empty($filtri['user']) ) {
 			$user = trim(mysqli_real_escape_string($con, $filtri['user']));
 		}
-		if( !empty($filtri['password']) ) {
-			$password = mysqli_real_escape_string($con, $filtri['password']);
-		}
 		if( !empty($filtri['isAdmin']) ) {
 			$isAdmin = mysqli_real_escape_string($con, $filtri['isAdmin']);
 		}
@@ -29,9 +26,6 @@
 		}
 		if(!empty($user)) {
 			$selezionaUtenti .= "and trim(user) LIKE '%$user%'";
-		}
-		if(!empty($password)) {
-			$selezionaUtenti .= "and password='$password'";
 		}
 		if(!empty($isAdmin)) {
 			$selezionaUtenti .= "and isAdmin='$isAdmin'";
