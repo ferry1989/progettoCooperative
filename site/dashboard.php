@@ -102,7 +102,13 @@
 						<input type="hidden" class="file" value="volontario">
 						<input class="form-control" placeholder="Nome" name='nome' /><br/>
 						<input class="form-control" placeholder="Cognome" name='cognome' /><br/>
-						<input class="form-control" placeholder="stato" name='stato' /><br/>
+						<select class="form-control" name="stato">
+							<option></option>
+							<option>Attivo</option>
+							<option>Idoneo non selezionato</option>
+							<option>Non idoneo</option>
+							<option>Ritirato</option>
+						</select><br/>
 						<button type="submit" class="btn btn-primary mb-1 center-block" id="seleziona_volontari">Cerca</button>
 					</div>
 				  </div>

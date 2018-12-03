@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "612700";
 $db = "cooperative";
 
 // Create connection
