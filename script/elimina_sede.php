@@ -6,9 +6,9 @@
 		$foo = file_get_contents("php://input");
 
 		$sede = json_decode($foo, true);
-		$idSede = mysqli_real_escape_string($con, $sede['idSede']);
+		$id_sede = mysqli_real_escape_string($con, $sede['id_sede']);
 		
-		$verificasede = "SELECT id_sede FROM sede where id_sede = '$idSede'";
+		$verificasede = "SELECT id_sede FROM sede where id_sede = '$id_sede'";
 		$result = mysqli_query($con,$verificasede);
 
 		if ($result->num_rows == 0) {
@@ -19,7 +19,7 @@
 		}
 		
 		else{
-			$deletePresenza ="delete from sede where id_sede = '$idSede'";
+			$deletePresenza ="delete from sede where id_sede = '$id_sede'";
 			if (!mysqli_query($con,$deletePresenza)) {
 				$msg = array("error"=>mysqli_error($con));
 			}

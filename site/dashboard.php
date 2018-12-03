@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(empty($_SESSION['username'])){
-		header("location: /site/index.html"); 
+		header("location: /site/index.php"); 
 	}
 ?>
 <!DOCTYPE html>
@@ -55,7 +55,7 @@
 					<h2 class="page-header text-primary">Benvenuto <?php echo $_SESSION['nomeEnte'] ?></h2>
 				</div>
 			</div>
-
+			<div class="response-message"></div>
 			<div class="row">
 
 				<?php

@@ -1,7 +1,21 @@
 
 //----------------------SUCCESS FUNCTION-----------------------------------
+var messageResponse = function(msg,response) {
+    $('.response-message').html('');
+    $('.response-message').append('<label class="response">'+msg[response].toUpperCase()+'</label>');
+    $('.response-message').addClass(response);
+    let topOffset = $('.response-message').top;
+    $('html, body').animate({
+        scrollTop: topOffset - 25
+    },0);
+    setTimeout(function(){ 
+        $('.response-message').html(''); 
+        $('.response-message').removeClass(response); 
+    },3000);
+}
+
 var generalInsert = function(msg) {
-    msg.error ? alert(msg.error) : alert(msg.success);
+    (msg.error) ? messageResponse(msg,'error') : messageResponse(msg,'success');
 }
 
 var selectForm = function(rows) {
@@ -11,7 +25,7 @@ var selectForm = function(rows) {
         $('.results').html('');
         var skip = 0;
         var lines = 0;
-        let file = $('.file').val();
+        let file = rows[0].fillForm;
         for (row of rows){
             $row = $('<tr class=row'+lines+' />')
 
@@ -69,7 +83,7 @@ function fillSelect (forms) {
 function buttonClick() {
     let formClick = $(this)[0];
     let id = formClick.id;
-    let forms;
+    let forms,labels;
     let url = '../script/' + id + '.php';
     let json = {};
     let success = generalInsert;
@@ -79,15 +93,21 @@ function buttonClick() {
         if( id.indexOf('seleziona') > -1 ){
             let inputForms = $('.'+id).find('input.form-control');
             let file = $('.'+id).find('.file')[0].value;
+            json = {'fillForm':file};
             forms = inputForms;
             success= selectForm;
             title(file);
         }
 
-        if( id.indexOf('insert') > -1 )
-            forms = $('.form-control');
+        if( id.indexOf('insert') > -1 ){
+            forms = $('.form-group').find('input,select');
+            labels = $('.form-group').find('label');
+            let checkRequiredFields = checkMandatoryFields(forms,labels);
+            if(!checkRequiredFields){
+                return false;
+            }
+        }
 
-        json = {'fillForm':'select'};
         for (var form of forms)
             json[form.name] = form.value;
 
@@ -100,14 +120,13 @@ function buttonClick() {
         }else{
             let row = $(this)[0].name;
             let form = $('.'+row)[1].value;
-            let file = $('.file').val(); //da ricatturare il valore
+            let file = $(this)[0].id.split("_")[1];
             let id_form = 'id_'+file;
             json[id_form] = form;
             $('.'+row).slideUp('slow').trigger('change');
         }
     }
 
-    console.log(json);
     callAjax(json,url,success);
 }
 

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(empty($_SESSION['username'])){
-		header("location: /site/index.html"); 
+		header("location: /site/index.php"); 
 	}
 	include_once '../config/db.php';
 ?>
@@ -26,7 +26,8 @@
     <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+	<link href="dist/css/sb-admin-2.css" rel="stylesheet">
+	<link href="dist/css/libform.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="vendor/morrisjs/morris.css" rel="stylesheet">
@@ -56,7 +57,7 @@
 					<h2 class="page-header text-primary">Inserisci Volontario</h2>
 				</div>
 			</div>
-
+			<div class="response-message"></div>
 			<div class="row">	
 				<div class="ente">
 					<div class="form-group">

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(empty($_SESSION['username'])){
-		header("location: /site/index.html"); 
+		header("location: /site/index.php"); 
 	}
 ?>
 <!DOCTYPE html>

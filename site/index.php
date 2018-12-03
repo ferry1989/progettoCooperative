@@ -49,6 +49,11 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
                                 </div>
+                                <?php if(!empty($_SESSION['message'])){
+                                        echo $_SESSION['message'];
+                                        unset($_SESSION['message']);
+                                    }
+                                ?>
                                 <div class="checkbox">
                                     <label>
                                         <input name="remember" type="checkbox" value="Remember Me">Ricordami sempre le credenziali ad ogni accesso.
