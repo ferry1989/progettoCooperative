@@ -112,11 +112,17 @@ function buttonClick() {
 
     }else{
         if( id.indexOf('aggiorna') > -1 ) {
+            if (!confirm("Sei sicuro di voler aggiornare il valore?"))
+                return false;
+                
             let row = $(this)[0].name;
             let forms = $('.'+row);
             for (var form of forms)
                 json[form.name] = form.value;
         }else{
+            if (!confirm("Sei sicuro di voler aggiornare il valore?"))
+                return false;
+
             let row = $(this)[0].name;
             let form = $('.'+row)[1].value;
             let file = $(this)[0].id.split("_")[1];
