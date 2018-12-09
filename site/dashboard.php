@@ -53,7 +53,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header text-primary">Benvenuto <?php echo $_SESSION['nomeEnte'] ?></h2>
+					<h2 class="page-header text-primary">Benvenuto <?php if( !empty($_SESSION['nomeEnte']) ) echo $_SESSION['nomeEnte'] ?></h2>
 				</div>
 			</div>
 			<div class="response-message"></div>

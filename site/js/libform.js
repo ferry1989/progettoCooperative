@@ -74,7 +74,7 @@ function fillSelect (forms) {
             let json = {'fillForm':form.name};
             let success = fillForm;
 
-            callAjax(json,url,success,form);
+            callAjax(json,url,success);
         }
     }
 }

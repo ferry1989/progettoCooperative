@@ -60,15 +60,15 @@
 			<div class="row">	
 				<div class="progettosede">
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Progetto</label>
-						<select class="form-control" id="seleziona_progetti" name="id_progetto">
+						<label for="exampleFormControlSelect3">Ente</label>
+						<select class="form-control" id="seleziona_enti" name="id_ente">
 							<option value="-1">-</option>
 						</select>
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Ente</label>
-						<select class="form-control" id="seleziona_enti" name="id_ente">
+						<label for="exampleFormControlSelect3">Progetto</label>
+						<select class="form-control" id="seleziona_progetti" name="id_progetto">
 							<option value="-1">-</option>
 						</select>
 					</div>

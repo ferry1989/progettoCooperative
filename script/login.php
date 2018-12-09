@@ -16,8 +16,10 @@ $msg = "";
 			session_start();
 			$_SESSION['isAdmin'] = $row["isAdmin"];
 			$_SESSION['username'] = trim($row["user"]);
-			$_SESSION['id_ente'] = trim($row["id_ente"]);
-			$_SESSION['nomeEnte'] = trim($row["nomeEnte"]);
+			if( $row["isAdmin"] == 0 ){
+				$_SESSION['id_ente'] = trim($row["id_ente"]);
+				$_SESSION['nomeEnte'] = trim($row["nomeEnte"]);
+			}
 			$msg = array("success"=>"Login Effettuato");
 			header("location: ../site/dashboard.php");
 		}

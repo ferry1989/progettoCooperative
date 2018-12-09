@@ -16,7 +16,7 @@
 			$result = mysqli_query($con,$verificaRegione);
 
 			if ($result->num_rows == 0) {
-				$msg = array("error"=>"Regione non esistente!");
+				$msg = array("error"=>"Sede non esistente!");
 				echo json_encode($msg);
 				mysqli_close($con);
 				return;
