@@ -13,9 +13,15 @@
 		if( !empty($filtri['denominazione']) ) {
 			$denominazione = mysqli_real_escape_string($con, $filtri['denominazione']);
 		}
+		if( !empty($filtri['id_ente']) && $filtri['id_ente'] != '-1' ) {
+			$id_ente = mysqli_real_escape_string($con, $filtri['id_ente']);
+		}
 
 		$selezionaSedi = "SELECT * FROM sede WHERE 1=1 ";
 
+		if(!empty($id_ente)) {
+			$selezionaSedi .= "and id_ente = ".$id_ente;
+		}
 		if(!empty($_SESSION["id_ente"])){
 			$selezionaSedi .= "and id_ente = ".$_SESSION["id_ente"];
 		}

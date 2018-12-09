@@ -67,13 +67,6 @@
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Sede</label>
-						<select class="form-control" id="seleziona_sedi" name="id_sede">
-							<option value="-1">-</option>
-						</select>
-					</div>
-
-					<div class="form-group">
 					<label for="exampleFormControlInput1">Titolo</label>
 					<input type="text" class="form-control" name="titolo">
 					</div>
