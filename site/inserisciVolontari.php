@@ -209,11 +209,6 @@
 							<option>Ritirato</option>
 						</select>
 					</div>
-
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Codice IBAN</label>
-						<input type="text" class="form-control" name="codiceiban">
-					</div>
 					
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Tipo Contratto</label>
@@ -226,6 +221,11 @@
 								}
 							?>
 						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Codice IBAN</label>
+						<input type="text" class="form-control" name="codiceiban">
 					</div>
 
 

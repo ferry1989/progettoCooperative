@@ -87,9 +87,15 @@
 					<div class="progetto seleziona_progetti">
 						<input type="hidden" class="file" value="progetto">
 						<input class="form-control" placeholder="Denominazione" name='titolo' /><br/>
+						<?php
+							if($_SESSION['isAdmin'] == 1){
+						?>
 						<select class="form-control" placeholder="settore intervento" id="seleziona_enti" name='id_ente' >
 							<option value="-1">-</option>
 						</select><br/>
+						<?php	
+							}
+						?>	
 						<input class="form-control" placeholder="settore intervento" name='settoreprevalente' /><br/>
 						<button type="submit" class="btn btn-primary mb-1 center-block" id="seleziona_progetti">Cerca</button>
 					</div>

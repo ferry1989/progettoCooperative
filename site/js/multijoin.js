@@ -85,6 +85,9 @@ $(document).ready(function() {
 	});
 	
 	$("#insert_progetto_sede").click(function() {
+		if (!confirm("Sei sicuro di voler aggiungere il valore?"))
+			return false;
+
 		var id_sede = $('#seleziona_sedi').val();
 		var id_progetto = $('#seleziona_progetti').val();
 		var utente = {

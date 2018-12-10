@@ -77,13 +77,35 @@
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Codice Fiscale</label>
+						<label for="exampleFormControlInput1">Codice Fiscale</label>
 						<input type="text" class="form-control" name="codfis">
 					</div>
 
 					<div class="form-group">
-					<label for="exampleFormControlInput1">Tipo</label>
-						<input type="text" class="form-control" name="tipo">
+						<label for="exampleFormControlInput1">Tipo</label>
+						<select class="form-control" name="tipo">
+							<option>-</option>
+							<option>1. PUBBLICO a) Amministrazione statale</option>
+							<option>1. PUBBLICO b)Enti Locali</option>
+							<option>1. PUBBLICO c)Altri Enti Pubblici</option>
+							<option>1. PUBBLICO d)Università/Scuole/Istituti</option>
+							<option>1. PUBBLICO e)Piano di Zona</option>
+							<option>1. PUBBLICO g)Unione dei Comuni</option>
+							<option>1. PUBBLICO h)Associazione tra Enti Locali</option>
+							<option>1. PUBBLICO i)Consorzio tra Enti Locali</option>
+							<option>1. PUBBLICO j)Azienda Sanitaria</option>
+							<option>1. PUBBLICO k)Azienda Ospedaliera</option>
+							<option>2. PRIVATO a)Organizzazione di volontariato</option>
+							<option>2. PRIVATO b)Associazione di promozione sociale</option>
+							<option>2. PRIVATO c)Ente filantropico</option>
+							<option>2. PRIVATO d)Impr. sociale incluse le coop. sociali</option>
+							<option>2. PRIVATO e)Rete associativa</option>
+							<option>2. PRIVATO f) Società di mutuo soccorso</option>
+							<option>2. PRIVATO g)Associazione riconosciuta</option>
+							<option>2. PRIVATO h)Associazione non riconosciuta</option>
+							<option>2. PRIVATO i)Fondazione</option>
+							<option>2. PRIVATO j) Altro Ente</option>
+						</select>
 					</div>
 
 					<div class="form-group">

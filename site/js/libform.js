@@ -99,6 +99,9 @@ function buttonClick() {
         }
 
         if( id.indexOf('insert') > -1 ){
+            if (!confirm("Sei sicuro di voler aggiungere il valore?"))
+                return false;
+
             forms = $('.form-group').find('input,select');
             labels = $('.form-group').find('label');
             let checkRequiredFields = checkMandatoryFields(forms,labels);
