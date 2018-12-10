@@ -102,18 +102,8 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Giorni Permessi usu</label>
-						<input type="text" class="form-control" name="numpermessiusu" value="0">
-					</div>
-					
-					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Permessi Donazione Sangue</label>
 						<input type="text" class="form-control" name="perdonazsang" value="0">
-					</div>
-
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Giorni Permessi Donazione Sangue usu</label>
-						<input type="text" class="form-control" name="perdonazsangusu" value="0">
 					</div>
 					
 					<div class="form-group">
@@ -122,18 +112,8 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Giorni Permessi Studio usu</label>
-						<input type="text" class="form-control" name="perstudiousu" value="0">
-					</div>
-					
-					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Malattia</label>
 						<input type="text" class="form-control" name="giornimalatt" value="0">
-					</div>
-					
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Giorni Malattia usu</label>
-						<input type="text" class="form-control" name="giornimalattusu" value="0">
 					</div>
 					
 					<div class="form-group">
@@ -142,28 +122,13 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Giorni Malattia non Retribuita usu</label>
-						<input type="text" class="form-control" name="malattnonretribusu" value="0">
-					</div>
-					
-					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Assenza per Servizio</label>
 						<input type="text" class="form-control" name="assenzaperservizio" value="0">
 					</div>
 					
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Giorni Assenza per Servizio usu</label>
-						<input type="text" class="form-control" name="assenzaperserviziousu" value="0">
-					</div>
-					
-					<div class="form-group">
 						<label for="exampleFormControlInput1">Giorni Lutto</label>
 						<input type="text" class="form-control" name="numgiornilutto" value="0">
-					</div>
-					
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Giorni Lutto usu</label>
-						<input type="text" class="form-control" name="numgiorniluttousu" value="0">
 					</div>
 					
 					<div class="form-group">

@@ -20,7 +20,18 @@
     	if( !empty($filtri['stato']) ) {
 			$stato = trim(mysqli_real_escape_string($con, $filtri['stato']));
 		}
-		$selezionaVolontari = "SELECT * FROM volontario WHERE 1=1 ";
+		$selezionaVolontari = "";
+		if(!empty($_SESSION["id_ente"])){
+			$selezionaVolontari = "select v.*, e.id_ente ".
+									"from volontario v ".
+									"join sediprogetti sp on sp.id_sedeprogetto = v.id_sedeprogetto ".
+									"join progetto p on sp.id_progetto = p.id_progetto ".
+									"join ente e on p.id_ente = e.id_ente WHERE 1=1 ".
+									"and e.id_ente = ".$_SESSION["id_ente"]." ";
+		}
+		else{
+			$selezionaVolontari = "select * from volontario v WHERE 1=1 ";
+		}
 		if( !empty($nome) ){
 			$selezionaVolontari .= "and trim(v.nome) LIKE '%$nome%' ";
 		}
@@ -44,5 +55,5 @@
 	else{
 		$msg = array("error"=>"Connessione al db non riuscita!");
 	}
-	echo json_encode($msg);
+	echo $selezionaVolontari;
 ?>
