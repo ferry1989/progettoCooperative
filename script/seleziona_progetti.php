@@ -35,7 +35,9 @@
 
 		$result = mysqli_query($con,$selezionaProgetti);
 		$msg = array();
-		array_push($msg,array("fillForm"=>$fillForm));
+		if( !empty($fillForm)){
+			array_push($msg,array("fillForm"=>$fillForm));
+		}
 		while($row = $result->fetch_assoc()) {
 			$addProgetto = array("id_progetto"=>$row["id_progetto"], "titolo"=>$row["titolo"], "annobando"=>$row["annobando"],"id_ente"=>$row["id_ente"], "settoreprevalente"=>$row["settoreprevalente"], "altrosettore"=>$row["altrosettore"], "sedidiattuazione"=>$row["sedidiattuazione"], "numerovolontari"=>$row["numerovolontari"], "numgiornidiservizio"=>$row["numgiornidiservizio"], "nhorestettiman"=>$row["nhorestettiman"], "24sett"=>$row["24sett"], "28sett"=>$row["28sett"], "36sett"=>$row["36sett"]);
 			array_push($msg, $addProgetto);

@@ -60,16 +60,16 @@
 			<div class="row">	
 				<div class="ente">
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Ente*</label>
+						<label for="exampleFormControlInput1">Nome Ente*</label>
 						<input type="text" class="form-control" name="nomeEnte">
 					</div>
 
 					<div class="form-group">
-						<label for="exampleFormControlSelect3">Utente*</label>
-						<select class="form-control" id="seleziona_utenti" name="id_utente">
-							<option value="-1">-</option>
-						</select>
+						<label for="exampleFormControlInput2">Password</label>
+						<input type="text" class="form-control" name="password" type="password">
 					</div>
+
+					<button type="submit" class="center-block genpassword" >Genera Password</button>
 
 					<div class="form-group">
 					<label for="exampleFormControlInput1">Telefono</label>

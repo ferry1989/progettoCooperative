@@ -24,6 +24,33 @@ function checkMandatoryFields(forms,labels) {
     return true;
 }
 
+function generatePassword() {
+    var randomPassword = Math.random().toString(36).slice(-10)+Math.random().toString(36).slice(-5);
+    $('input[name="password"]').val(randomPassword);
+}
+
+function sendMail() {
+    $.ajax({
+        type: 'POST',
+        url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+        data: {
+            'key': 'YOUR API KEY HERE',
+            'message': {
+                'from_email': 'YOUR@EMAIL.HERE',
+                'to': [{
+                    'email': 'RECIPIENT@EMAIL.HERE',
+                    'name': 'RECIPIENT NAME (OPTIONAL)',
+                    'type': 'to'
+                }],
+                'autotext': 'true',
+                'subject': 'YOUR SUBJECT HERE!',
+                'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+            }
+        }
+    }).done(function(response) {
+    });
+}
+
 $(document).ready(function() {
 
     var state = $('select[name="stato"]');
@@ -50,5 +77,7 @@ $(document).ready(function() {
             check.parent().children('label.textrequired').remove();
         }
     });
+
+    $(document).on('click','.genpassword',generatePassword);
 
 });

@@ -18,7 +18,6 @@
 		}
 		$result = mysqli_query($con,$selezionaRegioniProgetti);
 		$msg = array();
-		array_push($msg,array("fillForm"=>"select"));
 		while($row = $result->fetch_assoc()) {
 			$addSedeProgetto = array("id_sedeprogetto"=>$row["id_sedeprogetto"], "denominazione"=>$row["denominazione"], "titolo"=>$row["titolo"]);
 			array_push($msg, $addSedeProgetto);

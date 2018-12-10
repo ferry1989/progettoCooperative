@@ -8,7 +8,7 @@
 		$utente = json_decode($foo, true);
 		$user = mysqli_real_escape_string($con, $utente['user']);
 		$password = mysqli_real_escape_string($con, $utente['password']);
-		$admin = mysqli_real_escape_string($con, $utente['admin']);
+		$admin = 1;
 		
 		
 		$verificaUtente = "SELECT id_utente FROM utente where user='$user'";

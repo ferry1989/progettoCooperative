@@ -41,7 +41,7 @@
 					        if($_SESSION['isAdmin'] == 1){
 				        ?>
 						<li>
-                            <a href="inserisciUtente.php"><i class="fa fa-user fa-fw"></i><span data-toggle="modal" data-target="#inserisciente">Crea Accessi</span></a>
+                            <a href="inserisciUtente.php"><i class="fa fa-user fa-fw"></i><span data-toggle="modal" data-target="#inserisciente">Crea Accessi Regione</span></a>
                         </li>
 						 <li>
                             <a href="inserisciEnte.php"><i class="fa fa-user fa-fw"></i><span data-toggle="modal" data-target="#inserisciente">Inserisci dati Ente</span></a>

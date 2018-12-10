@@ -40,7 +40,9 @@
 
 		$result = mysqli_query($con,$selezionaEnti);
 		$msg = array();
-		array_push($msg,array("fillForm"=>$fillForm));
+		if( !empty($fillForm)){
+			array_push($msg,array("fillForm"=>$fillForm));
+		}
 		while($row = $result->fetch_assoc()) {
 			$addEnte = array("id_ente"=>$row["id_ente"], "telefono"=>$row["telefono"], "nomeEnte"=>$row["nomeEnte"], "codfis"=>$row["codfis"], "tipo"=>$row["tipo"], "rapplegale"=>$row["rapplegale"], "cod"=>$row["cod"], "web"=>$row["web"], "email"=>$row["email"], "pec"=>$row["pec"], "fax"=>$row["fax"]);
 			array_push($msg, $addEnte);

@@ -69,14 +69,7 @@
 						<input type="text" class="form-control" name="password" type="password" placeholder="Password">
 					</div>
 
-					<div class="form-group">
-						<label for="exampleFormControlSelect3">Admin</label>
-						<select class="form-control" name="admin">
-							<option value="-1">-</option>
-							<option value="0">NO</option>
-							<option value="1">SI</option>
-						</select>
-					</div>
+					<button type="submit" class="center-block genpassword" >Genera Password</button><br>
 				  
 					<button type="submit" class="btn btn-info center-block" id="insert_utente" >SALVA E CONFERMA</button>
 				</div>	  
