@@ -55,5 +55,5 @@
 	else{
 		$msg = array("error"=>"Connessione al db non riuscita!");
 	}
-	echo $selezionaVolontari;
+	echo json_encode($msg);
 ?>
