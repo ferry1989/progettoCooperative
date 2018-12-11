@@ -68,6 +68,13 @@
 					</div>
 
 					<div class="form-group">
+						<label for="exampleFormControlSelect3">Sede di attuazione</label>
+						<select class="form-control" id="seleziona_sedi" name="id_sede">
+							<option value="-1">-</option>
+						</select>
+					</div>
+
+					<div class="form-group">
 						<label for="exampleFormControlInput1">Nome</label>
 						<input type="text" class="form-control" name="nome">
 					</div>
