@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Nov 30, 2018 alle 03:24
+-- Creato il: Dic 11, 2018 alle 06:23
 -- Versione del server: 5.7.23
 -- Versione PHP: 7.1.21
 
@@ -32,7 +32,14 @@ CREATE TABLE `contratto` (
   `id_contratto` int(11) NOT NULL,
   `tipo` text NOT NULL,
   `compenso` double DEFAULT NULL,
-  `costoassenza` double NOT NULL
+  `costoassenza` double NOT NULL,
+  `numpermessi` int(11) NOT NULL,
+  `perdonazsang` int(11) NOT NULL,
+  `perstudio` int(11) NOT NULL,
+  `giornimalatt` int(11) NOT NULL,
+  `assenzaperservizio` int(11) NOT NULL,
+  `numgiornilutto` int(11) NOT NULL,
+  `infortunio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -299,7 +306,8 @@ ALTER TABLE `utente`
 -- Indici per le tabelle `volontario`
 --
 ALTER TABLE `volontario`
-  ADD PRIMARY KEY (`id_volontario`);
+  ADD PRIMARY KEY (`id_volontario`),
+  ADD UNIQUE KEY `id_volontario` (`id_volontario`);
 
 --
 -- Indici per le tabelle `volontarioprogetto`

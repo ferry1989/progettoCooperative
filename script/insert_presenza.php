@@ -33,8 +33,7 @@
 			$maternita = new DateTime($presenza['maternita']);
 			$maternita = mysqli_real_escape_string($con,$maternita->format('Ymdhis'));
 			$infortunio = mysqli_real_escape_string($con, $presenza['infortunio']);
-			
-			
+	
 			$verificaVolontario = "SELECT * FROM volontario where id_volontario='$id_volontario'";
 			$result = mysqli_query($con,$verificaVolontario);
 
@@ -66,8 +65,47 @@
 				if (!mysqli_query($con,$insertpresenza)) {
 					$msg = array("error"=>mysqli_error($con));
 				}
-				else{
-					$msg = array("success"=>"presenza creata");
+				else{	
+					$verificaPresenzeLimite = 	"SELECT ".
+												"v.stato, ".
+												"CASE WHEN (sum(p.numpermessi) + sum(p.numpermessiusu)) >= c.numpermessi THEN 1 ELSE 0 END as limitenumpermessi, ".
+												"CASE WHEN (sum(p.perdonazsang) + sum(p.perdonazsangusu)) >= c.perdonazsang THEN 1 ELSE 0 END as limiteperdonazsang, ".
+												"CASE WHEN (sum(p.perstudio) + sum(p.perstudiousu)) >= c.perstudio THEN 1 ELSE 0 END as limiteperstudio, ".
+												"CASE WHEN (sum(p.giornimalatt) + sum(p.giornimalattusu)) >= c.giornimalatt THEN 1 ELSE 0 END as limitegiornimalatt, ".
+												"CASE WHEN (sum(p.assenzaperservizio) + sum(p.assenzaperserviziousu)) >= c.assenzaperservizio THEN 1 ELSE 0 END as limiteassenzaperservizio, ".
+												"CASE WHEN (sum(p.numgiornilutto) + sum(p.numgiorniluttousu)) >= c.numgiornilutto THEN 1 ELSE 0 END as limitenumgiornilutto, ".
+												"CASE WHEN sum(p.infortunio) >= c.infortunio THEN 1 ELSE 0 END as limiteinfortunio ".
+												"FROM presenza p ".
+												"join volontario v on p.id_volontario = v.id_volontario ".
+												"join contratto c on c.id_contratto = v.id_contratto ".
+												"WHERE p.id_volontario = $id_volontario  ".
+												"GROUP BY p.id_volontario, c.id_contratto ";
+					$result = mysqli_query($con,$verificaPresenzeLimite);
+					if ($result->num_rows > 0) {
+						$row = $result->fetch_assoc();
+						if($row['stato'] == 'Attivo'){
+							if($row['limitenumpermessi'] == '1' || $row['limiteperdonazsang'] == '1' || $row['limiteperstudio'] == '1' || $row['limitegiornimalatt'] == '1' || $row['limiteassenzaperservizio'] == '1' || $row['limitenumgiornilutto'] == '1' || $row['limiteinfortunio'] == '1'){
+								$updateVolontario = "UPDATE volontario SET stato='Ritirato' WHERE id_volontario = $id_volontario ";
+								if (!mysqli_query($con,$updateVolontario)) {
+									$msg = array("error"=>mysqli_error($con));
+								}
+								else{
+									$msg = array("success"=>"presenza creata. Utente Rititaro per limite assenze superato");
+								}
+							}
+							else{
+								$msg = array("success"=>"presenza creata");
+							}
+						}
+						else{
+							$msg = array("success"=>"presenza creata");
+						}
+					}
+					else{
+						$msg = array("success"=>"presenza creata");
+					}
+			
+			
 				}
 			}
 			mysqli_close($con);
